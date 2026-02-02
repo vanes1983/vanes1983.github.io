@@ -306,6 +306,7 @@
     </div>
 
     <script>
+        const wordTimeMult = 0.7
         // Данные теста
         const testData = [
             {
@@ -393,7 +394,7 @@
             
             // Рассчитываем время на чтение (2 секунды на слово + минимум 30 секунд)
             const wordCount = currentTextData.text.split(' ').length;
-            timeLeft = Math.max(30, Math.floor(wordCount * 2));
+            timeLeft = Math.max(15, Math.floor(wordCount * wordTimeMult));
             
             // Запускаем таймер
             startTimer();
