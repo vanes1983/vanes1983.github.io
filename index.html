@@ -119,15 +119,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-width: 120px;
+            min-width: 60px;
             transition: all 0.3s ease;
         }
         
-        .timer .time-label {
-            font-size: 14px;
-            color: #95a5a6;
-            margin-right: 8px;
-        }
         
         .timer .time-value {
             font-weight: 600;
@@ -158,6 +153,12 @@
             margin-bottom: 20px;
             max-height: 300px;
             overflow-y: auto;
+        }
+
+        .text-container #textContent {
+            font-size: 16px;
+            line-height: 1.45;    
+            margin: 0;             
         }
         
         .question-container {
@@ -302,7 +303,6 @@
     <div id="page3" class="page">
         <div class="timer-container">
             <div id="timer" class="timer">
-                <span class="time-label">Время:</span>
                 <span class="time-value" id="time">60</span>
             </div>
         </div>
@@ -458,6 +458,10 @@
             
             // Отображаем текст
             document.getElementById('textContent').innerHTML = currentTextData.text;
+            setTimeout(() => {
+                        document.getElementById('textContent').scrollTop = 0;
+                        document.getElementById('textContainer').scrollTop = 0;}, 0);
+
             document.getElementById('textTitle').textContent = `Текст для анализа ${currentTextIndex + 1} из ${testData.length}`;
             
             // Показываем контейнер с текстом и скрываем вопросы
