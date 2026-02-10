@@ -1,17 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Project Presentation Slide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Manrope:wght@800&display=swap" rel="stylesheet">
 
-    <script src="bundle.js" ></script>
+    <style>
+        /* СБРОС СТИЛЕЙ */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        body {
+            background-color: #ECEBE9; /* Цвет подложки браузера */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            overflow: auto; /* Разрешаем скролл, если экран меньше макета */
+        }
+
+        /* --- ГЛАВНЫЙ КОНТЕЙНЕР (СЛАЙД) --- 
+           Он имеет фиксированные размеры. Верстка внутри него НИКОГДА не поедет.
+        */
+        .artboard {
+            width: 1280px;  /* Фиксированная ширина */
+            height: 720px;  /* Фиксированная высота (16:9) */
+            background-color: #F4F1EA; /* Теплый кремовый фон */
+            position: relative;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.15); /* Эффект парения */
+            overflow: hidden;
+            flex-shrink: 0; /* Чтобы флекс не сжимал его */
+        }
+
+        /* --- ЛЕВАЯ ЧАСТЬ (ИЗОБРАЖЕНИЕ) --- */
+        .image-area {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 62%; /* Картинка занимает 42% ширины */
+            height: 100%;
+            background-color: #DADADA;
+            overflow: hidden;
+        }
+
+        .image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            /* Легкий фильтр для "кинематографичности" */
+            filter: grayscale(20%) contrast(95%);
+        }
+
+        /* --- ПРАВАЯ ЧАСТЬ (КОНТЕНТ) --- */
+        .content-area {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 43%;
+            height: 100%;
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* --- ЗАГОЛОВОК С НАЛОЖЕНИЕМ (САМОЕ ВАЖНОЕ) --- */
+        .hero-title {
+            position: absolute;
+            font-family: 'Manrope', sans-serif; /* Мощный геометричный шрифт */
+            font-weight: 800;
+            font-size: 120px; /* Огромный размер */
+            line-height: 0.85; /* Плотный интерлиньяж */
+            color: #111;
+            text-transform: uppercase;
+            
+            /* Позиционирование для нахлеста */
+            left: 42%; /* Сдвигаем влево, чтобы заехать на картинку */
+            top: 15%;
+            z-index: 10; /* Поверх картинки */
+            
+            /* Отключаем перенос слов, чтобы не ломалось */
+            white-space: nowrap; 
+            letter-spacing: -4px; /* Плотный трекинг */
+        }
+
+        /* Маленький надзаголовок */
+        .meta-tag {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #888;
+            font-weight: 600;
+            margin-bottom: auto; /* Прижимаем к верху */
+            text-align: right; /* Выравнивание по правому краю */
+        }
+
+        /* Текстовое описание */
+        .description {
+            width: 320px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #555;
+            margin-left: auto; /* Прижимаем вправо */
+            margin-top: 150px; /* Отступ от заголовка */
+        }
+
+        /* --- ПОДВАЛ (ТАБЛИЦА ДАННЫХ) --- */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            border-top: 1px solid rgba(0,0,0,0.1); /* Тонкая линия */
+            padding-top: 25px;
+            margin-top: auto; /* Прижимаем к низу */
+        }
+
+        .detail-item h3 {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #111;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .detail-item span {
+            font-size: 12px;
+            color: #666;
+            font-family: 'Inter', sans-serif;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>HELLO!</h1>
-    </header>
-    <button>push</button>
+
+    <main class="artboard">
+        
+        <div class="image-area">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=2070&auto=format&fit=crop" alt="Jewelry Project">
+        </div>
+
+        <h1 class="hero-title">
+            Project<br>
+            Name
+        </h1>
+
+        <div class="content-area">
+            
+            <div class="meta-tag">Portfolio & Creative Direction</div>
+
+            <p class="description">
+                <b>Concept:</b> This collection explores the balance between geometric rigidity and organic flow. Inspired by modernist architecture, the pieces are designed to act as wearable sculptures.<br><br>
+                Crafted from 18k recycled gold, each item undergoes a meticulous hand-finishing process to achieve a unique matte texture.
+            </p>
+
+            <div class="details-grid">
+                <div class="detail-item">
+                    <h3>Role</h3>
+                    <span>Art Director</span>
+                </div>
+                <div class="detail-item">
+                    <h3>Client</h3>
+                    <span>Maison Éclat</span>
+                </div>
+                <div class="detail-item">
+                    <h3>Year</h3>
+                    <span>2024</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
 </body>
 </html>
