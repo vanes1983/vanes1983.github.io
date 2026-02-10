@@ -2,60 +2,241 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Project Presentation Slide</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Manrope:wght@800&display=swap" rel="stylesheet">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artful Dodger | Полное портфолио</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        /* СБРОС СТИЛЕЙ */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        /* Общие сбросы и настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
 
         body {
-            background-color: #ECEBE9; /* Цвет подложки браузера */
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #f8f8f8; /* Светлый фон для всей страницы */
             font-family: 'Inter', sans-serif;
-            overflow: auto; /* Разрешаем скролл, если экран меньше макета */
-        }
-
-        /* --- ГЛАВНЫЙ КОНТЕЙНЕР (СЛАЙД) --- 
-           Он имеет фиксированные размеры. Верстка внутри него НИКОГДА не поедет.
-        */
-        .artboard {
-            width: 1280px;  /* Фиксированная ширина */
-            height: 720px;  /* Фиксированная высота (16:9) */
-            background-color: #F4F1EA; /* Теплый кремовый фон */
+            color: #1a1a1a;
+            overflow-x: hidden;
+            width: 1280px;
+            margin: 0 auto;
             position: relative;
-            box-shadow: 0 50px 100px rgba(0,0,0,0.15); /* Эффект парения */
-            overflow: hidden;
-            flex-shrink: 0; /* Чтобы флекс не сжимал его */
         }
 
-        /* --- ЛЕВАЯ ЧАСТЬ (ИЗОБРАЖЕНИЕ) --- */
-        .image-area {
+        /* Контейнер для всех страниц */
+        .portfolio-container {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Стили для каждой страницы */
+        .portfolio-page {
+            width: 100%;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+            margin-bottom: 0;
+            background-color: #ffffff; /* Белый фон для каждой страницы */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+
+        .portfolio-page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Анимация задержки для разных элементов */
+        .portfolio-page.visible .stagger-item {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .portfolio-page.visible .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+        .portfolio-page.visible .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+        .portfolio-page.visible .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+        .portfolio-page.visible .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+        .portfolio-page.visible .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ==================== ЕДИНЫЕ СТИЛИ ТЕКСТОВ ==================== */
+        
+        /* Крупные заголовки (самые большие на страницах) */
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+        }
+
+        /* Заголовки среднего размера */
+        .section-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+        }
+
+        /* Основной текст */
+        .body-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+        }
+
+        /* Мелкий текст и метки */
+        .small-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        /* Текст для метаданных и деталей */
+        .meta-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 1.4;
+            color: #444444;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ПЕРВОЙ СТРАНИЦЫ ==================== */
+        .page1-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+
+        .page1-header {
+            margin-bottom: 40px;
+        }
+
+        .page1-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            line-height: 0.9;
+            letter-spacing: -2px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+        }
+
+        .page1-meta-info {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            padding: 0 5px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .page1-meta-info div:last-child {
+            text-align: right;
+        }
+
+        .page1-meta-info div:nth-child(2), 
+        .page1-meta-info div:nth-child(3) {
+            text-align: center;
+        }
+
+        .page1-hero-image-container {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .page1-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: sepia(10%) contrast(105%);
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .page1-hero-image-container:hover .page1-hero-image {
+            transform: scale(1.03);
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ВТОРОЙ СТРАНИЦЫ ==================== */
+        .page2-artboard {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page2-image-area {
             position: absolute;
             left: 0;
             top: 0;
-            width: 62%; /* Картинка занимает 42% ширины */
+            width: 62%;
             height: 100%;
-            background-color: #DADADA;
+            background-color: #e0e0e0;
             overflow: hidden;
         }
 
-        .image-area img {
+        .page2-image-area img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             display: block;
-            /* Легкий фильтр для "кинематографичности" */
-            filter: grayscale(20%) contrast(95%);
         }
 
-        /* --- ПРАВАЯ ЧАСТЬ (КОНТЕНТ) --- */
-        .content-area {
+        .page2-hero-title {
+            position: absolute;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            line-height: 0.85;
+            color: #1a1a1a;
+            text-transform: uppercase;
+            left: 42%;
+            top: 15%;
+            z-index: 10;
+            white-space: nowrap;
+            letter-spacing: -2px;
+        }
+
+        .page2-content-area {
             position: absolute;
             right: 0;
             top: 0;
@@ -67,112 +248,1214 @@
             justify-content: space-between;
         }
 
-        .hero-title {
-            position: absolute;
-            font-family: 'Manrope', sans-serif; /* Мощный геометричный шрифт */
-            font-weight: 800;
-            font-size: 120px; /* Огромный размер */
-            line-height: 0.85; /* Плотный интерлиньяж */
-            color: #111;
-            text-transform: uppercase;
-            
-            /* Позиционирование для нахлеста */
-            left: 42%; /* Сдвигаем влево, чтобы заехать на картинку */
-            top: 15%;
-            z-index: 10; /* Поверх картинки */
-            
-            /* Отключаем перенос слов, чтобы не ломалось */
-            white-space: nowrap; 
-            letter-spacing: -4px; /* Плотный трекинг */
-        }
-
-        /* Маленький надзаголовок */
-        .meta-tag {
+        .page2-meta-tag {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
             font-size: 11px;
             text-transform: uppercase;
-            letter-spacing: 0.2em;
-            color: #888;
-            font-weight: 600;
-            margin-bottom: auto; /* Прижимаем к верху */
-            text-align: right; /* Выравнивание по правому краю */
+            letter-spacing: 1px;
+            color: #666666;
+            margin-bottom: auto;
+            text-align: right;
         }
 
-        /* Текстовое описание */
-        .description {
+        .page2-description {
             width: 320px;
-            font-size: 13px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
             line-height: 1.6;
-            color: #555;
-            margin-left: auto; /* Прижимаем вправо */
-            margin-top: 150px; /* Отступ от заголовка */
+            color: #333333;
+            margin-left: auto;
+            margin-top: 150px;
         }
 
-        /* --- ПОДВАЛ (ТАБЛИЦА ДАННЫХ) --- */
-        .details-grid {
+        .page2-details-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 120px;
-            border-top: 1px solid rgba(0,0,0,0.1); /* Тонкая линия */
+            border-top: 1px solid rgba(0,0,0,0.1);
             padding-top: 25px;
-            margin-top: auto; /* Прижимаем к низу */
+            margin-top: auto;
         }
 
-        .detail-item h3 {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: #111;
-            margin-bottom: 6px;
-            font-weight: 700;
-        }
-
-        .detail-item span {
-            font-size: 12px;
-            color: #666;
+        .page2-detail-item h3 {
             font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+            margin-bottom: 6px;
         }
 
+        .page2-detail-item span {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ТРЕТЬЕЙ СТРАНИЦЫ ==================== */
+        .page3-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px;
+        }
+
+        .page3-projects-container {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+        }
+
+        .page3-project-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page3-image-wrapper {
+            width: 100%;
+            height: 340px;
+            background-color: #eaeaea;
+            margin-bottom: 25px;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .page3-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .page3-image-wrapper:hover img {
+            transform: scale(1.03);
+        }
+
+        .page3-metadata {
+            display: flex;
+            gap: 30px;
+        }
+
+        .page3-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .page3-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666666;
+        }
+
+        .page3-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        .page3-footer-title {
+            margin-top: auto;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            line-height: 0.9;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 30px;
+            color: #1a1a1a;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ЧЕТВЁРТОЙ СТРАНИЦЫ ==================== */
+        .page4-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .page4-content-side {
+            width: 60%;
+            height: 100%;
+            padding: 60px 0 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            z-index: 2;
+        }
+
+        .page4-top-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .page4-main-title {
+            position: absolute;
+            top: 220px;
+            left: 80px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            line-height: 0.9;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            width: 1000px;
+            pointer-events: none;
+            color: #1a1a1a;
+        }
+
+        .page4-description-block {
+            max-width: 400px;
+            margin-top: 140px;
+        }
+
+        .page4-description-text {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #333333;
+        }
+
+        .page4-metadata {
+            display: flex;
+            gap: 60px;
+        }
+
+        .page4-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .page4-meta-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .page4-meta-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        .page4-image-side {
+            width: 40%;
+            height: 100%;
+            position: relative;
+        }
+
+        .page4-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ПЯТОЙ СТРАНИЦЫ ==================== */
+        .page5-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page5-header-label {
+            position: absolute;
+            top: 40px;
+            left: 80px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .page5-main-title {
+            position: absolute;
+            top: 130px;
+            left: 70px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            letter-spacing: -2px;
+            line-height: 1;
+            z-index: 10;
+            pointer-events: none;
+            color: #1a1a1a;
+            text-transform: uppercase;
+        }
+
+        .page5-image-top-right {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            width: 600px;
+            height: 320px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .page5-image-top-right img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page5-image-bottom-left {
+            position: absolute;
+            bottom: 40px;
+            left: 80px;
+            width: 560px;
+            height: 380px;
+            background-color: #e0e0e0;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .page5-image-bottom-left img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .page5-description {
+            position: absolute;
+            top: 420px;
+            left: 780px;
+            width: 380px;
+        }
+
+        .page5-description p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: #333333;
+        }
+
+        .page5-meta-data {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+            border-top: 1px solid rgba(0,0,0,0.1);
+            padding-top: 20px;
+        }
+
+        .page5-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page5-meta-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: #666666;
+        }
+
+        .page5-meta-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ШЕСТОЙ СТРАНИЦЫ ==================== */
+        .page6-container {
+            display: flex;
+            width: 100%;
+            height: 720px;
+            overflow: hidden;
+            gap: 60px;
+            padding: 60px;
+            background-color: #fafafa;
+        }
+
+        .page6-gallery {
+            display: flex;
+            gap: 20px;
+            flex: 2;
+        }
+
+        .page6-gallery-item {
+            flex: 1;
+            aspect-ratio: 2 / 5;
+            overflow: hidden;
+            position: relative;
+            background-color: #eaeaea;
+            border-radius: 4px;
+        }
+
+        .page6-gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .page6-gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .page6-info-panel {
+            flex: 1;
+            padding-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .page6-info-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .page6-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666666;
+        }
+
+        .page6-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            color: #333333;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ СЕДЬМОЙ СТРАНИЦЫ ==================== */
+        .page7-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+            padding: 40px;
+            display: grid;
+            grid-template-columns: 460px 1fr 340px;
+            grid-template-rows: 240px 1fr;
+            gap: 30px;
+        }
+
+        .page7-image-box {
+            background-color: #eaeaea;
+            overflow: hidden;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .page7-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .page7-main-photo {
+            grid-row: 1 / 3;
+        }
+
+        .page7-top-photo {
+            grid-column: 2 / 4;
+        }
+
+        .page7-middle-photo {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        .page7-text-content {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page7-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            color: #1a1a1a;
+        }
+
+        .page7-description {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333333;
+        }
+
+        .page7-line-accent {
+            width: 40px;
+            height: 2px;
+            background: #1a1a1a;
+            margin-bottom: 20px;
+        }
+
+        .page7-footer-tag {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ВОСЬМОЙ СТРАНИЦЫ ==================== */
+        .page8-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            padding: 60px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .page8-image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .page8-image-container {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background-color: #eaeaea;
+            border-radius: 4px;
+        }
+
+        .page8-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+        }
+
+        .page8-image-container img:hover {
+            filter: brightness(1.1);
+        }
+
+        .page8-content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+
+        .page8-text-block h2 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+
+        .page8-text-block p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333333;
+            text-align: justify;
+        }
+
+        .page8-metadata-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            border-top: 1px solid rgba(0,0,0,0.08);
+            padding-top: 25px;
+        }
+
+        .page8-meta-group {
+            display: flex;
+            gap: 60px;
+        }
+
+        .page8-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .page8-meta-label {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #666666;
+            letter-spacing: 1px;
+        }
+
+        .page8-meta-value {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #444444;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ДЕВЯТОЙ СТРАНИЦЫ ==================== */
+        .page9-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fafafa;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 60px 80px;
+        }
+
+        .page9-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page9-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 110px;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            color: #1a1a1a;
+            line-height: 1;
+        }
+
+        .page9-info-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            padding-bottom: 15px;
+        }
+
+        .page9-info-item {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
+
+        .page9-image-container {
+            flex-grow: 1;
+            width: 100%;
+            overflow: hidden;
+            background-color: #eaeaea;
+            border-radius: 4px;
+        }
+
+        .page9-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Навигация */
+        .portfolio-navigation {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background-color: #1a1a1a;
+            transform: scale(1.2);
+        }
+
+        .nav-dot:hover {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        /* Индикатор прогресса */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: #1a1a1a;
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Информация о текущей странице */
+        .current-page-info {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            letter-spacing: 1px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 10px;
+            border-radius: 3px;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Общие классы для демонстрации единых стилей */
+        .style-demo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .style-demo h3 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .style-demo .hero-title-demo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 24px;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .style-demo .section-title-demo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .style-demo .body-text-demo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+        
+        .style-demo .small-text-demo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 1.4;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #666666;
+        }
     </style>
 </head>
 <body>
+    <div class="progress-bar"></div>
+    <div class="current-page-info">Страница 1/9</div>
+    
+    <div class="portfolio-navigation">
+        <div class="nav-dot active" data-page="1"></div>
+        <div class="nav-dot" data-page="2"></div>
+        <div class="nav-dot" data-page="3"></div>
+        <div class="nav-dot" data-page="4"></div>
+        <div class="nav-dot" data-page="5"></div>
+        <div class="nav-dot" data-page="6"></div>
+        <div class="nav-dot" data-page="7"></div>
+        <div class="nav-dot" data-page="8"></div>
+        <div class="nav-dot" data-page="9"></div>
+    </div>
 
-    <main class="artboard">
-        
-        <div class="image-area">
-            <img src="images/image1.jpg?q=80&w=2070&auto=format&fit=crop" alt="Jewelry Project">
-        </div>
+    <div class="portfolio-container">
+        <!-- Страница 1 -->
+        <section class="portfolio-page visible" id="page1">
+            <div class="page1-wrapper">
+                <header class="page1-header stagger-item">
+                    <h1 class="page1-title">Artful Dodger</h1>
+                </header>
 
-        <h1 class="hero-title">
-            Project<br>
-            Name
-        </h1>
+                <nav class="page1-meta-info stagger-item">
+                    <div>Portfolio & Creative Director</div>
+                    <div>@socialnickname</div>
+                    <div>www.example.com</div>
+                    <div>123 Street Name, City</div>
+                </nav>
 
-        <div class="content-area">
-            
-            <div class="meta-tag">Portfolio & Creative Direction</div>
+                <main class="page1-hero-image-container stagger-item">
+                    <img src="images/19.jpg?auto=format&fit=crop&q=80&w=1500" 
+                         alt="Portrait" 
+                         class="page1-hero-image">
+                </main>
+            </div>
+        </section>
 
-            <p class="description">
-                <b>Concept:</b> This collection explores the balance between geometric rigidity and organic flow. Inspired by modernist architecture, the pieces are designed to act as wearable sculptures.<br><br>
-                Crafted from 18k recycled gold, each item undergoes a meticulous hand-finishing process to achieve a unique matte texture.
-            </p>
-
-            <div class="details-grid">
-                <div class="detail-item">
-                    <h3>Role</h3>
-                    <span>Art Director</span>
+        <!-- Страница 2 -->
+        <section class="portfolio-page" id="page2">
+            <main class="page2-artboard">
+                <div class="page2-image-area stagger-item">
+                    <img src="images/1.jpg?auto=format&fit=crop&q=80&w=2070" alt="Jewelry Project">
                 </div>
-                <div class="detail-item">
-                    <h3>Client</h3>
-                    <span>Maison Éclat</span>
+
+                <h1 class="page2-hero-title stagger-item">
+                    Project<br>
+                    Name
+                </h1>
+
+                <div class="page2-content-area">
+                    <div class="page2-meta-tag stagger-item">Portfolio & Creative Direction</div>
+
+                    <p class="page2-description stagger-item">
+                        <b>Concept:</b> This collection explores the balance between geometric rigidity and organic flow. Inspired by modernist architecture, the pieces are designed to act as wearable sculptures.<br><br>
+                        Crafted from 18k recycled gold, each item undergoes a meticulous hand-finishing process to achieve a unique matte texture.
+                    </p>
+
+                    <div class="page2-details-grid stagger-item">
+                        <div class="page2-detail-item">
+                            <h3>Role</h3>
+                            <span>Art Director</span>
+                        </div>
+                        <div class="page2-detail-item">
+                            <h3>Client</h3>
+                            <span>Maison Éclat</span>
+                        </div>
+                        <div class="page2-detail-item">
+                            <h3>Year</h3>
+                            <span>2024</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="detail-item">
-                    <h3>Year</h3>
-                    <span>2024</span>
+            </main>
+        </section>
+
+        <!-- Страница 3 -->
+        <section class="portfolio-page" id="page3">
+            <div class="page3-canvas">
+                <div class="page3-projects-container">
+                    <div class="page3-project-card stagger-item">
+                        <div class="page3-image-wrapper">
+                            <img src="images/3.jpg?auto=format&fit=crop&w=600&q=80" alt="Profile 1">
+                        </div>
+                        <div class="page3-metadata">
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Year</span>
+                                <span class="page3-value">2024</span>
+                            </div>
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Client</span>
+                                <span class="page3-value">Client Name</span>
+                            </div>
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Project</span>
+                                <span class="page3-value">Project Name</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page3-project-card stagger-item">
+                        <div class="page3-image-wrapper">
+                            <img src="images/2.jpg?auto=format&fit=crop&w=600&q=80" alt="Profile 2">
+                        </div>
+                        <div class="page3-metadata">
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Year</span>
+                                <span class="page3-value">2024</span>
+                            </div>
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Client</span>
+                                <span class="page3-value">Client Name</span>
+                            </div>
+                            <div class="page3-meta-item">
+                                <span class="page3-label">Project</span>
+                                <span class="page3-value">Project Name</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="page3-footer-title stagger-item">Project Details</h1>
+            </div>
+        </section>
+
+        <!-- Страница 4 -->
+        <section class="portfolio-page" id="page4">
+            <div class="page4-canvas">
+                <div class="page4-content-side">
+                    <div class="page4-top-label stagger-item">Portfolio & Creative Direction</div>
+                    <h1 class="page4-main-title stagger-item">Project Name<br>Can Go Here</h1>
+ 
+                    <div class="page4-description-block stagger-item">
+                        <p class="page4-description-text">
+                            Luptat as doluptur am, utempe rumsul sedi unt officimi duntio elenimp.
+                            Tet la quist odit ut et andipundis et la di diosti risten aliquas imolupic te elest.
+                        </p>
+                        
+                        <div class="page4-metadata">
+                            <div class="page4-meta-item">
+                                <span class="page4-meta-label">Year</span>
+                                <span class="page4-meta-value">2026</span>
+                            </div>
+                            <div class="page4-meta-item">
+                                <span class="page4-meta-label">Client</span>
+                                <span class="page4-meta-value">Global Brand</span>
+                            </div>
+                            <div class="page4-meta-item">
+                                <span class="page4-meta-label">Project</span>
+                                <span class="page4-meta-value">Visual Identity</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page4-image-side stagger-item">
+                    <img src="images/4.jpg?auto=format&fit=crop&q=80&w=1000" alt="Profile" class="page4-hero-image">
                 </div>
             </div>
-        </div>
+        </section>
 
-    </main>
+        <!-- Страница 5 -->
+        <section class="portfolio-page" id="page5">
+            <div class="page5-canvas">
+                <div class="page5-header-label stagger-item">Portfolio & Creative Direction</div>
+                
+                <h1 class="page5-main-title stagger-item">PROJECT INFO</h1>
 
+                <div class="page5-image-top-right stagger-item">
+                    <img src="images/16.jpg?auto=format&fit=crop&q=80&w=1000" alt="Detail 1">
+                </div>
+
+                <div class="page5-image-bottom-left stagger-item">
+                    <img src="images/18.jpg?auto=format&fit=crop&q=80&w=1000" alt="Detail 2">
+                </div>
+
+                <div class="page5-description stagger-item">
+                    <p>
+                        Luptiunt ex doluptur am, simuspe rumqui sunt, unt officius dentio conecap. Tat id maxim volut am ut ex evelendus et la di dionetit itatus aliquos invelignis as alanduntis velenistrum quuntit etumque nulpar, con restorio comniet.
+                    </p>
+
+                    <div class="page5-meta-data">
+                        <div class="page5-meta-item">
+                            <span class="page5-meta-label">Year</span>
+                            <span class="page5-meta-value">2024</span>
+                        </div>
+                        <div class="page5-meta-item">
+                            <span class="page5-meta-label">Client</span>
+                            <span class="page5-meta-value">Client Name</span>
+                        </div>
+                        <div class="page5-meta-item">
+                            <span class="page5-meta-label">Project</span>
+                            <span class="page5-meta-value">Project Name</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 6 -->
+        <section class="portfolio-page" id="page6">
+            <div class="page6-container">
+                <div class="page6-gallery">
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo1.avif?q=80&w=1000&auto=format&fit=crop" alt="Jewelry 1">
+                    </div>
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo2.avif?q=80&w=1000&auto=format&fit=crop" alt="Jewelry 2">
+                    </div>
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo3.avif?q=80&w=1000&auto=format&fit=crop" alt="Jewelry 3">
+                    </div>
+                </div>
+
+                <div class="page6-info-panel">
+                    <div class="page6-info-group stagger-item">
+                        <span class="page6-label">Year</span>
+                        <span class="page6-value">2024</span>
+                    </div>
+                    
+                    <div class="page6-info-group stagger-item">
+                        <span class="page6-label">Client</span>
+                        <span class="page6-value">Aurelia & Co.</span>
+                    </div>
+
+                    <div class="page6-info-group stagger-item">
+                        <span class="page6-label">Project</span>
+                        <span class="page6-value">The Essence Collection</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 7 -->
+        <section class="portfolio-page" id="page7">
+            <div class="page7-canvas">
+                <div class="page7-image-box page7-main-photo stagger-item">
+                    <img src="images/6.jpg?auto=format&fit=crop&q=80&w=800" alt="Model 1">
+                </div>
+
+                <div class="page7-image-box page7-top-photo stagger-item">
+                    <img src="images/7.jpg?auto=format&fit=crop&q=80&w=1000" alt="Model 2">
+                </div>
+
+                <div class="page7-image-box page7-middle-photo stagger-item">
+                    <img src="images/8.jpg?auto=format&fit=crop&q=80&w=600" alt="Model 3">
+                </div>
+
+                <div class="page7-text-content stagger-item">
+                    <div class="page7-line-accent"></div>
+                    <h1 class="page7-title">Luptant as deluctor se, viat tempi sani sit.</h1>
+                    <p class="page7-description">
+                        Non ad modit asit ad ut andiatumtus et re di dipienit estius aliquam usatigento es eturerferis vellesedisquid excestit utatque nobist, con perispic tendaert, con nosto que facilla vollaborentia ipi. Aquatus decturiorit qui abori volent ed ex nulpaic tent untibusamet doluptatur re santotalit aut la dolutem experi unt occae quaspic tectia sitempelessi stianda saphid utacid ut que omnisti busaerum que sed eventis usatur sit, sum.
+                    </p>
+                </div>
+
+                <div class="page7-footer-tag stagger-item">Issue No. 09 — 2026</div>
+            </div>
+        </section>
+
+        <!-- Страница 8 -->
+        <section class="portfolio-page" id="page8">
+            <div class="page8-canvas">
+                <div class="page8-image-grid">
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/10.jpg?auto=format&fit=crop&q=80&w=400" alt="Model 1">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/11.jpg?auto=format&fit=crop&q=80&w=400" alt="Model 2">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/12.jpg?auto=format&fit=crop&q=80&w=400" alt="Model 3">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/13.jpg?auto=format&fit=crop&q=80&w=400" alt="Model 4">
+                    </div>
+                </div>
+
+                <div class="page8-content-section">
+                    <div class="page8-text-block stagger-item">
+                        <h2>Luminous silhouettes, strange sunset over city edifices</h2>
+                        <p>
+                            Dusk's glow hits the water with amber radiance, casting soft shadows across the architecture. The series explores the intersection of human emotion and urban geometry, capturing moments of stillness in a world that never truly sleeps.
+                        </p>
+                    </div>
+                    <div class="page8-text-block stagger-item">
+                        <h2>Luminous silhouettes, strange sunset over city edifices</h2>
+                        <p>
+                            Dusk's glow hits the water with amber radiance, casting soft shadows across the architecture. The series explores the intersection of human emotion and urban geometry, capturing moments of stillness in a world that never truly sleeps.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="page8-metadata-footer">
+                    <div class="page8-meta-group">
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Year</span>
+                            <span class="page8-meta-value">2024</span>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Client</span>
+                            <span class="page8-meta-value">Client Name</span>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Project</span>
+                            <span class="page8-meta-value">Project Title</span>
+                        </div>
+                    </div>
+                    <div class="page8-meta-group">
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Year</span>
+                            <span class="page8-meta-value">2024</span>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Client</span>
+                            <span class="page8-meta-value">Client Name</span>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <span class="page8-meta-label">Project</span>
+                            <span class="page8-meta-value">Project Title</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 9 -->
+        <section class="portfolio-page" id="page9">
+            <div class="page9-canvas">
+                <header class="page9-header stagger-item">
+                    <h1 class="page9-title">Thank You</h1>
+                </header>
+
+                <nav class="page9-info-bar stagger-item">
+                    <div class="page9-info-item">Portfolio & Creative Director</div>
+                    <div class="page9-info-item">@socialnickname</div>
+                    <div class="page9-info-item">www.example.com</div>
+                    <div class="page9-info-item">121 Street Name, City</div>
+                </nav>
+
+                <main class="page9-image-container stagger-item">
+                    <img src="images/photox.avif?q=80&w=1280&h=400&auto=format&fit=crop" alt="Woman in field">
+                </main>
+            </div>
+        </section>
+    </div>
+
+    <div class="style-demo">
+        <h3>Единые стили текста:</h3>
+        <div class="hero-title-demo">Крупный заголовок</div>
+        <div class="section-title-demo">Заголовок среднего размера</div>
+        <div class="body-text-demo">Основной текст для описаний и параграфов с удобным межстрочным интервалом.</div>
+        <div class="small-text-demo">Мелкий текст для меток и деталей</div>
+    </div>
+
+    <script>
+        // Функция для анимации появления элементов при скроллинге
+        function animateOnScroll() {
+            const pages = document.querySelectorAll('.portfolio-page');
+            const progressBar = document.querySelector('.progress-bar');
+            const currentPageInfo = document.querySelector('.current-page-info');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            // Функция для проверки видимости элемента
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= window.innerHeight * 0.8 &&
+                    rect.bottom >= window.innerHeight * 0.2
+                );
+            }
+            
+            // Функция для обновления видимых элементов
+            function updateVisibleElements() {
+                let visiblePageIndex = 0;
+                
+                pages.forEach((page, index) => {
+                    if (isElementInViewport(page)) {
+                        page.classList.add('visible');
+                        visiblePageIndex = index;
+                        
+                        // Обновляем активную точку навигации
+                        navDots.forEach(dot => dot.classList.remove('active'));
+                        navDots[index].classList.add('active');
+                        
+                        // Обновляем информацию о текущей странице
+                        currentPageInfo.textContent = `Страница ${index + 1}/9`;
+                    }
+                });
+                
+                // Обновляем прогресс-бар
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            }
+            
+            // Инициализация при загрузке
+            updateVisibleElements();
+            
+            // Обработчик скролла
+            window.addEventListener('scroll', updateVisibleElements);
+            window.addEventListener('resize', updateVisibleElements);
+            
+            // Навигация по точкам
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    const targetPage = pages[index];
+                    targetPage.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Обновляем активную точку
+                    navDots.forEach(d => d.classList.remove('active'));
+                    dot.classList.add('active');
+                });
+            });
+            
+            // Добавляем задержку для элементов внутри страниц
+            const staggerItems = document.querySelectorAll('.stagger-item');
+            staggerItems.forEach((item, index) => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+            });
+            
+            // Инициализация первой страницы как видимой
+            if (pages.length > 0) {
+                pages[0].classList.add('visible');
+            }
+        }
+        
+        // Запуск анимации при загрузке страницы
+        document.addEventListener('DOMContentLoaded', animateOnScroll);
+    </script>
 </body>
 </html>
