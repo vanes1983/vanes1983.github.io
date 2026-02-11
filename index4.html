@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #f8f8f8;
+            background-color: #f9f9f9;
             font-family: 'Inter', sans-serif;
             color: #1a1a1a;
             overflow-x: hidden;
@@ -40,10 +40,11 @@
             opacity: 0;
             transform: translateY(50px);
             transition: opacity 1s ease, transform 1s ease;
-            margin-bottom: 0;
+            margin-bottom: 60px; /* Увеличил отступ между страницами для легкости */
             background-color: #ffffff;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03); /* Мягкая тень для глубины */
+            border-radius: 12px; /* Скругленные углы для современности */
+            overflow: hidden; /* Чтобы избежать переполнения */
         }
 
         .portfolio-page.visible {
@@ -79,9 +80,9 @@
         .hero-title {
             font-family: 'Inter', sans-serif;
             font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            letter-spacing: -2px;
+            font-size: 96px; /* Уменьшил размер для элегантности */
+            line-height: 0.95;
+            letter-spacing: -1.5px; /* Уменьшил letter-spacing для лучшей читаемости */
             text-transform: uppercase;
             color: #1a1a1a;
         }
@@ -89,10 +90,10 @@
         /* Заголовки среднего размера */
         .section-title {
             font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
+            font-weight: 600; /* Сделал легче для легкости */
+            font-size: 22px;
+            line-height: 1.3;
+            letter-spacing: -0.3px;
             text-transform: uppercase;
             color: #1a1a1a;
         }
@@ -100,70 +101,72 @@
         /* Основной текст */
         .body-text {
             font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-weight: 300; /* Сделал легче для изящности */
             font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+            line-height: 1.7; /* Увеличил для лучшей читаемости */
+            color: #444444; /* Мягкий серый для легкости */
         }
 
         /* Мелкий текст и метки */
         .small-text {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
-            font-size: 11px;
-            line-height: 1.4;
-            letter-spacing: 1px;
+            font-size: 12px; /* Увеличил для современности */
+            line-height: 1.5;
+            letter-spacing: 0.8px;
             text-transform: uppercase;
-            color: #666666;
+            color: #777777; /* Мягче цвет */
         }
 
         /* Текст для метаданных и деталей */
         .meta-text {
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            font-size: 13px;
-            line-height: 1.4;
-            color: #444444;
+            font-size: 14px; /* Увеличил для баланса */
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        /* Общие улучшения: hover эффекты для интерактивности */
+        img {
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+            filter: brightness(1.05);
         }
 
         /* ==================== СТИЛИ ДЛЯ ПЕРВОЙ СТРАНИЦЫ ==================== */
         .page1-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 80px 60px; /* Увеличил padding для воздуха */
         }
 
         .page1-header {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .page1-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            letter-spacing: -2px;
+            font-size: 96px; /* Синхронизировал с hero-title */
+            line-height: 0.95;
+            letter-spacing: -1.5px;
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding-bottom: 20px;
-            text-transform: uppercase;
-            color: #1a1a1a;
+            margin-bottom: 50px;
+            border-bottom: 1px solid rgba(0,0,0,0.05); /* Мягче граница */
+            padding-bottom: 30px;
         }
 
         .page1-meta-info {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            line-height: 1.4;
-            letter-spacing: 1px;
-            margin-bottom: 30px;
-            padding: 0 5px;
-            text-transform: uppercase;
-            color: #666666;
+            gap: 30px; /* Увеличил для равномерности */
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            margin-bottom: 40px;
+            padding: 0 10px;
+            color: #777777;
         }
 
         .page1-meta-info div:last-child {
@@ -177,29 +180,25 @@
 
         .page1-hero-image-container {
             width: 100%;
-            height: 60vh;
+            height: 70vh; /* Увеличил для акцента */
             overflow: hidden;
             position: relative;
-            border-radius: 4px;
+            border-radius: 12px; /* Скругленные углы */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05); /* Мягкая тень */
         }
 
         .page1-hero-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: sepia(10%) contrast(105%);
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .page1-hero-image-container:hover .page1-hero-image {
-            transform: scale(1.03);
+            filter: sepia(5%) contrast(110%); /* Улучшил фильтр */
         }
 
         /* ==================== СТИЛИ ДЛЯ ВТОРОЙ СТРАНИЦЫ ==================== */
         .page2-artboard {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc; /* Светлее фон */
             position: relative;
             overflow: hidden;
         }
@@ -208,10 +207,11 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 62%;
+            width: 60%; /* Уменьшил для баланса */
             height: 100%;
-            background-color: #e0e0e0;
+            background-color: #e8e8e8;
             overflow: hidden;
+            border-radius: 0 12px 12px 0; /* Скругление */
         }
 
         .page2-image-area img {
@@ -223,94 +223,80 @@
 
         .page2-hero-title {
             position: absolute;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.85;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            left: 38%;
-            top: 15%;
+            font-size: 96px;
+            line-height: 0.9;
+            left: 35%; /* Сдвинул для равномерности */
+            top: 20%;
             z-index: 10;
             white-space: nowrap;
-            letter-spacing: -2px;
+            letter-spacing: -1.5px;
         }
 
         .page2-content-area {
             position: absolute;
             right: 0;
             top: 0;
-            width: 43%;
+            width: 45%; /* Увеличил для текста */
             height: 100%;
-            padding: 60px 80px;
+            padding: 80px 100px; /* Увеличил padding */
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .page2-meta-tag {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666666;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
             margin-bottom: auto;
             text-align: right;
         }
 
         .page2-description {
-            width: 320px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            width: 340px; /* Увеличил ширину */
             font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+            line-height: 1.7;
+            color: #444444;
             margin-left: auto;
-            margin-top: 150px;
+            margin-top: 160px;
         }
 
         .page2-details-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 120px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 25px;
+            gap: 140px; /* Увеличил для равномерности */
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 30px;
             margin-top: auto;
         }
 
         .page2-detail-item h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 12px;
+            letter-spacing: 0.8px;
             color: #1a1a1a;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
         }
 
         .page2-detail-item span {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
+            font-size: 14px;
+            color: #555555;
         }
 
         /* ==================== СТИЛИ ДЛЯ ТРЕТЬЕЙ СТРАНИЦЫ ==================== */
         .page3-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 60px 80px;
+            padding: 80px 100px; /* Увеличил padding */
         }
 
         .page3-projects-container {
             display: flex;
-            gap: 40px;
+            gap: 50px; /* Увеличил gap */
             flex: 1;
         }
 
@@ -322,69 +308,56 @@
 
         .page3-image-wrapper {
             width: 100%;
-            height: 340px;
-            background-color: #eaeaea;
-            margin-bottom: 25px;
+            height: 360px; /* Увеличил высоту */
+            background-color: #e8e8e8;
+            margin-bottom: 30px;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page3-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
         }
         
-        .page3-image-wrapper:hover img {
-            transform: scale(1.03);
-        }
-
         .page3-metadata {
             display: flex;
-            gap: 30px;
+            gap: 40px; /* Увеличил gap */
         }
 
         .page3-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
 
         .page3-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666666;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         .page3-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
+            font-size: 14px;
+            color: #555555;
         }
 
         .page3-footer-title {
             margin-top: auto;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            line-height: 0.9;
+            font-size: 96px;
+            letter-spacing: -1.5px;
+            line-height: 0.95;
             border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 30px;
-            color: #1a1a1a;
+            padding-top: 40px;
         }
 
         /* ==================== СТИЛИ ДЛЯ ЧЕТВЁРТОЙ СТРАНИЦЫ ==================== */
         .page4-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
             display: flex;
@@ -393,7 +366,7 @@
         .page4-content-side {
             width: 60%;
             height: 100%;
-            padding: 60px 0 60px 80px;
+            padding: 80px 0 80px 100px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -401,67 +374,53 @@
         }
 
         .page4-top-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         .page4-main-title {
             position: absolute;
-            top: 220px;
-            left: 80px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            text-transform: uppercase;
-            letter-spacing: -2px;
+            top: 240px;
+            left: 100px;
+            font-size: 96px;
+            line-height: 0.95;
+            letter-spacing: -1.5px;
             width: 1000px;
-            pointer-events: none;
             color: #1a1a1a;
         }
 
         .page4-description-block {
-            max-width: 400px;
-            margin-top: 140px;
+            max-width: 420px; /* Увеличил ширину */
+            margin-top: 160px;
         }
 
         .page4-description-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #333333;
+            line-height: 1.7;
+            margin-bottom: 30px;
+            color: #444444;
         }
 
         .page4-metadata {
             display: flex;
-            gap: 60px;
+            gap: 70px; /* Увеличил gap */
         }
 
         .page4-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
         }
 
         .page4-meta-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #666666;
+            font-size: 12px;
+            color: #777777;
         }
 
         .page4-meta-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
+            font-size: 14px;
+            color: #555555;
         }
 
         .page4-image-side {
@@ -474,53 +433,48 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 12px 0 0 12px; /* Скругление */
         }
 
         /* ==================== СТИЛИ ДЛЯ ПЯТОЙ СТРАНИЦЫ ==================== */
         .page5-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
         }
 
         .page5-header-label {
             position: absolute;
-            top: 40px;
-            left: 80px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            top: 50px;
+            left: 100px;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         .page5-main-title {
             position: absolute;
-            top: 130px;
-            left: 70px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            letter-spacing: -2px;
+            top: 150px;
+            left: 90px;
+            font-size: 96px;
+            letter-spacing: -1.5px;
             line-height: 1;
             z-index: 10;
-            pointer-events: none;
             color: #1a1a1a;
-            text-transform: uppercase;
         }
 
         .page5-image-top-right {
             position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 600px;
-            height: 320px;
-            background-color: #e0e0e0;
+            top: 50px;
+            right: 50px;
+            width: 620px;
+            height: 340px;
+            background-color: #e8e8e8;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page5-image-top-right img {
@@ -531,13 +485,14 @@
 
         .page5-image-bottom-left {
             position: absolute;
-            bottom: 40px;
-            left: 80px;
-            width: 560px;
-            height: 380px;
-            background-color: #e0e0e0;
+            bottom: 50px;
+            left: 100px;
+            width: 580px;
+            height: 400px;
+            background-color: #e8e8e8;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page5-image-bottom-left img {
@@ -548,26 +503,24 @@
 
         .page5-description {
             position: absolute;
-            top: 420px;
-            left: 780px;
-            width: 380px;
+            top: 440px;
+            left: 800px;
+            width: 400px;
         }
 
         .page5-description p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: #333333;
+            line-height: 1.7;
+            margin-bottom: 50px;
+            color: #444444;
         }
 
         .page5-meta-data {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             width: 100%;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 25px;
         }
 
         .page5-meta-item {
@@ -576,19 +529,14 @@
         }
 
         .page5-meta-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            color: #666666;
+            font-size: 12px;
+            margin-bottom: 10px;
+            color: #777777;
         }
 
         .page5-meta-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
+            font-size: 14px;
+            color: #555555;
         }
 
         /* ==================== СТИЛИ ДЛЯ ШЕСТОЙ СТРАНИЦЫ ==================== */
@@ -597,14 +545,14 @@
             width: 100%;
             height: 720px;
             overflow: hidden;
-            gap: 60px;
-            padding: 60px;
-            background-color: #fafafa;
+            gap: 70px; /* Увеличил gap */
+            padding: 80px;
+            background-color: #fcfcfc;
         }
 
         .page6-gallery {
             display: flex;
-            gap: 20px;
+            gap: 25px;
             flex: 2;
         }
 
@@ -613,77 +561,68 @@
             aspect-ratio: 2 / 5;
             overflow: hidden;
             position: relative;
-            background-color: #eaeaea;
-            border-radius: 4px;
+            background-color: #e8e8e8;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page6-gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .page6-gallery-item:hover img {
-            transform: scale(1.05);
         }
 
         .page6-info-panel {
             flex: 1;
-            padding-bottom: 40px;
+            padding-bottom: 50px;
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 40px; /* Увеличил gap */
         }
 
         .page6-info-group {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 6px;
         }
 
         .page6-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #666666;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         .page6-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            color: #333333;
+            color: #444444;
         }
 
         /* ==================== СТИЛИ ДЛЯ СЕДЬМОЙ СТРАНИЦЫ ==================== */
         .page7-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
-            padding: 40px;
+            padding: 50px;
             display: grid;
-            grid-template-columns: 460px 1fr 340px;
-            grid-template-rows: 240px 1fr;
-            gap: 30px;
+            grid-template-columns: 480px 1fr 360px; /* Улучшил пропорции */
+            grid-template-rows: 260px 1fr;
+            gap: 40px; /* Увеличил gap */
         }
 
         .page7-image-box {
-            background-color: #eaeaea;
+            background-color: #e8e8e8;
             overflow: hidden;
             position: relative;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page7-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
         }
 
         .page7-main-photo {
@@ -702,56 +641,47 @@
         .page7-text-content {
             grid-column: 3 / 4;
             grid-row: 2 / 3;
-            padding-top: 10px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
         }
 
         .page7-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            color: #1a1a1a;
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            letter-spacing: -0.3px;
         }
 
         .page7-description {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            line-height: 1.6;
+            line-height: 1.7;
             text-align: justify;
-            color: #333333;
+            color: #444444;
         }
 
         .page7-line-accent {
-            width: 40px;
-            height: 2px;
+            width: 50px;
+            height: 1px; /* Тоньше для изящности */
             background: #1a1a1a;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .page7-footer-tag {
             position: absolute;
-            bottom: 40px;
-            right: 40px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            bottom: 50px;
+            right: 50px;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         /* ==================== СТИЛИ ДЛЯ ВОСЬМОЙ СТРАНИЦЫ ==================== */
         .page8-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
-            padding: 60px;
+            background-color: #fcfcfc;
+            padding: 80px;
             position: relative;
             display: flex;
             flex-direction: column;
@@ -761,139 +691,118 @@
         .page8-image-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
+            gap: 20px; /* Увеличил gap */
+            margin-bottom: 50px;
         }
 
         .page8-image-container {
             aspect-ratio: 3/4;
             overflow: hidden;
-            background-color: #eaeaea;
-            border-radius: 4px;
+            background-color: #e8e8e8;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page8-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: filter 0.3s ease;
-        }
-
-        .page8-image-container img:hover {
-            filter: brightness(1.1);
         }
 
         .page8-content-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 60px;
+            gap: 100px; /* Увеличил gap */
+            margin-bottom: 70px;
         }
 
         .page8-text-block h2 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
+            font-size: 22px;
+            letter-spacing: -0.3px;
+            margin-bottom: 20px;
         }
 
         .page8-text-block p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
             font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+            line-height: 1.7;
+            color: #444444;
             text-align: justify;
         }
 
         .page8-metadata-footer {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 25px;
+            gap: 100px;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 30px;
         }
 
         .page8-meta-group {
             display: flex;
-            gap: 60px;
+            gap: 70px; /* Увеличил gap */
         }
 
         .page8-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
         }
 
         .page8-meta-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #666666;
-            letter-spacing: 1px;
+            font-size: 12px;
+            color: #777777;
+            letter-spacing: 0.8px;
         }
 
         .page8-meta-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
+            font-size: 14px;
+            color: #555555;
         }
 
         /* ==================== СТИЛИ ДЛЯ ДЕВЯТОЙ СТРАНИЦЫ ==================== */
         .page9-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 60px 80px;
+            padding: 80px 100px;
         }
 
         .page9-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 70px;
         }
 
         .page9-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            color: #1a1a1a;
+            font-size: 96px;
+            letter-spacing: -1.5px;
             line-height: 1;
         }
 
         .page9-info-bar {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-bottom: 15px;
+            padding-bottom: 20px;
         }
 
         .page9-info-item {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            font-size: 12px;
+            letter-spacing: 0.8px;
+            color: #777777;
         }
 
         .page9-image-container {
             flex-grow: 1;
             width: 100%;
             overflow: hidden;
-            background-color: #eaeaea;
-            border-radius: 4px;
+            background-color: #e8e8e8;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
         }
 
         .page9-image-container img {
@@ -905,31 +814,31 @@
         /* Навигация */
         .portfolio-navigation {
             position: fixed;
-            right: 20px;
+            right: 30px; /* Сдвинул для баланса */
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
 
         .nav-dot {
-            width: 12px;
-            height: 12px;
+            width: 10px; /* Уменьшил для изящности */
+            height: 10px;
             border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.15);
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .nav-dot.active {
             background-color: #1a1a1a;
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
 
         .nav-dot:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.4);
         }
 
         /* Индикатор прогресса */
@@ -938,7 +847,7 @@
             top: 0;
             left: 0;
             width: 0%;
-            height: 3px;
+            height: 2px; /* Тоньше для легкости */
             background-color: #1a1a1a;
             z-index: 1001;
             transition: width 0.3s ease;
@@ -947,81 +856,19 @@
         /* Информация о текущей странице */
         .current-page-info {
             position: fixed;
-            left: 20px;
-            top: 20px;
+            left: 30px;
+            top: 30px;
             color: #1a1a1a;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
             font-size: 12px;
-            letter-spacing: 1px;
+            letter-spacing: 0.8px;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 5px 10px;
-            border-radius: 3px;
-            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px); /* Улучшил blur */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* Общие классы для демонстрации единых стилей */
-        .style-demo {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
-            max-width: 300px;
-        }
-        
-        .style-demo h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-        
-        .style-demo .hero-title-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 0.9;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .section-title-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .body-text-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333333;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .small-text-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 10px;
-            line-height: 1.4;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
-        }
     </style>
 </head>
 <body>
@@ -1145,6 +992,8 @@
                         </div>
                     </div>
                 </div>
+
+                <h1 class="page3-footer-title stagger-item">Детали проекта</h1>
             </div>
         </section>
 

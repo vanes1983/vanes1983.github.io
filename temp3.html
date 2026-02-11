@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEREBRO AGENCY | Свадебный проект</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* Общие сбросы и настройки */
         * {
@@ -18,9 +18,9 @@
         }
 
         body {
-            background-color: #f8f8f8;
-            font-family: 'Inter', sans-serif;
-            color: #1a1a1a;
+            background-color: #fafafa;
+            font-family: 'Manrope', sans-serif;
+            color: #333333;
             overflow-x: hidden;
             width: 1280px;
             margin: 0 auto;
@@ -38,12 +38,13 @@
             width: 100%;
             position: relative;
             opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 1s ease, transform 1s ease;
+            transform: translateY(20px);
+            transition: opacity 1.5s ease, transform 1.5s ease;
             margin-bottom: 0;
             background-color: #ffffff;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            margin-bottom: 60px;
+            border-radius: 12px;
         }
 
         .portfolio-page.visible {
@@ -53,19 +54,19 @@
 
         /* Анимация задержки для разных элементов */
         .portfolio-page.visible .stagger-item {
-            animation: fadeInUp 0.8s ease forwards;
+            animation: fadeInUp 1.2s ease forwards;
         }
 
-        .portfolio-page.visible .stagger-item:nth-child(1) { animation-delay: 0.1s; }
-        .portfolio-page.visible .stagger-item:nth-child(2) { animation-delay: 0.2s; }
-        .portfolio-page.visible .stagger-item:nth-child(3) { animation-delay: 0.3s; }
-        .portfolio-page.visible .stagger-item:nth-child(4) { animation-delay: 0.4s; }
-        .portfolio-page.visible .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+        .portfolio-page.visible .stagger-item:nth-child(1) { animation-delay: 0.2s; }
+        .portfolio-page.visible .stagger-item:nth-child(2) { animation-delay: 0.4s; }
+        .portfolio-page.visible .stagger-item:nth-child(3) { animation-delay: 0.6s; }
+        .portfolio-page.visible .stagger-item:nth-child(4) { animation-delay: 0.8s; }
+        .portfolio-page.visible .stagger-item:nth-child(5) { animation-delay: 1.0s; }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(15px);
             }
             to {
                 opacity: 1;
@@ -74,121 +75,117 @@
         }
 
         /* ==================== ЕДИНЫЕ СТИЛИ ТЕКСТОВ ==================== */
-        
+       
         /* Крупные заголовки (самые большие на страницах) */
         .hero-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            color: #1a1a1a;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            color: #222222;
         }
 
         /* Заголовки среднего размера */
         .section-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
             font-size: 24px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            color: #1a1a1a;
+            line-height: 1.4;
+            letter-spacing: -0.2px;
+            color: #222222;
         }
 
         /* Основной текст */
         .body-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
             font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+            line-height: 1.8;
+            color: #555555;
         }
 
         /* Мелкий текст и метки */
         .small-text {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            line-height: 1.4;
+            line-height: 1.6;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            color: #888888;
         }
 
         /* Текст для метаданных и деталей */
         .meta-text {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            line-height: 1.4;
-            color: #444444;
+            line-height: 1.6;
+            color: #666666;
         }
 
         /* ==================== СТИЛИ ДЛЯ ПЕРВОЙ СТРАНИЦЫ ==================== */
         .page1-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 40px;
+            padding: 100px 60px;
         }
 
         .page1-header {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .page1-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            letter-spacing: -2px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
             text-align: center;
-            margin-bottom: 40px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-            padding-bottom: 20px;
-            text-transform: uppercase;
-            color: #1a1a1a;
+            margin-bottom: 60px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            padding-bottom: 30px;
+            color: #222222;
         }
 
         .page1-meta-info {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            font-family: 'Inter', sans-serif;
+            gap: 30px;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            line-height: 1.4;
+            line-height: 1.6;
             letter-spacing: 1px;
-            margin-bottom: 30px;
-            padding: 0 5px;
-            text-transform: uppercase;
-            color: #666666;
+            margin-bottom: 50px;
+            padding: 0 15px;
+            color: #888888;
         }
 
         .page1-meta-info div:last-child {
             text-align: right;
         }
 
-        .page1-meta-info div:nth-child(2), 
+        .page1-meta-info div:nth-child(2),
         .page1-meta-info div:nth-child(3) {
             text-align: center;
         }
 
         .page1-hero-image-container {
             width: 100%;
-            height: 60vh;
+            height: 70vh;
             overflow: hidden;
             position: relative;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .page1-hero-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: sepia(10%) contrast(105%);
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            filter: contrast(105%);
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .page1-hero-image-container:hover .page1-hero-image {
@@ -199,7 +196,7 @@
         .page2-artboard {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fdfdfd;
             position: relative;
             overflow: hidden;
         }
@@ -208,10 +205,11 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 62%;
+            width: 60%;
             height: 100%;
-            background-color: #e0e0e0;
+            background-color: #eeeeee;
             overflow: hidden;
+            border-radius: 0 12px 12px 0;
         }
 
         .page2-image-area img {
@@ -219,98 +217,100 @@
             height: 100%;
             object-fit: cover;
             display: block;
+            transition: transform 1.2s ease;
+        }
+
+        .page2-image-area:hover img {
+            transform: scale(1.03);
         }
 
         .page2-hero-title {
             position: absolute;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.85;
-            color: #1a1a1a;
-            text-transform: uppercase;
-            left: 38%;
-            top: 15%;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1;
+            color: #222222;
+            left: 36%;
+            top: 20%;
             z-index: 10;
             white-space: nowrap;
-            letter-spacing: -2px;
+            letter-spacing: -0.5px;
         }
 
         .page2-content-area {
             position: absolute;
             right: 0;
             top: 0;
-            width: 43%;
+            width: 45%;
             height: 100%;
-            padding: 60px 80px;
+            padding: 100px 120px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
         .page2-meta-tag {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            color: #666666;
+            color: #888888;
             margin-bottom: auto;
             text-align: right;
         }
 
         .page2-description {
-            width: 320px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            width: 360px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
             font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
+            line-height: 1.8;
+            color: #555555;
             margin-left: auto;
-            margin-top: 150px;
+            margin-top: 180px;
         }
 
         .page2-details-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 120px;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 25px;
+            gap: 160px;
+            border-top: 1px solid rgba(0,0,0,0.03);
+            padding-top: 35px;
             margin-top: auto;
         }
 
         .page2-detail-item h3 {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            color: #1a1a1a;
-            margin-bottom: 6px;
+            color: #222222;
+            margin-bottom: 10px;
         }
 
         .page2-detail-item span {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            color: #444444;
+            color: #666666;
         }
 
         /* ==================== СТИЛИ ДЛЯ ТРЕТЬЕЙ СТРАНИЦЫ ==================== */
         .page3-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fdfdfd;
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
-            padding: 60px 80px;
+            padding: 100px 120px;
         }
 
         .page3-projects-container {
             display: flex;
-            gap: 40px;
+            gap: 60px;
             flex: 1;
         }
 
@@ -322,78 +322,77 @@
 
         .page3-image-wrapper {
             width: 100%;
-            height: 340px;
-            background-color: #eaeaea;
-            margin-bottom: 25px;
+            height: 380px;
+            background-color: #eeeeee;
+            margin-bottom: 35px;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .page3-image-wrapper img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
+            transition: transform 1.2s ease;
         }
-        
+       
         .page3-image-wrapper:hover img {
             transform: scale(1.03);
         }
 
         .page3-metadata {
             display: flex;
-            gap: 30px;
+            gap: 50px;
         }
 
         .page3-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
         }
 
         .page3-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            color: #666666;
+            color: #888888;
         }
 
         .page3-value {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            color: #444444;
+            color: #666666;
         }
 
         .page3-footer-title {
             margin-top: auto;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-            line-height: 0.9;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 30px;
-            color: #1a1a1a;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+            border-top: 1px solid rgba(0,0,0,0.03);
+            padding-top: 50px;
+            color: #222222;
         }
 
         /* ==================== СТИЛИ ДЛЯ ЧЕТВЁРТОЙ СТРАНИЦЫ ==================== */
         .page4-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fdfdfd;
             position: relative;
             overflow: hidden;
             display: flex;
         }
 
         .page4-content-side {
-            width: 60%;
+            width: 58%;
             height: 100%;
-            padding: 60px 0 60px 80px;
+            padding: 100px 0 100px 120px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -401,71 +400,68 @@
         }
 
         .page4-top-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            color: #888888;
         }
 
         .page4-main-title {
             position: absolute;
-            top: 220px;
-            left: 80px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            line-height: 0.9;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            width: 1000px;
+            top: 260px;
+            left: 120px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            line-height: 1.1;
+            letter-spacing: -0.5px;
+            width: 900px;
             pointer-events: none;
-            color: #1a1a1a;
+            color: #222222;
         }
 
         .page4-description-block {
-            max-width: 400px;
-            margin-top: 140px;
+            max-width: 440px;
+            margin-top: 180px;
         }
 
         .page4-description-text {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 25px;
-            color: #333333;
+            line-height: 1.8;
+            margin-bottom: 35px;
+            color: #555555;
         }
 
         .page4-metadata {
             display: flex;
-            gap: 60px;
+            gap: 80px;
         }
 
         .page4-meta-item {
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 8px;
         }
 
         .page4-meta-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
-            color: #666666;
+            color: #888888;
         }
 
         .page4-meta-value {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            color: #444444;
+            color: #666666;
         }
 
         .page4-image-side {
-            width: 40%;
+            width: 42%;
             height: 100%;
             position: relative;
         }
@@ -474,100 +470,112 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            border-radius: 12px 0 0 12px;
+            box-shadow: -2px 0 8px rgba(0,0,0,0.02);
         }
 
         /* ==================== СТИЛИ ДЛЯ ПЯТОЙ СТРАНИЦЫ ==================== */
         .page5-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fdfdfd;
             position: relative;
             overflow: hidden;
         }
 
         .page5-header-label {
             position: absolute;
-            top: 40px;
-            left: 80px;
-            font-family: 'Inter', sans-serif;
+            top: 60px;
+            left: 120px;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            color: #888888;
         }
 
         .page5-main-title {
             position: absolute;
-            top: 130px;
-            left: 70px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            letter-spacing: -2px;
-            line-height: 1;
+            top: 170px;
+            left: 110px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
             z-index: 10;
             pointer-events: none;
-            color: #1a1a1a;
-            text-transform: uppercase;
+            color: #222222;
         }
 
         .page5-image-top-right {
             position: absolute;
-            top: 40px;
-            right: 40px;
-            width: 600px;
-            height: 320px;
-            background-color: #e0e0e0;
+            top: 60px;
+            right: 60px;
+            width: 640px;
+            height: 360px;
+            background-color: #eeeeee;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .page5-image-top-right img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .page5-image-top-right:hover img {
+            transform: scale(1.03);
         }
 
         .page5-image-bottom-left {
             position: absolute;
-            bottom: 40px;
-            left: 80px;
-            width: 560px;
-            height: 380px;
-            background-color: #e0e0e0;
+            bottom: 60px;
+            left: 120px;
+            width: 600px;
+            height: 420px;
+            background-color: #eeeeee;
             overflow: hidden;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
         .page5-image-bottom-left img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .page5-image-bottom-left:hover img {
+            transform: scale(1.03);
         }
 
         .page5-description {
             position: absolute;
-            top: 420px;
-            left: 780px;
-            width: 380px;
+            top: 460px;
+            left: 820px;
+            width: 420px;
         }
 
         .page5-description p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
             font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 40px;
-            color: #333333;
+            line-height: 1.8;
+            margin-bottom: 60px;
+            color: #555555;
         }
 
         .page5-meta-data {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             width: 100%;
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.03);
+            padding-top: 30px;
         }
 
         .page5-meta-item {
@@ -576,360 +584,491 @@
         }
 
         .page5-meta-label {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            color: #666666;
+            margin-bottom: 12px;
+            color: #888888;
         }
 
         .page5-meta-value {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
             font-weight: 400;
             font-size: 13px;
-            color: #444444;
+            color: #666666;
         }
 
-        /* ==================== СТИЛИ ДЛЯ ШЕСТОЙ СТРАНИЦЫ ==================== */
-        .page6-container {
+        /* ==================== СТИЛИ ДЛЯ НОВОЙ ШЕСТОЙ СТРАНИЦЫ (ADDON1) ==================== */
+        .page6-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fdfdfd;
+            padding: 30px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr 1.1fr;
+            grid-template-rows: 1fr 1.3fr;
+            gap: 20px;
+            grid-template-areas: 
+                "top-left center-tall right-tall"
+                "bottom-left center-bottom right-tall";
+        }
+
+        .page6-grid-item {
+            position: relative;
+            overflow: hidden;
+            background-color: #eeeeee;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .page6-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 1.2s ease;
+        }
+
+        .page6-grid-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .item-1 { grid-area: top-left; }
+        .item-2 { grid-area: bottom-left; }
+        .item-3 { grid-area: center-tall; }
+        .item-4 { grid-area: center-bottom; }
+        .item-5 { grid-area: right-tall; }
+
+        .page6-label {
+            position: absolute;
+            bottom: 25px;
+            right: 30px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            background: rgba(34,34,34,0.6);
+            padding: 8px 14px;
+            border-radius: 6px;
+            backdrop-filter: blur(6px);
+            z-index: 10;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ НОВОЙ СЕДЬМОЙ СТРАНИЦЫ (ADDON2) ==================== */
+        .page7-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fdfdfd;
+            padding: 30px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr 1fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .page7-photo-item {
+            background-color: #eeeeee;
+            overflow: hidden;
+            position: relative;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            transition: transform 0.5s ease;
+        }
+
+        .page7-photo-item:hover {
+            transform: scale(1.03);
+            z-index: 10;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .page7-photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(5%);
+            transition: filter 0.5s ease, transform 1.2s ease;
+        }
+
+        .page7-photo-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.03);
+        }
+
+        .item-left-1 { grid-column: 1; grid-row: 1; }
+        .item-left-2 { grid-column: 1; grid-row: 2; }
+        .item-left-3 { grid-column: 1; grid-row: 3; }
+        .item-center { grid-column: 2; grid-row: 1 / span 3; }
+        .item-right-1 { grid-column: 3; grid-row: 1; }
+        .item-right-2 { grid-column: 3; grid-row: 2; }
+        .item-right-3 { grid-column: 3; grid-row: 3; }
+
+        .page7-label {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #ffffff;
+            background: rgba(34,34,34,0.5);
+            padding: 6px 12px;
+            border-radius: 6px;
+            backdrop-filter: blur(6px);
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ВОСЬМОЙ СТРАНИЦЫ (БЫВШАЯ ШЕСТАЯ) ==================== */
+        .page8-container {
             display: flex;
             width: 100%;
             height: 720px;
             overflow: hidden;
-            gap: 60px;
-            padding: 60px;
-            background-color: #fafafa;
+            gap: 80px;
+            padding: 100px;
+            background-color: #fdfdfd;
         }
 
-        .page6-gallery {
+        .page8-gallery {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             flex: 2;
         }
 
-        .page6-gallery-item {
+        .page8-gallery-item {
             flex: 1;
             aspect-ratio: 2 / 5;
             overflow: hidden;
             position: relative;
-            background-color: #eaeaea;
-            border-radius: 4px;
+            background-color: #eeeeee;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .page6-gallery-item img {
+        .page8-gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
-        .page6-gallery-item:hover img {
-            transform: scale(1.05);
+        .page8-gallery-item:hover img {
+            transform: scale(1.04);
         }
 
-        .page6-info-panel {
+        .page8-info-panel {
             flex: 1;
-            padding-bottom: 40px;
+            padding-bottom: 60px;
             display: flex;
             flex-direction: column;
-            gap: 32px;
+            gap: 50px;
         }
 
-        .page6-info-group {
+        .page8-info-group {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
         }
 
-        .page6-label {
-            font-family: 'Inter', sans-serif;
+        .page8-label {
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
-            text-transform: uppercase;
             letter-spacing: 1px;
-            color: #666666;
+            color: #888888;
         }
 
-        .page6-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
+        .page8-value {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
             font-size: 16px;
-            color: #333333;
+            color: #555555;
         }
 
-        /* ==================== СТИЛИ ДЛЯ СЕДЬМОЙ СТРАНИЦЫ ==================== */
-        .page7-canvas {
+        /* ==================== СТИЛИ ДЛЯ ДЕВЯТОЙ СТРАНИЦЫ (БЫВШАЯ СЕДЬМАЯ) ==================== */
+        .page9-canvas {
             width: 100%;
             height: 720px;
-            background-color: #fafafa;
+            background-color: #fdfdfd;
             position: relative;
             overflow: hidden;
-            padding: 40px;
+            padding: 60px;
             display: grid;
-            grid-template-columns: 460px 1fr 340px;
-            grid-template-rows: 240px 1fr;
-            gap: 30px;
+            grid-template-columns: 500px 1fr 380px;
+            grid-template-rows: 280px 1fr;
+            gap: 50px;
         }
 
-        .page7-image-box {
-            background-color: #eaeaea;
+        .page9-image-box {
+            background-color: #eeeeee;
             overflow: hidden;
             position: relative;
-            border-radius: 4px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
         }
 
-        .page7-image-box img {
+        .page9-image-box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
+            transition: transform 1.2s ease;
         }
 
-        .page7-main-photo {
+        .page9-image-box:hover img {
+            transform: scale(1.03);
+        }
+
+        .page9-main-photo {
             grid-row: 1 / 3;
         }
 
-        .page7-top-photo {
+        .page9-top-photo {
             grid-column: 2 / 4;
         }
 
-        .page7-middle-photo {
+        .page9-middle-photo {
             grid-column: 2 / 3;
             grid-row: 2 / 3;
         }
 
-        .page7-text-content {
+        .page9-text-content {
             grid-column: 3 / 4;
             grid-row: 2 / 3;
-            padding-top: 10px;
+            padding-top: 20px;
             display: flex;
             flex-direction: column;
-        }
-
-        .page7-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            line-height: 1.1;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            color: #1a1a1a;
-        }
-
-        .page7-description {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.6;
-            text-align: justify;
-            color: #333333;
-        }
-
-        .page7-line-accent {
-            width: 40px;
-            height: 2px;
-            background: #1a1a1a;
-            margin-bottom: 20px;
-        }
-
-        .page7-footer-tag {
-            position: absolute;
-            bottom: 40px;
-            right: 40px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
-        }
-
-        /* ==================== СТИЛИ ДЛЯ ВОСЬМОЙ СТРАНИЦЫ ==================== */
-        .page8-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fafafa;
-            padding: 60px;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .page8-image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 15px;
-            margin-bottom: 40px;
-        }
-
-        .page8-image-container {
-            aspect-ratio: 3/4;
-            overflow: hidden;
-            background-color: #eaeaea;
-            border-radius: 4px;
-        }
-
-        .page8-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: filter 0.3s ease;
-        }
-
-        .page8-image-container img:hover {
-            filter: brightness(1.1);
-        }
-
-        .page8-content-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            margin-bottom: 60px;
-        }
-
-        .page8-text-block h2 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            text-transform: uppercase;
-            letter-spacing: -0.5px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-
-        .page8-text-block p {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 16px;
-            line-height: 1.6;
-            color: #333333;
-            text-align: justify;
-        }
-
-        .page8-metadata-footer {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            border-top: 1px solid rgba(0,0,0,0.08);
-            padding-top: 25px;
-        }
-
-        .page8-meta-group {
-            display: flex;
-            gap: 60px;
-        }
-
-        .page8-meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-        }
-
-        .page8-meta-label {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 11px;
-            text-transform: uppercase;
-            color: #666666;
-            letter-spacing: 1px;
-        }
-
-        .page8-meta-value {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 13px;
-            color: #444444;
-        }
-
-        /* ==================== СТИЛИ ДЛЯ ДЕВЯТОЙ СТРАНИЦЫ ==================== */
-        .page9-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fafafa;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            padding: 60px 80px;
-        }
-
-        .page9-header {
-            text-align: center;
-            margin-bottom: 60px;
         }
 
         .page9-title {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 110px;
-            text-transform: uppercase;
-            letter-spacing: -2px;
-            color: #1a1a1a;
-            line-height: 1;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 35px;
+            letter-spacing: -0.2px;
+            color: #222222;
         }
 
-        .page9-info-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-bottom: 15px;
+        .page9-description {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.8;
+            text-align: justify;
+            color: #555555;
         }
 
-        .page9-info-item {
-            font-family: 'Inter', sans-serif;
+        .page9-line-accent {
+            width: 60px;
+            height: 1px;
+            background: #222222;
+            margin-bottom: 30px;
+            opacity: 0.7;
+        }
+
+        .page9-footer-tag {
+            position: absolute;
+            bottom: 60px;
+            right: 60px;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 11px;
             letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            color: #888888;
         }
 
-        .page9-image-container {
-            flex-grow: 1;
+        /* ==================== СТИЛИ ДЛЯ ДЕСЯТОЙ СТРАНИЦЫ (БЫВШАЯ ВОСЬМАЯ) ==================== */
+        .page10-canvas {
             width: 100%;
-            overflow: hidden;
-            background-color: #eaeaea;
-            border-radius: 4px;
+            height: 720px;
+            background-color: #fdfdfd;
+            padding: 100px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .page9-image-container img {
+        .page10-image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .page10-image-container {
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            background-color: #eeeeee;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .page10-image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.8s ease, filter 0.5s ease;
+        }
+
+        .page10-image-container:hover img {
+            transform: scale(1.03);
+            filter: brightness(1.03);
+        }
+
+        .page10-content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
+            margin-bottom: 100px;
+        }
+
+        .page10-text-block h2 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 24px;
+            letter-spacing: -0.2px;
+            margin-bottom: 25px;
+            color: #222222;
+        }
+
+        .page10-text-block p {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555555;
+            text-align: justify;
+        }
+
+        .page10-metadata-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
+            border-top: 1px solid rgba(0,0,0,0.03);
+            padding-top: 35px;
+        }
+
+        .page10-meta-group {
+            display: flex;
+            gap: 80px;
+        }
+
+        .page10-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .page10-meta-label {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            color: #888888;
+            letter-spacing: 1px;
+        }
+
+        .page10-meta-value {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        /* ==================== СТИЛИ ДЛЯ ОДИННАДЦАТОЙ СТРАНИЦЫ (БЫВШАЯ ДЕВЯТАЯ) ==================== */
+        .page11-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fdfdfd;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 100px 120px;
+        }
+
+        .page11-header {
+            text-align: center;
+            margin-bottom: 100px;
+        }
+
+        .page11-title {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 72px;
+            letter-spacing: -0.5px;
+            color: #222222;
+            line-height: 1.1;
+        }
+
+        .page11-info-bar {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+            padding-bottom: 25px;
+        }
+
+        .page11-info-item {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: #888888;
+        }
+
+        .page11-image-container {
+            flex-grow: 1;
+            width: 100%;
+            overflow: hidden;
+            background-color: #eeeeee;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+
+        .page11-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .page11-image-container:hover img {
+            transform: scale(1.03);
         }
 
         /* Навигация */
         .portfolio-navigation {
             position: fixed;
-            right: 20px;
+            right: 40px;
             top: 50%;
             transform: translateY(-50%);
             z-index: 1000;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 15px;
         }
 
         .nav-dot {
-            width: 12px;
-            height: 12px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.2);
+            background-color: rgba(0, 0, 0, 0.1);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.5s ease;
         }
 
         .nav-dot.active {
-            background-color: #1a1a1a;
+            background-color: #222222;
             transform: scale(1.2);
         }
 
         .nav-dot:hover {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.3);
         }
 
         /* Индикатор прогресса */
@@ -938,106 +1077,49 @@
             top: 0;
             left: 0;
             width: 0%;
-            height: 3px;
-            background-color: #1a1a1a;
+            height: 2px;
+            background-color: #222222;
             z-index: 1001;
-            transition: width 0.3s ease;
+            transition: width 0.5s ease;
         }
 
         /* Информация о текущей странице */
         .current-page-info {
             position: fixed;
-            left: 20px;
-            top: 20px;
-            color: #1a1a1a;
-            font-family: 'Inter', sans-serif;
+            left: 40px;
+            top: 40px;
+            color: #222222;
+            font-family: 'Manrope', sans-serif;
             font-weight: 500;
             font-size: 12px;
             letter-spacing: 1px;
             z-index: 1000;
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 5px 10px;
-            border-radius: 3px;
-            backdrop-filter: blur(5px);
-        }
-
-        /* Общие классы для демонстрации единых стилей */
-        .style-demo {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            z-index: 1000;
-            max-width: 300px;
-        }
-        
-        .style-demo h3 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-        
-        .style-demo .hero-title-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            font-size: 24px;
-            line-height: 0.9;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .section-title-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 18px;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-            text-transform: uppercase;
-            color: #1a1a1a;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .body-text-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333333;
-            margin-bottom: 10px;
-        }
-        
-        .style-demo .small-text-demo {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 10px;
-            line-height: 1.4;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: #666666;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 10px 14px;
+            border-radius: 6px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
         }
     </style>
 </head>
 <body>
     <div class="progress-bar"></div>
-    <div class="current-page-info">Страница 1/9</div>
-    
+    <div class="current-page-info">Страница 1/11</div>
+   
     <div class="portfolio-navigation">
         <div class="nav-dot active" data-page="1"></div>
         <div class="nav-dot" data-page="2"></div>
         <div class="nav-dot" data-page="3"></div>
         <div class="nav-dot" data-page="4"></div>
         <div class="nav-dot" data-page="5"></div>
+        <!-- Добавленные две точки для новых страниц 6 и 7 -->
         <div class="nav-dot" data-page="6"></div>
         <div class="nav-dot" data-page="7"></div>
+        <!-- Перенумерованные точки для страниц 8-11 (бывшие 6-9) -->
         <div class="nav-dot" data-page="8"></div>
         <div class="nav-dot" data-page="9"></div>
+        <div class="nav-dot" data-page="10"></div>
+        <div class="nav-dot" data-page="11"></div>
     </div>
 
     <div class="portfolio-container">
@@ -1045,7 +1127,7 @@
         <section class="portfolio-page visible" id="page1">
             <div class="page1-wrapper">
                 <header class="page1-header stagger-item">
-                    <h1 class="page1-title">SEREBRO AGENCY</h1>
+                    <h1 class="page1-title">Serebro agency</h1>
                 </header>
 
                 <nav class="page1-meta-info stagger-item">
@@ -1056,8 +1138,8 @@
                 </nav>
 
                 <main class="page1-hero-image-container stagger-item">
-                    <img src="images/19.jpg?auto=format&fit=crop&q=80&w=1500" 
-                         alt="Свадебный проект на пляже" 
+                    <img src="images/19.jpg?auto=format&fit=crop&q=80&w=1500"
+                         alt="Свадебный проект на пляже"
                          class="page1-hero-image">
                 </main>
             </div>
@@ -1071,8 +1153,8 @@
                 </div>
 
                 <h1 class="page2-hero-title stagger-item">
-                    ЗАКАТНЫЕ<br>
-                    ДЮНЫ
+                    Закатные<br>
+                    дюны
                 </h1>
 
                 <div class="page2-content-area">
@@ -1120,7 +1202,7 @@
                             </div>
                             <div class="page3-meta-item">
                                 <span class="page3-label">Проект</span>
-                                <span class="page3-value">ЗАКАТНЫЕ ДЮНЫ</span>
+                                <span class="page3-value">Закатные дюны</span>
                             </div>
                         </div>
                     </div>
@@ -1140,7 +1222,7 @@
                             </div>
                             <div class="page3-meta-item">
                                 <span class="page3-label">Проект</span>
-                                <span class="page3-value">ЗАКАТНЫЕ ДЮНЫ</span>
+                                <span class="page3-value">Закатные дюны</span>
                             </div>
                         </div>
                     </div>
@@ -1153,13 +1235,13 @@
             <div class="page4-canvas">
                 <div class="page4-content-side">
                     <div class="page4-top-label stagger-item">Свадебное агентство</div>
-                    <h1 class="page4-main-title stagger-item">ЗАКАТНЫЕ<br>ДЮНЫ</h1>
- 
+                    <h1 class="page4-main-title stagger-item">Закатные<br>дюны</h1>
+
                     <div class="page4-description-block stagger-item">
                         <p class="page4-description-text">
                             Свадьба, вдохновленная природой побережья. Мягкие линии дюн, шум прибоя и золотистый свет заходящего солнца создают атмосферу гармонии и умиротворения. Каждая деталь — от текстиля до флористики — подчеркивает единение с природой.
                         </p>
-                        
+                       
                         <div class="page4-metadata">
                             <div class="page4-meta-item">
                                 <span class="page4-meta-label">Год</span>
@@ -1171,7 +1253,7 @@
                             </div>
                             <div class="page4-meta-item">
                                 <span class="page4-meta-label">Проект</span>
-                                <span class="page4-meta-value">ЗАКАТНЫЕ ДЮНЫ</span>
+                                <span class="page4-meta-value">Закатные дюны</span>
                             </div>
                         </div>
                     </div>
@@ -1187,8 +1269,8 @@
         <section class="portfolio-page" id="page5">
             <div class="page5-canvas">
                 <div class="page5-header-label stagger-item">Свадебный дизайн</div>
-                
-                <h1 class="page5-main-title stagger-item">ЗАКАТНЫЕ ДЮНЫ</h1>
+               
+                <h1 class="page5-main-title stagger-item">Закатные дюны</h1>
 
                 <div class="page5-image-top-right stagger-item">
                     <img src="images/16.jpg?auto=format&fit=crop&q=80&w=1000" alt="Детали декора">
@@ -1221,154 +1303,203 @@
             </div>
         </section>
 
-        <!-- Страница 6 -->
+        <!-- ========== НОВАЯ СТРАНИЦА 6 (ADDON1) ========== -->
         <section class="portfolio-page" id="page6">
-            <div class="page6-container">
-                <div class="page6-gallery">
-                    <div class="page6-gallery-item stagger-item">
+            <div class="page6-canvas">
+                <div class="page6-grid-item item-1 stagger-item">
+                    <img src="images/6.jpg?auto=format&fit=crop&q=80&w=600" alt="Group laughing">
+                </div>
+                <div class="page6-grid-item item-2 stagger-item">
+                    <img src="images/7.jpg?auto=format&fit=crop&q=80&w=600" alt="Sitting in orange">
+                </div>
+                <div class="page6-grid-item item-3 stagger-item">
+                    <img src="images/8.jpg?auto=format&fit=crop&q=80&w=600" alt="Portrait central">
+                </div>
+                <div class="page6-grid-item item-4 stagger-item">
+                    <img src="images/3.jpg?auto=format&fit=crop&q=80&w=600" alt="Close up fashion">
+                </div>
+                <div class="page6-grid-item item-5 stagger-item">
+                    <img src="images/20.avif?auto=format&fit=crop&q=80&w=700" alt="Full height group">
+                </div>
+                <div class="page6-label small-text">COLLECTION 2026 / VOL. 7</div>
+            </div>
+        </section>
+
+        <!-- ========== НОВАЯ СТРАНИЦА 7 (ADDON2) ========== -->
+        <section class="portfolio-page" id="page7">
+            <div class="page7-canvas">
+                <div class="page7-photo-item item-left-1 stagger-item">
+                    <img src="images/6.jpg" alt="Portrait">
+                </div>
+                <div class="page7-photo-item item-left-2 stagger-item">
+                    <img src="images/7.jpg" alt="Portrait">
+                </div>
+                <div class="page7-photo-item item-left-3 stagger-item">
+                    <img src="images/8.jpg" alt="Portrait">
+                </div>
+                <div class="page7-photo-item item-center stagger-item">
+                    <img src="images/4.jpg" alt="Main Portrait">
+                    <div class="page7-label small-text">Center Focus</div>
+                </div>
+                <div class="page7-photo-item item-right-1 stagger-item">
+                    <img src="images/10.jpg" alt="Nature">
+                </div>
+                <div class="page7-photo-item item-right-2 stagger-item">
+                    <img src="images/11.jpg" alt="Group">
+                </div>
+                <div class="page7-photo-item item-right-3 stagger-item">
+                    <img src="images/12.jpg" alt="Portrait Style">
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 8 (бывшая страница 6) -->
+        <section class="portfolio-page" id="page8">
+            <div class="page8-container">
+                <div class="page8-gallery">
+                    <div class="page8-gallery-item stagger-item">
                         <img src="images/photo1.avif?q=80&w=1000&auto=format&fit=crop" alt="Свадебный букет">
                     </div>
-                    <div class="page6-gallery-item stagger-item">
+                    <div class="page8-gallery-item stagger-item">
                         <img src="images/photo2.avif?q=80&w=1000&auto=format&fit=crop" alt="Украшение стола">
                     </div>
-                    <div class="page6-gallery-item stagger-item">
+                    <div class="page8-gallery-item stagger-item">
                         <img src="images/photo3.avif?q=80&w=1000&auto=format&fit=crop" alt="Детали церемонии">
                     </div>
                 </div>
 
-                <div class="page6-info-panel">
-                    <div class="page6-info-group stagger-item">
-                        <span class="page6-label">Год</span>
-                        <span class="page6-value">2024</span>
+                <div class="page8-info-panel">
+                    <div class="page8-info-group stagger-item">
+                        <span class="page8-label">Год</span>
+                        <span class="page8-value">2024</span>
                     </div>
-                    
-                    <div class="page6-info-group stagger-item">
-                        <span class="page6-label">Клиенты</span>
-                        <span class="page6-value">Анна & Алексей</span>
+                   
+                    <div class="page8-info-group stagger-item">
+                        <span class="page8-label">Клиенты</span>
+                        <span class="page8-value">Анна & Алексей</span>
                     </div>
 
-                    <div class="page6-info-group stagger-item">
-                        <span class="page6-label">Проект</span>
-                        <span class="page6-value">ЗАКАТНЫЕ ДЮНЫ</span>
+                    <div class="page8-info-group stagger-item">
+                        <span class="page8-label">Проект</span>
+                        <span class="page8-value">ЗАКАТНЫЕ ДЮНЫ</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Страница 7 -->
-        <section class="portfolio-page" id="page7">
-            <div class="page7-canvas">
-                <div class="page7-image-box page7-main-photo stagger-item">
+        <!-- Страница 9 (бывшая страница 7) -->
+        <section class="portfolio-page" id="page9">
+            <div class="page9-canvas">
+                <div class="page9-image-box page9-main-photo stagger-item">
                     <img src="images/6.jpg?auto=format&fit=crop&q=80&w=800" alt="Невеста на пляже">
                 </div>
 
-                <div class="page7-image-box page7-top-photo stagger-item">
+                <div class="page9-image-box page9-top-photo stagger-item">
                     <img src="images/7.jpg?auto=format&fit=crop&q=80&w=1000" alt="Свадебная церемония">
                 </div>
 
-                <div class="page7-image-box page7-middle-photo stagger-item">
+                <div class="page9-image-box page9-middle-photo stagger-item">
                     <img src="images/8.jpg?auto=format&fit=crop&q=80&w=600" alt="Детали оформления">
                 </div>
 
-                <div class="page7-text-content stagger-item">
-                    <div class="page7-line-accent"></div>
-                    <h1 class="page7-title">Дополнительные детали концепции</h1>
-                    <p class="page7-description">
+                <div class="page9-text-content stagger-item">
+                    <div class="page9-line-accent"></div>
+                    <h1 class="page9-title">Дополнительные детали концепции</h1>
+                    <p class="page9-description">
                         Флористика включает сухоцветы, морские травы и песчаные кактусы. Мебель из светлого дерева и плетеные кресла создают уютную зону отдыха. Меню состоит из свежих морепродуктов и локальных продуктов. Музыкальное сопровождение — живой акустический сет с элементами звуков моря. Для гостей подготовлены индивидуальные наборы с эко-косметикой на основе морских минералов и картой местности с маршрутами прогулок по дюнам.
                     </p>
                 </div>
 
-                <div class="page7-footer-tag stagger-item">Проект № 09 — 2024</div>
+                <div class="page9-footer-tag stagger-item">Проект № 09 — 2024</div>
             </div>
         </section>
 
-        <!-- Страница 8 -->
-        <section class="portfolio-page" id="page8">
-            <div class="page8-canvas">
-                <div class="page8-image-grid">
-                    <div class="page8-image-container stagger-item">
+        <!-- Страница 10 (бывшая страница 8) -->
+        <section class="portfolio-page" id="page10">
+            <div class="page10-canvas">
+                <div class="page10-image-grid">
+                    <div class="page10-image-container stagger-item">
                         <img src="images/10.jpg?auto=format&fit=crop&q=80&w=400" alt="Закат на море">
                     </div>
-                    <div class="page8-image-container stagger-item">
+                    <div class="page10-image-container stagger-item">
                         <img src="images/11.jpg?auto=format&fit=crop&q=80&w=400" alt="Свадебный банкет">
                     </div>
-                    <div class="page8-image-container stagger-item">
+                    <div class="page10-image-container stagger-item">
                         <img src="images/12.jpg?auto=format&fit=crop&q=80&w=400" alt="Декор стола">
                     </div>
-                    <div class="page8-image-container stagger-item">
+                    <div class="page10-image-container stagger-item">
                         <img src="images/13.jpg?auto=format&fit=crop&q=80&w=400" alt="Морской пейзаж">
                     </div>
                 </div>
 
-                <div class="page8-content-section">
-                    <div class="page8-text-block stagger-item">
-                        <h2>АККОМОДАЦИЯ У МОРЯ</h2>
+                <div class="page10-content-section">
+                    <div class="page10-text-block stagger-item">
+                        <h2>Аккомодация у моря</h2>
                         <p>
                             Для комфорта гостей организованы шатры с системой климат-контроля и противомоскитными сетками. Предусмотрены отдельные зоны для переодевания, зона СПА с массажем и гидромассажной ванной. Все помещения оборудованы с учетом морского климата и возможных ветров.
                         </p>
                     </div>
-                    <div class="page8-text-block stagger-item">
-                        <h2>ЭКОЛОГИЧНОСТЬ И БЕЗОПАСНОСТЬ</h2>
+                    <div class="page10-text-block stagger-item">
+                        <h2>Экологичность и безопасность</h2>
                         <p>
                             Все материалы биоразлагаемы, декор после мероприятия отправляется на переработку. Используется солнечная энергия для освещения. На пляже организованы мобильные туалетные комнаты с системой очистки воды. Профессиональная команда обеспечивает безопасность на воде и контроль за погодными условиями.
                         </p>
                     </div>
                 </div>
 
-                <div class="page8-metadata-footer">
-                    <div class="page8-meta-group">
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Год</span>
-                            <span class="page8-meta-value">2024</span>
+                <div class="page10-metadata-footer">
+                    <div class="page10-meta-group">
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Год</span>
+                            <span class="page10-meta-value">2024</span>
                         </div>
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Клиент</span>
-                            <span class="page8-meta-value">Анна & Алексей</span>
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Клиент</span>
+                            <span class="page10-meta-value">Анна & Алексей</span>
                         </div>
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Проект</span>
-                            <span class="page8-meta-value">ЗАКАТНЫЕ ДЮНЫ</span>
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Проект</span>
+                            <span class="page10-meta-value">ЗАКАТНЫЕ ДЮНЫ</span>
                         </div>
                     </div>
-                    <div class="page8-meta-group">
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Локация</span>
-                            <span class="page8-meta-value">Черноморское побережье</span>
+                    <div class="page10-meta-group">
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Локация</span>
+                            <span class="page10-meta-value">Черноморское побережье</span>
                         </div>
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Сезон</span>
-                            <span class="page8-meta-value">Сентябрь 2024</span>
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Сезон</span>
+                            <span class="page10-meta-value">Сентябрь 2024</span>
                         </div>
-                        <div class="page8-meta-item stagger-item">
-                            <span class="page8-meta-label">Гости</span>
-                            <span class="page8-meta-value">80 человек</span>
+                        <div class="page10-meta-item stagger-item">
+                            <span class="page10-meta-label">Гости</span>
+                            <span class="page10-meta-value">80 человек</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Страница 9 -->
-        <section class="portfolio-page" id="page9">
-            <div class="page9-canvas">
-                <header class="page9-header stagger-item">
-                    <h1 class="page9-title">Благодарим</h1>
+        <!-- Страница 11 (бывшая страница 9) -->
+        <section class="portfolio-page" id="page11">
+            <div class="page11-canvas">
+                <header class="page11-header stagger-item">
+                    <h1 class="page11-title">Благодарим</h1>
                 </header>
 
-                <nav class="page9-info-bar stagger-item">
-                    <div class="page9-info-item">@serebro_agency</div>
-                    <div class="page9-info-item">+7 (999) 123-45-67</div>
-                    <div class="page9-info-item">serebro@agency.com</div>
-                    <div class="page9-info-item">#закатныедюны</div>
+                <nav class="page11-info-bar stagger-item">
+                    <div class="page11-info-item">@serebro_agency</div>
+                    <div class="page11-info-item">+7 (999) 123-45-67</div>
+                    <div class="page11-info-item">serebro@agency.com</div>
+                    <div class="page11-info-item">#закатныедюны</div>
                 </nav>
 
-                <main class="page9-image-container stagger-item">
+                <main class="page11-image-container stagger-item">
                     <img src="images/photox.avif?q=80&w=1280&h=400&auto=format&fit=crop" alt="Свадьба на закате">
                 </main>
             </div>
         </section>
     </div>
-
 
     <script>
         // Функция для анимации появления элементов при скроллинге
@@ -1377,7 +1508,7 @@
             const progressBar = document.querySelector('.progress-bar');
             const currentPageInfo = document.querySelector('.current-page-info');
             const navDots = document.querySelectorAll('.nav-dot');
-            
+           
             // Функция для проверки видимости элемента
             function isElementInViewport(el) {
                 const rect = el.getBoundingClientRect();
@@ -1386,64 +1517,64 @@
                     rect.bottom >= window.innerHeight * 0.2
                 );
             }
-            
+           
             // Функция для обновления видимых элементов
             function updateVisibleElements() {
                 let visiblePageIndex = 0;
-                
+               
                 pages.forEach((page, index) => {
                     if (isElementInViewport(page)) {
                         page.classList.add('visible');
                         visiblePageIndex = index;
-                        
+                       
                         // Обновляем активную точку навигации
                         navDots.forEach(dot => dot.classList.remove('active'));
                         navDots[index].classList.add('active');
-                        
+                       
                         // Обновляем информацию о текущей странице
-                        currentPageInfo.textContent = `Страница ${index + 1}/9`;
+                        currentPageInfo.textContent = `Страница ${index + 1}/11`;
                     }
                 });
-                
+               
                 // Обновляем прогресс-бар
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPercent = (scrollTop / scrollHeight) * 100;
                 progressBar.style.width = scrollPercent + '%';
             }
-            
+           
             // Инициализация при загрузке
             updateVisibleElements();
-            
+           
             // Обработчик скролла
             window.addEventListener('scroll', updateVisibleElements);
             window.addEventListener('resize', updateVisibleElements);
-            
+           
             // Навигация по точкам
             navDots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
                     const targetPage = pages[index];
                     targetPage.scrollIntoView({ behavior: 'smooth' });
-                    
+                   
                     // Обновляем активную точку
                     navDots.forEach(d => d.classList.remove('active'));
                     dot.classList.add('active');
                 });
             });
-            
+           
             // Добавляем задержку для элементов внутри страниц
             const staggerItems = document.querySelectorAll('.stagger-item');
             staggerItems.forEach((item, index) => {
                 item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
+                item.style.transform = 'translateY(15px)';
             });
-            
+           
             // Инициализация первой страницы как видимой
             if (pages.length > 0) {
                 pages[0].classList.add('visible');
             }
         }
-        
+       
         // Запуск анимации при загрузке страницы
         document.addEventListener('DOMContentLoaded', animateOnScroll);
     </script>

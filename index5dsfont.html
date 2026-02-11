@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEREBRO | Свадебный проект "Закатные дюны"</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Сброс и базовые настройки */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            background-color: #fefefe;
+            font-family: 'Manrope', sans-serif;
+            color: #1a1a1a;
+            overflow-x: hidden;
+            max-width: 1440px;
+            margin: 0 auto;
+            position: relative;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        /* Контейнер */
+        .portfolio-container {
+            width: 100%;
+            position: relative;
+        }
+
+        /* Страницы */
+        .portfolio-page {
+            width: 100%;
+            position: relative;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+            box-shadow: 0 4px 40px rgba(0,0,0,0.03);
+            border-radius: 1px;
+        }
+
+        .portfolio-page.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Единые текстовые стили */
+        .hero-title {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 4.5rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            color: #1a1a1a;
+        }
+
+        .section-title {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 1.3;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+
+        .body-text {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #444444;
+        }
+
+        .small-text {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 500;
+            font-size: 0.7rem;
+            line-height: 1.4;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #888888;
+        }
+
+        .meta-text {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 300;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #666666;
+        }
+
+        /* Страница 1 */
+        .page1-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page1-header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .page1-title {
+            font-weight: 700;
+            font-size: 4.5rem;
+            line-height: 1;
+            letter-spacing: -0.03em;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .page1-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+        }
+
+        .page1-meta-info {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .page1-hero-image-container {
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            position: relative;
+            border-radius: 2px;
+        }
+
+        .page1-hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(1.02) contrast(1.05);
+            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .page1-hero-image-container:hover .page1-hero-image {
+            transform: scale(1.02);
+        }
+
+        /* Страница 2 */
+        .page2-artboard {
+            width: 100%;
+            height: 90vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .page2-image-area {
+            flex: 1.2;
+            height: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page2-image-area img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 1.2s ease;
+        }
+
+        .page2-content-area {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(135deg, #fefefe 0%, #fafafa 100%);
+        }
+
+        .page2-hero-title {
+            font-weight: 700;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 3rem;
+            letter-spacing: -0.03em;
+        }
+
+        .page2-description {
+            margin-bottom: 3rem;
+            max-width: 400px;
+        }
+
+        .page2-details-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Страница 3 */
+        .page3-canvas {
+            padding: 4rem;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page3-projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .page3-project-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page3-image-wrapper {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .page3-image-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.02) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        .page3-metadata {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .page3-footer-title {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Страница 4 */
+        .page4-canvas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 90vh;
+        }
+
+        .page4-content-side {
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .page4-main-title {
+            font-size: 3.5rem;
+            margin-bottom: 3rem;
+            line-height: 1;
+        }
+
+        .page4-description-block {
+            max-width: 400px;
+        }
+
+        .page4-metadata {
+            display: flex;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .page4-image-side {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page4-image-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Страница 5 */
+        .page5-canvas {
+            min-height: 90vh;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+
+        .page5-main-title {
+            grid-column: 1 / -1;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .page5-image-top-right {
+            grid-column: 2;
+            grid-row: 2;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .page5-image-bottom-left {
+            grid-column: 1;
+            grid-row: 2;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .page5-description {
+            grid-column: 2;
+            grid-row: 3;
+            margin-top: 2rem;
+        }
+
+        /* Страница 6 */
+        .page6-container {
+            min-height: 90vh;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .page6-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .page6-gallery-item {
+            overflow: hidden;
+            border-radius: 2px;
+            position: relative;
+        }
+
+        .page6-gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(0deg, rgba(0,0,0,0.03) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .page6-info-panel {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 3rem;
+        }
+
+        /* Страница 7 */
+        .page7-canvas {
+            min-height: 90vh;
+            padding: 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr;
+            gap: 2rem;
+        }
+
+        .page7-main-photo {
+            grid-column: 1;
+            grid-row: 1 / -1;
+        }
+
+        .page7-top-photo {
+            grid-column: 2 / -1;
+            grid-row: 1;
+        }
+
+        .page7-middle-photo {
+            grid-column: 2;
+            grid-row: 2;
+        }
+
+        .page7-text-content {
+            grid-column: 3;
+            grid-row: 2;
+            padding: 2rem;
+            background: rgba(255,255,255,0.9);
+            border-radius: 2px;
+        }
+
+        /* Страница 8 */
+        .page8-canvas {
+            min-height: 90vh;
+            padding: 4rem;
+        }
+
+        .page8-image-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 4rem;
+        }
+
+        .page8-content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .page8-metadata-footer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Страница 9 */
+        .page9-canvas {
+            min-height: 90vh;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .page9-title {
+            font-size: 5rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .page9-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+        }
+
+        .page9-info-bar {
+            display: flex;
+            gap: 4rem;
+            margin-bottom: 4rem;
+            padding: 1rem 0;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Навигация */
+        .portfolio-navigation {
+            position: fixed;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-dot::before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            right: -4px;
+            bottom: -4px;
+            border-radius: 50%;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background-color: #1a1a1a;
+        }
+
+        .nav-dot.active::before {
+            border-color: rgba(0,0,0,0.2);
+        }
+
+        .nav-dot:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Прогресс-бар */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, #1a1a1a, #888888);
+            z-index: 1001;
+            transition: width 0.3s ease;
+        }
+
+        /* Информация о странице */
+        .current-page-info {
+            position: fixed;
+            left: 2rem;
+            top: 2rem;
+            font-weight: 400;
+            font-size: 0.85rem;
+            letter-spacing: 0.05em;
+            z-index: 1000;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        /* Общие улучшения */
+        img {
+            max-width: 100%;
+            height: auto;
+            vertical-align: middle;
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .portfolio-page.visible .stagger-item {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Задержки для анимаций */
+        .portfolio-page.visible .stagger-item:nth-child(1) { transition-delay: 0.1s; }
+        .portfolio-page.visible .stagger-item:nth-child(2) { transition-delay: 0.2s; }
+        .portfolio-page.visible .stagger-item:nth-child(3) { transition-delay: 0.3s; }
+        .portfolio-page.visible .stagger-item:nth-child(4) { transition-delay: 0.4s; }
+        .portfolio-page.visible .stagger-item:nth-child(5) { transition-delay: 0.5s; }
+
+        /* Эффекты при наведении */
+        .image-hover-zoom {
+            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .image-hover-zoom:hover {
+            transform: scale(1.03);
+        }
+
+        /* Акценты */
+        .accent-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #1a1a1a, transparent);
+            margin: 1rem 0;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 1200px) {
+            .hero-title, .page1-title, .page9-title {
+                font-size: 3.5rem;
+            }
+            
+            .page2-hero-title, .page4-main-title, .page5-main-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-page {
+                margin-bottom: 1rem;
+            }
+            
+            .page1-wrapper,
+            .page2-content-area,
+            .page3-canvas,
+            .page4-content-side,
+            .page5-canvas,
+            .page6-container,
+            .page7-canvas,
+            .page8-canvas,
+            .page9-canvas {
+                padding: 2rem;
+            }
+            
+            .portfolio-navigation {
+                right: 1rem;
+            }
+            
+            .current-page-info {
+                left: 1rem;
+                top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar"></div>
+    <div class="current-page-info">01 / 09</div>
+    
+    <div class="portfolio-navigation">
+        <div class="nav-dot active" data-page="1"></div>
+        <div class="nav-dot" data-page="2"></div>
+        <div class="nav-dot" data-page="3"></div>
+        <div class="nav-dot" data-page="4"></div>
+        <div class="nav-dot" data-page="5"></div>
+        <div class="nav-dot" data-page="6"></div>
+        <div class="nav-dot" data-page="7"></div>
+        <div class="nav-dot" data-page="8"></div>
+        <div class="nav-dot" data-page="9"></div>
+    </div>
+
+    <div class="portfolio-container">
+        <!-- Страница 1 -->
+        <section class="portfolio-page visible" id="page1">
+            <div class="page1-wrapper">
+                <header class="page1-header stagger-item">
+                    <h1 class="page1-title">SEREBRO</h1>
+                    <div class="small-text">Свадебное агентство</div>
+                </header>
+
+                <nav class="page1-meta-info stagger-item">
+                    <div class="small-text">@serebro_agency</div>
+                    <div class="small-text">wedding_planner</div>
+                    <div class="small-text">beach_weddings</div>
+                    <div class="small-text">#закатныедюны</div>
+                </nav>
+
+                <main class="page1-hero-image-container stagger-item">
+                    <img src="images/19.jpg" 
+                         alt="Свадебный проект на пляже" 
+                         class="page1-hero-image image-hover-zoom">
+                </main>
+            </div>
+        </section>
+
+        <!-- Страница 2 -->
+        <section class="portfolio-page" id="page2">
+            <main class="page2-artboard">
+                <div class="page2-image-area stagger-item">
+                    <img src="images/1.jpg" alt="Свадьба на пляже" class="image-hover-zoom">
+                </div>
+
+                <div class="page2-content-area">
+                    <div class="accent-line stagger-item"></div>
+                    
+                    <h1 class="page2-hero-title stagger-item">
+                        ЗАКАТНЫЕ<br>ДЮНЫ
+                    </h1>
+
+                    <p class="page2-description body-text stagger-item">
+                        Концепция свадьбы на побережье, где золотые пески встречаются с лазурным морем. 
+                        Вдохновение — природные формы дюн и теплые оттенки закатного неба.
+                    </p>
+
+                    <div class="page2-details-grid stagger-item">
+                        <div class="page2-detail-item">
+                            <div class="small-text">Роль</div>
+                            <div class="meta-text">Главный организатор</div>
+                        </div>
+                        <div class="page2-detail-item">
+                            <div class="small-text">Клиент</div>
+                            <div class="meta-text">Анна & Алексей</div>
+                        </div>
+                        <div class="page2-detail-item">
+                            <div class="small-text">Год</div>
+                            <div class="meta-text">2024</div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </section>
+
+        <!-- Страница 3 -->
+        <section class="portfolio-page" id="page3">
+            <div class="page3-canvas">
+                <div class="page3-projects-container">
+                    <div class="page3-project-card stagger-item">
+                        <div class="page3-image-wrapper">
+                            <img src="images/3.jpg" alt="Свадебная арка" class="image-hover-zoom">
+                        </div>
+                        <div class="page3-metadata">
+                            <div class="page3-meta-item">
+                                <div class="small-text">Год</div>
+                                <div class="meta-text">2024</div>
+                            </div>
+                            <div class="page3-meta-item">
+                                <div class="small-text">Проект</div>
+                                <div class="meta-text">ЗАКАТНЫЕ ДЮНЫ</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="page3-project-card stagger-item">
+                        <div class="page3-image-wrapper">
+                            <img src="images/2.jpg" alt="Свадебный стол" class="image-hover-zoom">
+                        </div>
+                        <div class="page3-metadata">
+                            <div class="page3-meta-item">
+                                <div class="small-text">Клиент</div>
+                                <div class="meta-text">Анна & Алексей</div>
+                            </div>
+                            <div class="page3-meta-item">
+                                <div class="small-text">Локация</div>
+                                <div class="meta-text">Черноморское побережье</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h1 class="page3-footer-title hero-title stagger-item">Детали проекта</h1>
+            </div>
+        </section>
+
+        <!-- Страница 4 -->
+        <section class="portfolio-page" id="page4">
+            <div class="page4-canvas">
+                <div class="page4-content-side">
+                    <div class="accent-line stagger-item"></div>
+                    
+                    <h1 class="page4-main-title hero-title stagger-item">
+                        КОНЦЕПЦИЯ<br>И ДИЗАЙН
+                    </h1>
+
+                    <div class="page4-description-block stagger-item">
+                        <p class="body-text">
+                            Свадьба, вдохновленная природой побережья. Мягкие линии дюн, шум прибоя 
+                            и золотистый свет заката создают атмосферу гармонии и умиротворения.
+                        </p>
+                        
+                        <div class="page4-metadata">
+                            <div class="page4-meta-item">
+                                <div class="small-text">Палитра</div>
+                                <div class="meta-text">Песочные, персиковые, терракотовые тона</div>
+                            </div>
+                            <div class="page4-meta-item">
+                                <div class="small-text">Материалы</div>
+                                <div class="meta-text">Дерево, лен, натуральные ткани</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="page4-image-side stagger-item">
+                    <img src="images/4.jpg" alt="Свадебная церемония" class="image-hover-zoom">
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 5 -->
+        <section class="portfolio-page" id="page5">
+            <div class="page5-canvas">
+                <h1 class="page5-main-title hero-title stagger-item">
+                    ВИЗУАЛЬНАЯ<br>ИСТОРИЯ
+                </h1>
+
+                <div class="page5-image-bottom-left stagger-item">
+                    <img src="images/16.jpg" alt="Детали декора" class="image-hover-zoom">
+                </div>
+
+                <div class="page5-image-top-right stagger-item">
+                    <img src="images/18.jpg" alt="Свадебный банкет" class="image-hover-zoom">
+                </div>
+
+                <div class="page5-description stagger-item">
+                    <p class="body-text">
+                        Проект воплощает мечту о романтической свадьбе у моря. Церемония проходит 
+                        на открытом воздухе, где каждая деталь создает неповторимую атмосферу.
+                    </p>
+
+                    <div class="accent-line" style="margin: 2rem 0;"></div>
+                    
+                    <div class="page5-meta-data">
+                        <div class="page5-meta-item">
+                            <div class="small-text">Время</div>
+                            <div class="meta-text">Закат</div>
+                        </div>
+                        <div class="page5-meta-item">
+                            <div class="small-text">Освещение</div>
+                            <div class="meta-text">Свечи и фонари</div>
+                        </div>
+                        <div class="page5-meta-item">
+                            <div class="small-text">Флористика</div>
+                            <div class="meta-text">Прибрежные растения</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 6 -->
+        <section class="portfolio-page" id="page6">
+            <div class="page6-container">
+                <div class="page6-gallery">
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo1.avif" alt="Свадебный букет" class="image-hover-zoom">
+                    </div>
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo2.avif" alt="Украшение стола" class="image-hover-zoom">
+                    </div>
+                    <div class="page6-gallery-item stagger-item">
+                        <img src="images/photo3.avif" alt="Детали церемонии" class="image-hover-zoom">
+                    </div>
+                </div>
+
+                <div class="page6-info-panel">
+                    <div class="accent-line stagger-item"></div>
+                    
+                    <div class="page6-info-group stagger-item">
+                        <div class="small-text">Год</div>
+                        <div class="section-title">2024</div>
+                    </div>
+                    
+                    <div class="page6-info-group stagger-item">
+                        <div class="small-text">Клиенты</div>
+                        <div class="section-title">Анна & Алексей</div>
+                    </div>
+
+                    <div class="page6-info-group stagger-item">
+                        <div class="small-text">Проект</div>
+                        <div class="section-title">ЗАКАТНЫЕ ДЮНЫ</div>
+                    </div>
+
+                    <div class="page6-info-group stagger-item">
+                        <div class="small-text">Гости</div>
+                        <div class="meta-text">80 человек</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 7 -->
+        <section class="portfolio-page" id="page7">
+            <div class="page7-canvas">
+                <div class="page7-main-photo stagger-item">
+                    <img src="images/6.jpg" alt="Невеста на пляже" class="image-hover-zoom">
+                </div>
+
+                <div class="page7-top-photo stagger-item">
+                    <img src="images/7.jpg" alt="Свадебная церемония" class="image-hover-zoom">
+                </div>
+
+                <div class="page7-middle-photo stagger-item">
+                    <img src="images/8.jpg" alt="Детали оформления" class="image-hover-zoom">
+                </div>
+
+                <div class="page7-text-content stagger-item">
+                    <div class="accent-line"></div>
+                    <h1 class="section-title">КОНЦЕПЦИЯ</h1>
+                    <p class="body-text" style="margin-top: 1.5rem;">
+                        Флористика включает сухоцветы и морские травы. Мебель из светлого дерева 
+                        создает уютную зону отдыха. Меню состоит из свежих морепродуктов. 
+                        Музыкальное сопровождение — живой акустический сет.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 8 -->
+        <section class="portfolio-page" id="page8">
+            <div class="page8-canvas">
+                <div class="page8-image-grid">
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/10.jpg" alt="Закат на море" class="image-hover-zoom">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/11.jpg" alt="Свадебный банкет" class="image-hover-zoom">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/12.jpg" alt="Декор стола" class="image-hover-zoom">
+                    </div>
+                    <div class="page8-image-container stagger-item">
+                        <img src="images/13.jpg" alt="Морской пейзаж" class="image-hover-zoom">
+                    </div>
+                </div>
+
+                <div class="page8-content-section">
+                    <div class="page8-text-block stagger-item">
+                        <div class="small-text">ИНФРАСТРУКТУРА</div>
+                        <h2 class="section-title" style="margin: 1rem 0 1.5rem;">АККОМОДАЦИЯ</h2>
+                        <p class="body-text">
+                            Для гостей организованы шатры с климат-контролем. Предусмотрены зоны 
+                            для переодевания и отдыха. Все помещения оборудованы с учетом морского климата.
+                        </p>
+                    </div>
+                    <div class="page8-text-block stagger-item">
+                        <div class="small-text">УСТОЙЧИВОСТЬ</div>
+                        <h2 class="section-title" style="margin: 1rem 0 1.5rem;">ЭКОЛОГИЧНОСТЬ</h2>
+                        <p class="body-text">
+                            Все материалы биоразлагаемы. Используется солнечная энергия для освещения. 
+                            Профессиональная команда обеспечивает безопасность и экологичность мероприятия.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="page8-metadata-footer">
+                    <div class="page8-meta-group">
+                        <div class="page8-meta-item stagger-item">
+                            <div class="small-text">Локация</div>
+                            <div class="meta-text">Черноморское побережье</div>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <div class="small-text">Сезон</div>
+                            <div class="meta-text">Сентябрь 2024</div>
+                        </div>
+                    </div>
+                    <div class="page8-meta-group">
+                        <div class="page8-meta-item stagger-item">
+                            <div class="small-text">Продолжительность</div>
+                            <div class="meta-text">2 дня</div>
+                        </div>
+                        <div class="page8-meta-item stagger-item">
+                            <div class="small-text">Команда</div>
+                            <div class="meta-text">15 специалистов</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница 9 -->
+        <section class="portfolio-page" id="page9">
+            <div class="page9-canvas">
+                <header class="page9-header stagger-item">
+                    <h1 class="page9-title">БЛАГОДАРИМ</h1>
+                    <div class="accent-line" style="margin: 2rem auto;"></div>
+                </header>
+
+                <nav class="page9-info-bar stagger-item">
+                    <div class="small-text">@serebro_agency</div>
+                    <div class="small-text">+7 999 123 45 67</div>
+                    <div class="small-text">serebro@agency.com</div>
+                </nav>
+
+                <main class="page9-image-container stagger-item" style="width: 100%; max-width: 800px; height: 400px;">
+                    <img src="images/photox.avif" alt="Свадьба на закате" class="image-hover-zoom">
+                </main>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const pages = document.querySelectorAll('.portfolio-page');
+            const progressBar = document.querySelector('.progress-bar');
+            const currentPageInfo = document.querySelector('.current-page-info');
+            const navDots = document.querySelectorAll('.nav-dot');
+            
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= window.innerHeight * 0.75 &&
+                    rect.bottom >= window.innerHeight * 0.25
+                );
+            }
+            
+            function updateVisibleElements() {
+                let visiblePageIndex = 0;
+                
+                pages.forEach((page, index) => {
+                    if (isElementInViewport(page)) {
+                        if (!page.classList.contains('visible')) {
+                            page.classList.add('visible');
+                        }
+                        visiblePageIndex = index;
+                        
+                        navDots.forEach(dot => dot.classList.remove('active'));
+                        navDots[index].classList.add('active');
+                        
+                        currentPageInfo.textContent = `${String(index + 1).padStart(2, '0')} / ${pages.length.toString().padStart(2, '0')}`;
+                    }
+                });
+                
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / scrollHeight) * 100;
+                progressBar.style.width = scrollPercent + '%';
+            }
+            
+            updateVisibleElements();
+            
+            window.addEventListener('scroll', updateVisibleElements);
+            window.addEventListener('resize', updateVisibleElements);
+            
+            navDots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    pages[index].scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+            
+            // Инициализация анимации для первой страницы
+            const firstPageStaggerItems = pages[0].querySelectorAll('.stagger-item');
+            firstPageStaggerItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateY(0)';
+                }, 100 * (index + 1));
+            });
+        });
+    </script>
+</body>
+</html>
