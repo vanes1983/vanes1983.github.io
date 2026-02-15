@@ -1,11 +1,34 @@
 @import "tailwindcss";
 
-@theme {
-  --font-sans: "Montserrat", sans-serif;
+:root {
+  --color-mint: #e8f4f0;
+  --color-mint-dark: #c5e0d8;
+  --color-sage: #9cb8a9;
+  --color-soft-blue: #e6eef5;
+  --color-cream: #faf9f7;
+  --color-warm-gray: #8a8a8a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: #f8fafc; /* Slate 50 - Very light gray/white */
-  color: #334155; /* Slate 700 */
+  font-family: 'Montserrat', sans-serif;
+  background-color: #faf9f7;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-section.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
