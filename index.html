@@ -1,15 +1,445 @@
-<!doctype html>
-<html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Миопрессура | Массажный кабинет в Калининграде</title>
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Миопрессура Калининград | Избавление от боли</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Animations for Scroll Reveal */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Text Animation Classes */
+        .hero-text-enter {
+            animation: slideFadeIn 1s forwards;
+        }
+        
+        .hero-text-exit {
+            animation: slideFadeOut 1s forwards;
+        }
+
+        @keyframes slideFadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideFadeOut {
+            0% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+
+        /* Background Fade Transition */
+        .bg-slide {
+            transition: opacity 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-700 antialiased selection:bg-teal-200 selection:text-teal-900">
+
+    <!-- 1. Верхнее меню -->
+    <nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Логотип / Иконка -->
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center text-white shadow-lg shadow-teal-200">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
+                        </svg>
+                    </div>
+                    <span class="font-medium text-lg tracking-wide text-slate-800">МИОПРЕССУРА</span>
+                </div>
+
+                <!-- Меню (Desktop) -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">О МИОПРЕССУРЕ</a>
+                    <a href="#cabinet" class="text-sm font-medium text-slate-600 hover:text-teal-600 transition-colors">КОНТАКТЫ И ЦЕНЫ</a>
+                    
+                    <!-- Telegram Button -->
+                    <a href="https://t.me/" target="_blank" class="flex items-center gap-2 bg-slate-100 hover:bg-teal-50 text-teal-700 px-4 py-2 rounded-full transition-colors text-sm font-medium">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.486-.024.234.346.478.705.588.136.04.304.056.495.04.593-.05 1.583-.615 1.623-.62.04-.005.09.006.102.035.013.03-.008.083-.024.103-.122.152-.765.756-.994.996-.282.296-.51.587.054.95.53.34 1.079.684 1.638 1.05.352.23.704.39.932.135.21-.235.663-1.077.838-1.466.11-.246.216-.48.273-.675.057-.197.058-.33.04-.422-.018-.093-.06-.15-.125-.178-.232-.1-4.085-1.574-4.32-1.637z"/>
+                        </svg>
+                        Telegram
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-teal-600 focus:outline-none p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full left-0 top-20 shadow-lg">
+            <div class="px-4 py-4 space-y-4 flex flex-col items-center">
+                <a href="#about" class="block w-full text-center text-slate-700 hover:text-teal-600 font-medium py-2">О МИОПРЕССУРЕ</a>
+                <a href="#cabinet" class="block w-full text-center text-slate-700 hover:text-teal-600 font-medium py-2">КОНТАКТЫ И ЦЕНЫ</a>
+                <a href="https://t.me/" target="_blank" class="inline-flex items-center justify-center gap-2 bg-slate-100 text-teal-700 px-6 py-3 rounded-full font-medium w-full">
+                    Telegram
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section (Слайдер) -->
+    <header class="relative w-full h-[600px] md:h-[700px] overflow-hidden bg-slate-200 mt-20">
+        <!-- Фоновые картинки -->
+        <div id="hero-bg-1" class="absolute inset-0 w-full h-full object-cover bg-slide opacity-100 z-0 transition-opacity duration-[2000ms]">
+            <img src="data/photo-1544161515-4ab6ce6db874.jpg?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-[0.85] contrast-[0.9]" alt="Massage 1">
+        </div>
+        <div id="hero-bg-2" class="absolute inset-0 w-full h-full object-cover bg-slide opacity-0 z-0 transition-opacity duration-[2000ms]">
+            <img src="data/photo-1600334089648-b0d9d3028eb2.jpg?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-[0.85] contrast-[0.9]" alt="Massage 2">
+        </div>
+        <div id="hero-bg-3" class="absolute inset-0 w-full h-full object-cover bg-slide opacity-0 z-0 transition-opacity duration-[2000ms]">
+            <img src="data/photo-1519823551278-64ac92734fb1.jpg?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover filter brightness-[0.85] contrast-[0.9]" alt="Massage 3">
+        </div>
+
+        <!-- Затемнение -->
+        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent z-10"></div>
+
+        <!-- Текстовый контент (3 objects) -->
+        <div class="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 overflow-hidden">
+            
+            <!-- Object 1 -->
+            <div id="hero-text-1" class="absolute max-w-4xl transition-all duration-1000 ease-out opacity-100 translate-y-0">
+                <h1 class="text-4xl md:text-6xl font-light text-white mb-4 tracking-wider uppercase drop-shadow-md">
+                    Лечим боль в спине и скованность
+                </h1>
+                <p class="text-xl md:text-2xl font-light text-slate-100 tracking-wide">
+                    Мы понимаем природу боли и знаем, что с этим делать
+                </p>
+            </div>
+
+            <!-- Object 2 -->
+            <div id="hero-text-2" class="absolute max-w-4xl transition-all duration-1000 ease-out opacity-0 translate-y-8">
+                <h1 class="text-4xl md:text-6xl font-light text-white mb-4 tracking-wider uppercase drop-shadow-md">
+                    Глубокая проработка мышц
+                </h1>
+                <p class="text-xl md:text-2xl font-light text-slate-100 tracking-wide">
+                    Одной процедуры в неделю достаточно
+                </p>
+            </div>
+
+            <!-- Object 3 -->
+            <div id="hero-text-3" class="absolute max-w-4xl transition-all duration-1000 ease-out opacity-0 translate-y-8">
+                <h1 class="text-4xl md:text-6xl font-light text-white mb-4 tracking-wider uppercase drop-shadow-md">
+                    Верните радость движения
+                </h1>
+                <p class="text-xl md:text-2xl font-light text-slate-100 tracking-wide">
+                    Занимаемся миопрессурой, точечным, компрессионным массажом
+                </p>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- 3. Секция о Миопрессуре (Первая Reveal секция) -->
+    <section id="about" class="py-24 bg-white reveal-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase mb-2 block">Методика</span>
+                    <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-6">Что такое миопрессура?</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-light text-lg">
+                        Миопрессура — это метод глубокого воздействия на мышцы для устранения 
+                        <strong class="text-teal-700 font-medium">триггерных точек</strong>. 
+                        Это уплотнения в мышечной ткани, которые являются основной причиной хронической боли в спине, шее и конечностях.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed font-light text-lg">
+                        В отличие от классического массажа, мы не просто "разминаем" спину. Мы находим источник боли и механически разрушаем патологическое уплотнение, возвращая мышце её естественную длину и эластичность.
+                    </p>
+                </div>
+                <div class="order-1 md:order-2 relative">
+                    <div class="absolute -inset-4 bg-teal-50 rounded-3xl transform rotate-3 -z-10"></div>
+                    <img src="data/photo-1519824145371-296894a0daa9.jpg?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Trigger Point Therapy" 
+                         class="rounded-2xl shadow-xl w-full object-cover h-[400px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Секция Научная База -->
+    <section class="py-24 bg-slate-50 reveal-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-white rounded-3xl transform -rotate-2 -z-10 shadow-sm"></div>
+                    <img src="data/photo-1532938911079-1b06ac7ceec7.jpg?q=80&w=1932&auto=format&fit=crop" 
+                         alt="Medical Research" 
+                         class="rounded-2xl shadow-lg w-full object-cover h-[400px] grayscale-[20%]">
+                </div>
+                <div>
+                    <span class="text-teal-600 font-semibold tracking-wider text-sm uppercase mb-2 block">Основано на науке</span>
+                    <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-6">Доказательная медицина</h2>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-light text-lg">
+                        Метод опирается на фундаментальные исследования американских врачей 
+                        <strong class="text-slate-800 font-medium">Джанет Тревелл и Дэвида Симонса</strong>.
+                    </p>
+                    <p class="text-slate-600 leading-relaxed mb-6 font-light text-lg">
+                        Их труд «Миофасциальные боли и дисфункции» является «библией» для специалистов по лечению боли во всем мире. Мы используем карты отраженных болей, составленные этими учеными, чтобы точно определить источник вашей проблемы, даже если он находится далеко от места, где болит.
+                    </p>
+                    <div class="flex items-center gap-4 text-slate-500 text-sm">
+                        <div class="flex items-center gap-1">
+                            <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Анатомическая точность</span>
+                        </div>
+                        <div class="flex items-center gap-1">
+                            <svg class="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <span>Безопасность</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Секция Кабинет и Цены -->
+    <section id="cabinet" class="py-24 bg-white reveal-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-light text-slate-800 mb-4">Наш Кабинет</h2>
+                <p class="text-slate-500 text-lg font-light">Чистота, уют и профессиональное оборудование</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Фото 1 -->
+                <div class="h-80 rounded-2xl overflow-hidden shadow-sm group">
+                    <img src="data/photo-1512678080530-7760d81faba6.jpg?q=80&w=1974&auto=format&fit=crop" 
+                         alt="Cabinet Interior 1" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+                
+                <!-- Инфо-карточка -->
+                <div class="bg-teal-50 rounded-2xl p-8 flex flex-col justify-center items-center text-center shadow-inner border border-teal-100">
+                    <h3 class="text-xl font-semibold text-teal-900 mb-6">Калининград</h3>
+                    
+                    <div class="space-y-4 mb-8">
+                        <p class="text-slate-700 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            ул. Сергеева, д. 2
+                        </p>
+                        <p class="text-slate-700 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            Ежедневно: 09:00 - 21:00
+                        </p>
+                    </div>
+
+                    <div class="w-full bg-white rounded-xl py-4 px-6 shadow-sm">
+                        <p class="text-sm text-slate-400 uppercase tracking-wider mb-1">Стоимость сеанса</p>
+                        <p class="text-3xl font-bold text-slate-800">2500 ₽ <span class="text-lg font-normal text-slate-500">/ час</span></p>
+                    </div>
+                </div>
+
+                <!-- Фото 2 -->
+                <div class="h-80 rounded-2xl overflow-hidden shadow-sm group">
+                    <img src="data/photo-1512678080530-7760d81faba6.jpg?q=80&w=2074&auto=format&fit=crop" 
+                         alt="Cabinet Interior 2" 
+                         class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Секция Подробнее (Ссылки) -->
+    <section class="py-24 bg-slate-50 reveal-section">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Блок 1 -->
+                <a href="about.html" class="group block relative h-64 rounded-2xl overflow-hidden shadow-md cursor-pointer">
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/30 transition-colors z-10"></div>
+                    <img src="data/photo-1591343395082-e120087004b4.jpg?q=80&w=2071&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="About">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                        <h3 class="text-white text-xl font-medium flex justify-between items-center">
+                            О Миопрессуре
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </h3>
+                    </div>
+                </a>
+
+                <!-- Блок 2 -->
+                <a href="howithelps.html" class="group block relative h-64 rounded-2xl overflow-hidden shadow-md cursor-pointer">
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/30 transition-colors z-10"></div>
+                    <img src="data/photo-1576091160399-112ba8d25d1d.jpg?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Why it helps">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                        <h3 class="text-white text-xl font-medium flex justify-between items-center">
+                            Почему это помогает
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </h3>
+                    </div>
+                </a>
+
+                <!-- Блок 3 -->
+               <!-- Блок 2 -->
+                <a href="contraindications.html" class="group block relative h-64 rounded-2xl overflow-hidden shadow-md cursor-pointer">
+                    <div class="absolute inset-0 bg-slate-900/40 group-hover:bg-slate-900/30 transition-colors z-10"></div>
+                    <img src="data/photo-1581594693702-fbdc51b2763b.jpg?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Why it helps">
+                    <div class="absolute bottom-0 left-0 p-6 z-20 w-full">
+                        <h3 class="text-white text-xl font-medium flex justify-between items-center">
+                            Противопоказания
+                            <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </h3>
+                    </div>
+                </a>
+
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Футер -->
+    <footer class="bg-white border-t border-slate-100 py-16 reveal-section">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            
+            <h2 class="text-2xl md:text-3xl font-light text-slate-800 mb-6">
+                У вас резкая боль внизу спины, в шее, между лопатками, в пояснице?
+            </h2>
+            <p class="text-slate-500 mb-10 text-lg">
+                Напишите нам и мы сможем вам помочь вернуться к полноценной жизни.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-6 mb-16">
+                <a href="https://t.me/" class="flex items-center gap-3 bg-teal-500 hover:bg-teal-600 text-white px-8 py-4 rounded-full transition-all shadow-lg shadow-teal-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.486-.024.234.346.478.705.588.136.04.304.056.495.04.593-.05 1.583-.615 1.623-.62.04-.005.09.006.102.035.013.03-.008.083-.024.103-.122.152-.765.756-.994.996-.282.296-.51.587.054.95.53.34 1.079.684 1.638 1.05.352.23.704.39.932.135.21-.235.663-1.077.838-1.466.11-.246.216-.48.273-.675.057-.197.058-.33.04-.422-.018-.093-.06-.15-.125-.178-.232-.1-4.085-1.574-4.32-1.637z"/>
+                    </svg>
+                    <span class="font-medium">Написать в Telegram</span>
+                </a>
+                <a href="tel:+70000000000" class="flex items-center gap-3 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 px-8 py-4 rounded-full transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.686.686 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                    </svg>
+                    <span class="font-medium">+7 (900) 000-00-00</span>
+                </a>
+            </div>
+
+            <!-- Галерея футера -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 opacity-70">
+                <img src="data/photo-1542848284-8afa78a08ccb.jpg?q=80&w=1972&auto=format&fit=crop" class="rounded-lg h-32 w-full object-cover">
+                <img src="data/photo-1519823551278-64ac92734fb1.jpg?q=80&w=2070&auto=format&fit=crop" class="rounded-lg h-32 w-full object-cover">
+                <img src="data/photo-1600334129128-685c5582fd35.jpg?q=80&w=2070&auto=format&fit=crop" class="rounded-lg h-32 w-full object-cover">
+                <img src="data/photo-1515377905703-c4788e51af15.jpg?q=80&w=2070&auto=format&fit=crop" class="rounded-lg h-32 w-full object-cover">
+            </div>
+
+            <div class="mt-12 text-slate-400 text-sm font-light">
+                &copy; 2023 Миопрессура Калининград. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Скрипты -->
+    <script>
+        // --- 1. Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // --- 2. Hero Slider Logic ---
+        const totalSlides = 3;
+        let currentIndex = 0; // Starts at 0 (first slide visible)
+        const intervalTime = 2000; // 2 seconds as requested
+
+        function updateSlider() {
+            // Calculate next index
+            const nextIndex = (currentIndex + 1) % totalSlides;
+
+            // --- Backgrounds ---
+            // Current (fading out)
+            const currentBg = document.getElementById(`hero-bg-${currentIndex + 1}`);
+            currentBg.classList.remove('opacity-100');
+            currentBg.classList.add('opacity-0');
+
+            // Next (fading in)
+            const nextBg = document.getElementById(`hero-bg-${nextIndex + 1}`);
+            nextBg.classList.remove('opacity-0');
+            nextBg.classList.add('opacity-100');
+
+
+            // --- Text Objects ---
+            // Current Text (Exit: Fade out + keeping position or slight shift away if desired, 
+            // but CSS class 'translate-y-8' serves as the "start position" for entry.
+            // So we just remove the visible state.)
+            
+            const currentText = document.getElementById(`hero-text-${currentIndex + 1}`);
+            // Make it invisible and shifted down
+            currentText.classList.remove('opacity-100', 'translate-y-0');
+            currentText.classList.add('opacity-0', 'translate-y-8');
+
+            const nextText = document.getElementById(`hero-text-${nextIndex + 1}`);
+            // Make it visible and centered
+            nextText.classList.remove('opacity-0', 'translate-y-8');
+            nextText.classList.add('opacity-100', 'translate-y-0');
+
+            // Update index
+            currentIndex = nextIndex;
+        }
+
+        // Initialize: Ensure only the first one is visible (already handled by HTML classes)
+        // Start the loop
+        setInterval(updateSlider, intervalTime);
+
+
+        // --- 3. Scroll Animation Logic (Intersection Observer) ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15 // Trigger when 15% visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: Stop observing once revealed
+                        // observer.unobserve(entry.target); 
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.reveal-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
 </html>
