@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -5,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEREBRO AGENCY | Свадебный проект</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* ---------- Общие сбросы и переменные ---------- */
         * {
@@ -91,28 +91,6 @@
         .image-wrapper:hover .image-cover {
             transform: scale(1.02);
         }
-
-        .video-wrapper {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          pointer-events: none;  /* чтобы не перехватывать клики */
-          touch-action: auto;
-        }
-
-        video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          pointer-events: none;
-          touch-action: auto;
-          -webkit-touch-callout: none;
-          background: transparent;
-        }
-
 
         /* ---------- КОНТЕЙНЕРЫ СТРАНИЦ ---------- */
         .portfolio-container {
@@ -203,7 +181,7 @@
         .current-page-info {
             position: fixed;
             left: 30px;
-            top: 45px;
+            top: 30px;
             color: #1e1e1e;
             font-family: 'Montserrat', sans-serif;
             font-weight: 400;
@@ -236,7 +214,7 @@
         .page1-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px 50px;
+            padding: 80px 50px;
         }
         .page1-header {
             margin-bottom: 50px;
@@ -249,10 +227,10 @@
         }
         .page1-meta-info {
             display: grid;
-            padding-top:  40px;
-            padding-bottom:   20px;
             grid-template-columns: repeat(4, 1fr);
             gap: 25px;
+            margin-bottom: 40px;
+            padding: 0 10px;
         }
         .page1-meta-info div:last-child { text-align: right; }
         .page1-meta-info div:nth-child(2),
@@ -752,108 +730,9 @@
         .modal-close:hover {
             opacity: 0.5;
         }
-        /* ---------- ФИКСИРОВАННАЯ ШАПКА ---------- */
-        .site-header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            z-index: 1500;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-        }
-
-        .header-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 5px 30px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .logo {
-            font-family: 'Montserrat', serif;
-            font-weight: 300;
-            font-size: 24px;
-            letter-spacing: -0.5px;
-            color: #1e1e1e;
-            text-decoration: none;
-            white-space: nowrap;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 12px;
-            margin-left: 30px; /* отступ от логотипа */
-        }
-
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: #f0f0f0;
-            border-radius: 50%;
-            color: #1e1e1e;
-            font-size: 18px;
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .social-icon:hover {
-            background-color: #1e1e1e;
-            color: #ffffff;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-link {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 14px;
-            letter-spacing: 0.5px;
-            color: #1e1e1e;
-            text-decoration: none;
-            transition: opacity 0.2s;
-            white-space: nowrap;
-        }
-
-        .nav-link:hover {
-            opacity: 0.6;
-        }
-
-        /* Отступ для контента, чтобы не перекрывался шапкой */
-        .portfolio-container {
-            margin-top: 80px; /* подстройте под высоту шапки */
-        }
     </style>
 </head>
 <body>
-        <!-- Фиксированная шапка -->
-    <header class="site-header">
-        <div class="header-container">
-            <div style="display: flex; align-items: center;">
-                <span class="logo">SOYUZ-DECOR</span>
-                <div class="social-icons">
-                    <a href="#" class="social-icon" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-                    <a href="#" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="tel:+79991234567" class="social-icon" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
-                </div>
-            </div>
-            <nav class="nav-links">
-                <a href="#" class="nav-link">Свадьбы</a>
-                <a href="#" class="nav-link">Фасады</a>
-                <a href="#" class="nav-link">Информация</a>
-            </nav>
-        </div>
-    </header>
     <div class="progress-bar"></div>
     <div class="current-page-info">Страница 1/11</div>
 
@@ -875,66 +754,19 @@
         <!-- СТРАНИЦА 1 -->
         <section class="portfolio-page visible" id="page1">
             <div class="page1-wrapper">
-
-
-                <div class="page1-hero-image-container image-wrapper stagger-item">
-                    <!-- Видео с оверлеем -->
-                    <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
-                        <video
-                            id="bgVideo"
-                            class="image-cover"
-                            muted
-                            loop
-                            autoplay
-                            playsinline
-                            webkit-playsinline
-                            preload="auto"
-                            disablepictureinpicture
-                            controlslist="nodownload nofullscreen noremoteplayback"
-                            style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;"
-                        >
-                            <source src="https://softwareart.ru/videos/soyuz/vidSoyuz1.mp4" type="video/mp4">
-                        </video>
-                        <img src="https://softwareart.ru/videos/sdwhite.png" 
-                             style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80%; height: auto; pointer-events: none;"
-                             alt="Overlay">
-                    </div>
-
-                    <script>
-                    (function() {
-                        const video = document.getElementById('bgVideo');
-                        // Функция попытки воспроизведения
-                        function tryPlay() {
-                            if (!video.paused) return;
-                            var p = video.play();
-                            if (p && typeof p.then === 'function') {
-                                p.then(() => clearInterval(interval)).catch(() => {});
-                            }
-                        }
-                        // События загрузки
-                        video.addEventListener('loadeddata', tryPlay);
-                        video.addEventListener('canplay', tryPlay);
-                        video.addEventListener('canplaythrough', tryPlay);
-                        // Интервал для надёжности
-                        const interval = setInterval(() => { if (video.paused) tryPlay(); else clearInterval(interval); }, 200);
-                        // Повтор при возвращении на вкладку
-                        document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
-                        // Блокировка нежелательных действий
-                        var touchEvents = ['touchstart', 'touchmove', 'touchend', 'touchcancel'];
-                        touchEvents.forEach(evt => document.addEventListener(evt, e => {}, { passive: true, capture: true }));
-                        document.addEventListener('contextmenu', e => e.preventDefault());
-                        document.addEventListener('selectstart', e => e.preventDefault());
-                        video.addEventListener('dragstart', e => e.preventDefault());
-                    })();
-                    </script>
-                </div>
-
+                <header class="page1-header stagger-item">
+                    <h1 class="hero-title page1-title">SEREBRO AGENCY</h1>
+                </header>
 
                 <div class="page1-meta-info small-text stagger-item">
-                    <div>Свадебный декор</div>
-                    <div>Концепты</div>
-                    <div>Экспертиза</div>
-                    <div>Бизнес декор</div>
+                    <div>@serebro_agency</div>
+                    <div>@wedding_planner</div>
+                    <div>@beach_weddings</div>
+                    <div>#закатныедюны</div>
+                </div>
+
+                <div class="page1-hero-image-container image-wrapper stagger-item">
+                    <img src="images/8.jpg?auto=format&fit=crop&q=80&w=1500" alt="Свадебный проект на пляже" class="image-cover">
                 </div>
             </div>
         </section>
@@ -1432,3 +1264,4 @@
     </script>
 </body>
 </html>
+```
