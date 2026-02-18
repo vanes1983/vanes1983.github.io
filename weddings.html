@@ -44,6 +44,7 @@
             font-size: 25px;
             line-height: 1.3;
             letter-spacing: -0.3px;
+            padding-bottom: 10px;
             color: #1e1e1e;
         }
 
@@ -159,46 +160,7 @@
             }
         }
 
-        /* ---------- НАВИГАЦИЯ И ПРОГРЕСС ---------- */
-        .portfolio-navigation {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
 
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .nav-dot.active {
-            background-color: #1e1e1e;
-            transform: scale(1.1);
-        }
-
-        .nav-dot:hover {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #1e1e1e;
-            z-index: 1001;
-            transition: width 0.4s ease;
-        }
 
 
 
@@ -214,12 +176,158 @@
             flex-direction: column;
             gap: 6px;
         }
-
+        .page-photo-item {
+            position: relative;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            flex-grow: 1;
+            width: 100%;
+        }
+        .page-photo-item:hover {
+            transform: scale(1.02);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
         /* ---------- СПЕЦИФИЧЕСКАЯ ВЁРСТКА СТРАНИЦ ---------- */
+        /* ----------------------------------------------------------------------------------------Страница page-canvas-bigimage */
+        .page-bigimage-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 30px 100px;
+            display: flex;
+            flex-direction: column;
+        }
+        .page-bigimage-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        /* -----------------------------------------------------------------------------------------page-photos1 */
+        .page-photos1-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 0.8fr 1.4fr 0.6fr;
+            grid-template-rows: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .item-left-1 { grid-column: 1; grid-row: 1; }
+        .item-left-2 { grid-column: 1; grid-row: 2; }
+        .item-left-3 { grid-column: 1; grid-row: 3; }
+        .item-center { grid-column: 2; grid-row: 1 / span 3; }
+        .item-right-1 { grid-column: 3; grid-row: 1; }
+        .item-right-2 { grid-column: 3; grid-row: 2; }
+        .item-right-3 { grid-column: 3; grid-row: 3; }
+
+        /* -----------------------------------------------------------------------page-photos2---------------------*/
+
+        .page-photos2-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 0.5fr 0.3fr 0.4fr;
+            grid-template-rows: 1fr 0.5fr;
+            gap: 15px;
+        }
+
+        .page-photos2-main-photo { grid-column: 1; grid-row: 1/ span 2; }
+        .page-photos2-top-photo { grid-column: 2/ span 2; grid-row: 1; }
+        .page-photos2-middle-photo { grid-column: 2; grid-row: 2; }
+        .page-photos2-text-content { grid-column: 3; grid-row: 2; padding: 5px;
+           display: flex;
+            flex-direction: column; }
+
+        /* -----------------------------------------------------------------------page-photos3---------------------*/
+
+            .page-photos3-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 0.7fr 0.7fr 1fr;
+            grid-template-rows: 0.7fr 1fr 1.2fr;
+            gap: 15px;
+        }
+
+        .i1-item-1 { grid-column: 1/ span 2; grid-row: 1/ span 2; }
+        .i1-item-2 { grid-column: 1; grid-row: 3; }
+        .i1-item-3 { grid-column: 2; grid-row: 3; }
+        .i1-item-4 { grid-column: 3; grid-row: 1/ span 2; }
+        .i1-item-5 { grid-column: 3; grid-row: 3; }
+
+
+        /* -----------------------------------------------------------------------------------------page-photos4 */
+        .page-photos4-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 0.5fr 1.4fr;
+            grid-template-rows:  1.2fr 1fr;
+            gap: 15px;
+        }
+
+        .item-page-photos4-1 { grid-column: 1; grid-row: 1; }
+        .item-page-photos4-2 { grid-column: 1; grid-row: 2; }
+        .item-page-photos4-big-3 { grid-column: 2; grid-row: 1/ span 2; }
+        /* -----------------------------------------------------------------------------------------page-photos5 */
+        .page-photos5-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr  1fr;
+            grid-template-rows:  0.65fr 1fr ;
+            gap: 15px;
+        }
+
+        .item-page-photos5-1 { grid-column: 1; grid-row: 2; }
+        .item-page-photos5-2 { grid-column: 2; grid-row: 1 / span 2; }
+        .item-page-photos5-3 { grid-column: 3; grid-row: 1/ span 2; }
+        .item-page-photos5-text { grid-column: 1; grid-row:  1; }
+        /* -----------------------------------------------------------------------------------------page-photos6 */
+        .page-photos6-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr  1fr;
+            grid-template-rows:  0.65fr 1fr ;
+            gap: 15px;
+        }
+
+        .item-page-photos6-1 { grid-column: 1; grid-row: 1/ span 2; }
+        .item-page-photos6-2 { grid-column: 2; grid-row: 1 / span 2; }
+        .item-page-photos6-3 { grid-column: 3; grid-row: 1/ span 2; }
+        /* -----------------------------------------------------------------------------------------page-photos7 */
+        .page-photos7-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr  1fr;
+            grid-template-rows:  0.65fr 1fr ;
+            gap: 15px;
+        }
+
+        .item-page-photos7-1 { grid-column: 1; grid-row: 1/ span 2; }
+        .item-page-photos7-2 { grid-column: 2/ span 2; grid-row: 1 / span 2; }
+
 
         /* Страница 1 */
         .page1-wrapper {
-            max-width: 1200px;
+            max-width: 100%;
+            height: auto;
+            min-height: 720px;
             margin: 0 auto;
             padding: 20px 50px;
         }
@@ -250,7 +358,8 @@
         /* Страница 2 */
         .page2-artboard {
             width: 100%;
-            height: 720px;
+            height: auto;
+            min-height: 720px;
             background-color: #fcfcfc;
             position: relative;
             overflow: hidden;
@@ -483,59 +592,10 @@
             z-index: 10;
         }
 
-        /* Страница 7 */
-        .page7-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.8fr 1.4fr 0.6fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 15px;
-        }
-        .page7-photo-item {
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .page7-photo-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-        .item-left-1 { grid-column: 1; grid-row: 1; }
-        .item-left-2 { grid-column: 1; grid-row: 2; }
-        .item-left-3 { grid-column: 1; grid-row: 3; }
-        .item-center { grid-column: 2; grid-row: 1 / span 3; }
-        .item-right-1 { grid-column: 3; grid-row: 1; }
-        .item-right-2 { grid-column: 3; grid-row: 2; }
-        .item-right-3 { grid-column: 3; grid-row: 3; }
 
 
-        .page-images1-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.7fr 0.7fr 1fr;
-            grid-template-rows: 0.7fr 1fr 1.2fr;
-            gap: 15px;
-        }
-        .page-images1-photo-item {
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .page-images1-photo-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-        .i1-item-1 { grid-column: 1/ span 2; grid-row: 1/ span 2; }
-        .i1-item-2 { grid-column: 1; grid-row: 3; }
-        .i1-item-3 { grid-column: 2; grid-row: 3; }
-        .i1-item-4 { grid-column: 3; grid-row: 1/ span 2; }
-        .i1-item-5 { grid-column: 3; grid-row: 3; }
+
+
 
 
 
@@ -565,24 +625,7 @@
             gap: 40px;
         }
 
-        /* Страница 9 */
-        .page9-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fcfcfc;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 500px 300px 400px;
-            grid-template-rows: 400px 250px;
-            gap: 15px;
-            position: relative;
-        }
-                .page9-main-photo { grid-column: 1; grid-row: 1/ span 2; }
-        .page9-top-photo { grid-column: 2/ span 2; grid-row: 1; }
-        .page9-middle-photo { grid-column: 2; grid-row: 2; }
-        .page9-text-content { grid-column: 3; grid-row: 2; padding: 5px;
-            display: flex;
-            flex-direction: column; }
+
 
 
 
@@ -630,30 +673,8 @@
             gap: 70px;
         }
 
-        /* Страница 11 */
-        .page11-canvas {
-            width: 100%;
-            height: 720px;
-            background-color: #fcfcfc;
-            padding: 30px 100px;
-            display: flex;
-            flex-direction: column;
-        }
-        .page11-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .page11-info-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-            padding-bottom: 20px;
-        }
-        .page11-image-container {
-            flex-grow: 1;
-            width: 100%;
-        }
+
+
 
         /* Страница 6 (сетка) */
         .page12-canvas {
@@ -784,7 +805,7 @@
         }
 
         .header-container {
-            max-width: 1280px;
+            width: 100%;
             margin: 0 auto;
             padding: 5px 30px;
             display: flex;
@@ -872,25 +893,16 @@
             </nav>
         </div>
     </header>
-    <div class="progress-bar"></div>
 
-    <div class="portfolio-navigation">
-        <div class="nav-dot active" data-page="1"></div>
-        <div class="nav-dot" data-page="2"></div>
-        <div class="nav-dot" data-page="3"></div>
-        <div class="nav-dot" data-page="4"></div>
-        <div class="nav-dot" data-page="5"></div>
-        <div class="nav-dot" data-page="6"></div>
-    </div>
 
     <div class="portfolio-container">
         <!-- SIMPLY CAN BE SPECIAL -->
-        <section class="portfolio-page" id="page11">
-            <div class="page11-canvas">
-                <header class="page11-header stagger-item">
+        <section class="portfolio-page">
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
                     <h1 class="hero-title">SIMPLY CAN BE SPECIAL</h1>
                 </header>
-                <div class="page11-image-container image-wrapper stagger-item">
+                <div class="page-photo-item image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
                 </div>
             </div>
@@ -898,27 +910,27 @@
 
 
 
-        <section class="portfolio-page" id="page7">
-            <div class="page7-canvas">
-                <div class="page7-photo-item item-left-1 image-wrapper stagger-item">
+        <section class="portfolio-page" >
+            <div class="page-photos1-canvas">
+                <div class="page-photo-item item-left-1 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-left-2 image-wrapper stagger-item">
+                <div class="page-photo-item item-left-2 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/a2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-left-3 image-wrapper stagger-item">
+                <div class="page-photo-item item-left-3 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/a7.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-center image-wrapper stagger-item">
+                <div class="page-photo-item item-center image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/2.jpg?auto=format&fit=crop" alt="Main Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-1 image-wrapper stagger-item">
+                <div class="page-photo-item item-right-1 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/a3.jpg?auto=format&fit=crop" alt="Nature" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-2 image-wrapper stagger-item">
+                <div class="page-photo-item item-right-2 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/a4.jpg?auto=format&fit=crop" alt="Group" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-3 image-wrapper stagger-item">
+                <div class="page-photo-item item-right-3 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SIMPLYCANBESPECIAL/a5.jpg?auto=format&fit=crop" alt="Portrait Style" class="image-cover">
                 </div>
             </div>
@@ -927,67 +939,494 @@
         <!-- SUN & LOVE DISTRICT -->
 
 
-        <section class="portfolio-page" id="page11">
-            <div class="page11-canvas">
-                <header class="page11-header stagger-item">
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
                     <h1 class="hero-title">SUN & LOVE DISTRICT</h1>
                 </header>
-                <div class="page11-image-container image-wrapper stagger-item">
+                <div class="page-photo-item image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
                 </div>
             </div>
         </section>
 
 
-        <section class="portfolio-page" id="page9">
-            <div class="page9-canvas">
-                <div class="page9-image-box page9-main-photo image-wrapper stagger-item">
+        <section class="portfolio-page" >
+            <div class="page-photos2-canvas">
+                <div class="page-photo-item page-photos2-main-photo image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a2.jpg?auto=format&fit=crop&q=80&w=800" alt="Невеста на пляже" class="image-cover">
                 </div>
 
-                <div class="page9-image-box page9-top-photo image-wrapper stagger-item">
+                <div class="page-photo-item page-photos2-top-photo image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/2.jpg?auto=format&fit=crop&q=80&w=1000" alt="Свадебная церемония" class="image-cover">
                 </div>
 
-                <div class="page9-image-box page9-middle-photo image-wrapper stagger-item">
+                <div class="page-photo-item page-photos2-middle-photo image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a5.jpg?auto=format&fit=crop&q=80&w=600" alt="Детали оформления" class="image-cover">
                 </div>
 
-                <div class="page9-text-content stagger-item">
+                <div class="page-photos2-text-content stagger-item">
                     <h2 class="section-title">Детали концепции</h2>
-                    <p class="body-text page9-description">
+                    <p class="body-text">
                         Флористика включает сухоцветы, морские травы и песчаные кактусы. Музыкальное сопровождение — живой акустический сет с элементами звуков моря. Для гостей подготовлены индивидуальные наборы с эко-косметикой на основе морских минералов и картой местности с маршрутами прогулок по дюнам.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="portfolio-page" id="page-images1">
-            <div class="page-images1-canvas">
-                <div class="page-images1-photo-item i1-item-1 image-wrapper stagger-item">
+        <section class="portfolio-page" >
+            <div class="page-photos3-canvas">
+                <div class="page-photo-item i1-item-1 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page-images1-photo-item i1-item-2 image-wrapper stagger-item">
+                <div class="page-photo-item i1-item-2 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page-images1-photo-item i1-item-3 image-wrapper stagger-item">
+                <div class="page-photo-item i1-item-3 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page-images1-photo-item i1-item-4 image-wrapper stagger-item">
+                <div class="page-photo-item i1-item-4 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a4.jpg?auto=format&fit=crop" alt="Main Portrait" class="image-cover">
                 </div>
-                <div class="page-images1-photo-item i1-item-5 image-wrapper stagger-item">
+                <div class="page-photo-item i1-item-5 image-wrapper stagger-item">
                     <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a5.jpg?auto=format&fit=crop" alt="Nature" class="image-cover">
                 </div>
 
         </section>
+
+        <!-- FOREST SYMPHONY -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">FOREST SYMPHONY</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/FORESTSYMPHONY/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos4-canvas">
+                <div class="page-photo-item item-page-photos4-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/FORESTSYMPHONY/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos4-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/FORESTSYMPHONY/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos4-big-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/FORESTSYMPHONY/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+
+
+        </section>
+
+
+        <!-- КРАСНАЯ ГОРКА -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">КРАСНАЯ ГОРКА</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/REDHILL/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos5-canvas">
+                <div class="page-photo-item item-page-photos5-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/REDHILL/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos5-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/REDHILL/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos5-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/REDHILL/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="item-page-photos5-text stagger-item">
+                    <h2 class="section-title">Детали концепции</h2>
+                    <p class="body-text">
+                        Флористика включает сухоцветы, морские травы и песчаные кактусы. Музыкальное сопровождение — живой акустический сет с элементами звуков моря. Для гостей подготовлены индивидуальные наборы с эко-косметикой на основе морских минералов и картой местности с маршрутами прогулок по дюнам.
+                    </p>
+                </div>
+
+        </section>
+        <!-- ТЕПЛЫЕ ВОСПОМИНАНИЯ -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ТЕПЛЫЕ ВОСПОМИНАНИЯ</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WARMMEMS/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos4-canvas">
+                <div class="page-photo-item item-page-photos4-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WARMMEMS/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos4-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WARMMEMS/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos4-big-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WARMMEMS/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+                <!-- ПЕРЕСПИМ -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ПЕРЕСПИМ?</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LETSSLEEP/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LETSSLEEP/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LETSSLEEP/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LETSSLEEP/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+ <!-- МЕНЬШЕ СЕРЬЕЗНОСТИ -->
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">МЕНЬШЕ СЕРЬЕЗНОСТИ</h1>
+                </header>
+                <div  style="display: flex; gap: 50px; flex: 1;">
+                    <div class="page-photo-item image-wrapper stagger-item">
+                        <img src="piscSoyuz/weddings/LESSSERIOUS/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                    </div>
+                    <div class="page-photo-item image-wrapper stagger-item">
+                        <img src="piscSoyuz/weddings/LESSSERIOUS/2.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LESSSERIOUS/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LESSSERIOUS/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/LESSSERIOUS/5.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+                <!-- WEDDING DINNER -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">WEDDING DINNER</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WEDDINNER/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WEDDINNER/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WEDDINNER/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/WEDDINNER/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+                <!-- УСАДЬБА -->
+
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">УСАДЬБА</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos7-canvas">
+                <div class="page-photo-item item-page-photos7-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos7-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/5.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/USADBA/6.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+        <!-- МУРАШКИ -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">МУРАШКИ</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/MURASHKI/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/MURASHKI/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/MURASHKI/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/MURASHKI/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+        <!-- КРИСТАЛЬНО ЧЕСТНО -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">КРИСТАЛЬНО ЧЕСТНО</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/CRYSTALCLEAN/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/CRYSTALCLEAN/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/CRYSTALCLEAN/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/CRYSTALCLEAN/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+        <!-- ФИЛИПП -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ФИЛИПП</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+        <!-- СЕНЕШАЛЬ -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">СЕНЕШАЛЬ</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos7-canvas">
+                <div class="page-photo-item item-page-photos7-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos7-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/5.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/SENSHAL/6.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+        <!-- ВИЛЛА РОТОНДА -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ВИЛЛА РОТОНДА</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/VILLAROTONDA/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/VILLAROTONDA/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/VILLAROTONDA/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/VILLAROTONDA/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+        <!-- ХАЙД -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ХАЙД</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/HAID/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+        <section class="portfolio-page" >
+            <div class="page-photos7-canvas">
+                <div class="page-photo-item item-page-photos7-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/HAID/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos7-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/HAID/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+
+        </section>
+        <!-- ДАГЕСТАН -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ДАГЕСТАН</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/DAGESTAN/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/DAGESTAN/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/DAGESTAN/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/DAGESTAN/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+
+        <!-- филип2 -->
+
+        <section class="portfolio-page" >
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ПАРК ОТЕЛЬ ФИЛИПП</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP2/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page" >
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP2/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP2/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/weddings/PHILIPP2/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+        </section>
+
+
+
     </div>
     <script>
         // Функция для анимации появления элементов при скроллинге
         function animateOnScroll() {
             const pages = document.querySelectorAll('.portfolio-page');
-            const progressBar = document.querySelector('.progress-bar');
-            const navDots = document.querySelectorAll('.nav-dot');
            
             // Функция для проверки видимости элемента
             function isElementInViewport(el) {
@@ -1006,11 +1445,7 @@
                     if (isElementInViewport(page)) {
                         page.classList.add('visible');
                         visiblePageIndex = index;
-                       
-                        // Обновляем активную точку навигации
-                        navDots.forEach(dot => dot.classList.remove('active'));
-                        navDots[index].classList.add('active');
-                       
+                                              
                     }
                 });
                
@@ -1018,7 +1453,6 @@
                 const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                 const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
                 const scrollPercent = (scrollTop / scrollHeight) * 100;
-                progressBar.style.width = scrollPercent + '%';
             }
            
             // Инициализация при загрузке
@@ -1028,17 +1462,7 @@
             window.addEventListener('scroll', updateVisibleElements);
             window.addEventListener('resize', updateVisibleElements);
            
-            // Навигация по точкам
-            navDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    const targetPage = pages[index];
-                    targetPage.scrollIntoView({ behavior: 'smooth' });
-                   
-                    // Обновляем активную точку
-                    navDots.forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-                });
-            });
+
            
             // Добавляем задержку для элементов внутри страниц
             const staggerItems = document.querySelectorAll('.stagger-item');
