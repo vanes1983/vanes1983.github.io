@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>СОЮЗ-ДЕКОР</title>
+    <title>СОЮЗ ДЕКОР</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -200,6 +200,22 @@
             transition: width 0.4s ease;
         }
 
+        .current-page-info {
+            position: fixed;
+            left: 30px;
+            top: 45px;
+            color: #1e1e1e;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 11px;
+            letter-spacing: 1.2px;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 8px 12px;
+            border-radius: 4px;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
 
         /* ---------- УНИВЕРСАЛЬНЫЕ КОМПОНЕНТЫ ---------- */
         .meta-grid {
@@ -839,6 +855,7 @@
         </div>
     </header>
     <div class="progress-bar"></div>
+    <div class="current-page-info">Страница 1/11</div>
 
     <div class="portfolio-navigation">
         <div class="nav-dot active" data-page="1"></div>
@@ -925,11 +942,13 @@
     </div>
 
 
+
     <script>
         // Функция для анимации появления элементов при скроллинге
         function animateOnScroll() {
             const pages = document.querySelectorAll('.portfolio-page');
             const progressBar = document.querySelector('.progress-bar');
+            const currentPageInfo = document.querySelector('.current-page-info');
             const navDots = document.querySelectorAll('.nav-dot');
            
             // Функция для проверки видимости элемента
@@ -954,6 +973,8 @@
                         navDots.forEach(dot => dot.classList.remove('active'));
                         navDots[index].classList.add('active');
                        
+                        // Обновляем информацию о текущей странице
+                        currentPageInfo.textContent = `Страница ${index + 1}/11`;
                     }
                 });
                
