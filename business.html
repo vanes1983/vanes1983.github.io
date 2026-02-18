@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* ---------- Общие сбросы и переменные ---------- */
+        /* ---------- Общие сбросы ---------- */
         * {
             margin: 0;
             padding: 0;
@@ -28,7 +28,7 @@
             position: relative;
         }
 
-        /* ---------- УНИВЕРСАЛЬНЫЕ ТИПОГРАФИЧЕСКИЕ КЛАССЫ ---------- */
+        /* ---------- ТИПОГРАФИКА ---------- */
         .hero-title {
             font-family: 'Montserrat', serif;
             font-weight: 300;
@@ -45,12 +45,14 @@
             letter-spacing: -1px;
             color: #1e1e1e;
         }
+
         .section-title {
             font-family: 'Montserrat', serif;
             font-weight: 400;
             font-size: 25px;
             line-height: 1.3;
             letter-spacing: -0.3px;
+            padding-bottom: 10px;
             color: #1e1e1e;
         }
 
@@ -79,7 +81,7 @@
             color: #5a5a5a;
         }
 
-        /* ---------- УНИВЕРСАЛЬНЫЕ КЛАССЫ ДЛЯ ИЗОБРАЖЕНИЙ ---------- */
+        /* ---------- ИЗОБРАЖЕНИЯ ---------- */
         .image-wrapper {
             overflow: hidden;
             border-radius: 8px;
@@ -100,31 +102,31 @@
         }
 
         .video-wrapper {
-          position: relative;
-          width: 100%;
-          height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          pointer-events: none;  /* чтобы не перехватывать клики */
-          touch-action: auto;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            touch-action: auto;
         }
 
         video {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          pointer-events: none;
-          touch-action: auto;
-          -webkit-touch-callout: none;
-          background: transparent;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            touch-action: auto;
+            -webkit-touch-callout: none;
+            background: transparent;
         }
 
-
-        /* ---------- КОНТЕЙНЕРЫ СТРАНИЦ ---------- */
+        /* ---------- КОНТЕЙНЕРЫ ПОРТФОЛИО ---------- */
         .portfolio-container {
             width: 100%;
             position: relative;
+            margin-top: 80px; /* под шапку */
         }
 
         .portfolio-page {
@@ -144,7 +146,7 @@
             transform: translateY(0);
         }
 
-        /* Анимация появления элементов */
+        /* Анимация появления */
         .portfolio-page.visible .stagger-item {
             animation: fadeInUp 1s ease forwards;
         }
@@ -166,359 +168,43 @@
             }
         }
 
-        /* ---------- НАВИГАЦИЯ И ПРОГРЕСС ---------- */
-        .portfolio-navigation {
-            position: fixed;
-            right: 30px;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 1000;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .nav-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            background-color: rgba(0, 0, 0, 0.15);
-            cursor: pointer;
-            transition: all 0.4s ease;
-        }
-
-        .nav-dot.active {
-            background-color: #1e1e1e;
-            transform: scale(1.1);
-        }
-
-        .nav-dot:hover {
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background-color: #1e1e1e;
-            z-index: 1001;
-            transition: width 0.4s ease;
-        }
-
-
-
-        /* ---------- УНИВЕРСАЛЬНЫЕ КОМПОНЕНТЫ ---------- */
-        .meta-grid {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .meta-item {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-        }
-
-        /* ---------- СПЕЦИФИЧЕСКАЯ ВЁРСТКА СТРАНИЦ ---------- */
-        .page1-subtitle {
-            text-align: center;
-            padding-top: 20px;
-            padding-bottom: 15px;
-        }
-        /* Страница 1 */
-        .page1-wrapper {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px 50px;
-        }
-        .page1-header {
-            margin-bottom: 50px;
-        }
-        .page1-title {
-            text-align: center;
-            margin-bottom: 50px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            padding-bottom: 25px;
-        }
-        .page1-meta-info {
-            display: grid;
-            padding-top:  40px;
-            padding-bottom:   20px;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 25px;
-        }
-        .page1-meta-info div:last-child { text-align: right; }
-        .page1-meta-info div:nth-child(2),
-        .page1-meta-info div:nth-child(3) { text-align: center; }
-        .page1-hero-image-container {
-            width: 100%;
-            height: 65vh;
-        }
-
-        /* Страница 2 */
-        .page2-artboard {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
+        /* ---------- КОМПОНЕНТЫ СТРАНИЦ ---------- */
+        .page-photo-item {
             position: relative;
-            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            flex-grow: 1;
+            width: 100%;
         }
-        .page2-image-area {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 60%;
-            height: 100%;
-            border-radius: 0 8px 8px 0;
-        }
-        .page2-hero-title {
-            position: absolute;
-            right: 13%;
-            top: 7%;
+        .page-photo-item:hover {
+            transform: scale(1.02);
             z-index: 10;
-            white-space: nowrap;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
-        .page2-content-area {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 45%;
-            height: 100%;
-            padding: 80px 100px;
+
+        /* Страница bigimage */
+        .page-bigimage-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 30px 100px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
         }
-        .page2-meta-tag {
-            margin-bottom: auto;
-            text-align: right;
-        }
-        .page2-description {
-            width: 340px;
-            margin-left: auto;
-            margin-top: 160px;
-        }
-        .page2-details-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 140px;
-            border-top: 1px solid rgba(0,0,0,0.05);
-            padding-top: 30px;
-            margin-top: auto;
-        }
-
-        /* Дополнительная ссылка "ЕЩЕ" на странице 2 */
-        .more-link {
-            display: inline-block;
-            margin-top: 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 400;
-            font-size: 12px;
-            letter-spacing: 1.5px;
-            color: #1e1e1e;
-            border-bottom: 1px solid currentColor;
-            cursor: pointer;
-            transition: opacity 0.3s;
-            align-self: flex-start;
-        }
-        .more-link:hover {
-            opacity: 0.6;
-        }
-
-        /* Страница 3 */
-        .page3-title {
+        .page-bigimage-header {
             text-align: center;
             margin-bottom: 30px;
-            padding-bottom: 25px;
         }
 
-        .page3-canvas {
+        /* Страница photos1 */
+        .page-photos1-canvas {
             width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 80px 100px;
-            display: flex;
-            flex-direction: column;
-        }
-        .page3-projects-container {
-            display: flex;
-            gap: 50px;
-            flex: 1;
-        }
-        .page3-project-card {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .page3-image-wrapper {
-            width: 100%;
-            height: 360px;
-            margin-bottom: 30px;
-        }
-        .page3-metadata {
-            display: flex;
-            gap: 40px;
-        }
-
-        /* Страница 4 */
-        .page4-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            position: relative;
-            overflow: hidden;
-            display: flex;
-        }
-        .page4-content-side {
-            width: 58%;
-            height: 100%;
-            padding: 80px 0 80px 100px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            z-index: 2;
-        }
-        .page4-main-title {
-            position: absolute;
-            top: 130px;
-            left: 100px;
-            width: 900px;
-            pointer-events: none;
-        }
-        .page4-description-block {
-            max-width: 420px;
-            margin-top: 300px;
-        }
-        .page4-description-text {
-            margin-bottom: 30px;
-        }
-        .page4-metadata {
-            display: flex;
-            gap: 100px;
-        }
-        .page4-image-side {
-            width: 42%;
-            height: 100%;
-            position: relative;
-        }
-        .page4-hero-image {
-            border-radius: 8px 0 0 8px;
-            box-shadow: -4px 0 12px rgba(0,0,0,0.03);
-        }
-
-        /* Страница 5 */
-        .page5-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            position: relative;
-            overflow: hidden;
-        }
-        .page5-header-label {
-            position: absolute;
-            top: 50px;
-            left: 100px;
-        }
-        .page5-main-title {
-            position: absolute;
-            top: 75px;
-            left: 200px;
-            z-index: 10;
-            pointer-events: none;
-        }
-        .page5-image-top-right {
-            position: absolute;
-            top: 50px;
-            right: 50px;
-            width: 620px;
-            height: 340px;
-        }
-        .page5-image-bottom-left {
-            position: absolute;
-            bottom: 50px;
-            left: 100px;
-            width: 580px;
-            height: 400px;
-        }
-        .page5-description {
-            position: absolute;
-            top: 420px;
-            left: 800px;
-            width: 400px;
-        }
-        .page5-description p {
-            margin-bottom: 50px;
-        }
-        .page5-meta-data {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            width: 100%;
-            border-top: 1px solid rgba(0,0,0,0.03);
-            padding-top: 5px;
-        }
-
-        /* Страница 6 (сетка) */
-        .page6-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr 1.1fr;
-            grid-template-rows: 1fr 1.3fr;
-            gap: 15px;
-            grid-template-areas: 
-                "top-left center-tall right-tall"
-                "bottom-left center-bottom right-tall";
-        }
-        .item-1 { grid-area: top-left; }
-        .item-2 { grid-area: bottom-left; }
-        .item-3 { grid-area: center-tall; }
-        .item-4 { grid-area: center-bottom; }
-        .item-5 { grid-area: right-tall; }
-        .page6-grid-item {
-            position: relative;
-        }
-        .page6-label {
-            position: absolute;
-            bottom: 20px;
-            right: 25px;
-            color: #ffffff;
-            background: rgba(30,30,30,0.7);
-            padding: 6px 12px;
-            border-radius: 4px;
-            backdrop-filter: blur(4px);
-            z-index: 10;
-        }
-
-        /* Страница 7 */
-        .page7-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
+            height: 720px;
             background-color: #fcfcfc;
             padding: 25px;
             display: grid;
             grid-template-columns: 0.8fr 1.4fr 0.6fr;
             grid-template-rows: repeat(3, 1fr);
             gap: 15px;
-        }
-        .page7-photo-item {
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .page7-photo-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
         .item-left-1 { grid-column: 1; grid-row: 1; }
         .item-left-2 { grid-column: 1; grid-row: 2; }
@@ -528,11 +214,26 @@
         .item-right-2 { grid-column: 3; grid-row: 2; }
         .item-right-3 { grid-column: 3; grid-row: 3; }
 
-
-        .page-images1-canvas {
+        /* Страница photos2 */
+        .page-photos2-canvas {
             width: 100%;
-            height: auto;
-            min-height: 720px;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 0.5fr 0.3fr 0.4fr;
+            grid-template-rows: 1fr 0.5fr;
+            gap: 15px;
+        }
+        .page-photos2-main-photo { grid-column: 1; grid-row: 1/ span 2; }
+        .page-photos2-top-photo { grid-column: 2/ span 2; grid-row: 1; }
+        .page-photos2-middle-photo { grid-column: 2; grid-row: 2; }
+        .page-photos2-text-content { grid-column: 3; grid-row: 2; padding: 5px; display: flex; flex-direction: column; }
+
+        /* Страница photos3 */
+        .page-photos3-canvas {
+            width: 100%;
+            height: 720px;
             background-color: #fcfcfc;
             padding: 25px;
             display: grid;
@@ -540,260 +241,73 @@
             grid-template-rows: 0.7fr 1fr 1.2fr;
             gap: 15px;
         }
-        .page-images1-photo-item {
-            position: relative;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .page-images1-photo-item:hover {
-            transform: scale(1.02);
-            z-index: 10;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
         .i1-item-1 { grid-column: 1/ span 2; grid-row: 1/ span 2; }
         .i1-item-2 { grid-column: 1; grid-row: 3; }
         .i1-item-3 { grid-column: 2; grid-row: 3; }
         .i1-item-4 { grid-column: 3; grid-row: 1/ span 2; }
         .i1-item-5 { grid-column: 3; grid-row: 3; }
 
-
-
-        /* Страница 8 */
-        .page8-container {
-            display: flex;
+        /* Страница photos4 */
+        .page-photos4-canvas {
             width: 100%;
-            height: auto;
-            min-height: 720px;
-            gap: 70px;
-            padding: 80px;
-            background-color: #fcfcfc;
-        }
-        .page8-gallery {
-            display: flex;
-            gap: 25px;
-            flex: 2;
-        }
-        .page8-gallery-item {
-            flex: 1;
-            aspect-ratio: 2 / 5;
-        }
-        .page8-info-panel {
-            flex: 1;
-            padding-bottom: 50px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-
-        /* Страница 9 */
-        .page9-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 30px;
-            display: grid;
-            grid-template-columns: 500px 300px 400px;
-            grid-template-rows: 400px 250px;
-            gap: 15px;
-            position: relative;
-        }
-                .page9-main-photo { grid-column: 1; grid-row: 1/ span 2; }
-        .page9-top-photo { grid-column: 2/ span 2; grid-row: 1; }
-        .page9-middle-photo { grid-column: 2; grid-row: 2; }
-        .page9-text-content { grid-column: 3; grid-row: 2; padding: 5px;
-            display: flex;
-            flex-direction: column; }
-
-
-
-
-        /* Страница 10 */
-        .page10-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 80px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .page10-image-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            margin-bottom: 50px;
-        }
-        .page10-image-container {
-            aspect-ratio: 3/4;
-        }
-        .page10-content-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            margin-bottom: 80px;
-        }
-        .page10-text-block h2 {
-            margin-bottom: 20px;
-        }
-        .page10-text-block p {
-            text-align: justify;
-        }
-        .page10-metadata-footer {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            border-top: 1px solid rgba(0,0,0,0.03);
-            padding-top: 30px;
-        }
-        .page10-meta-group {
-            display: flex;
-            gap: 70px;
-        }
-
-        /* Страница 11 */
-        .page11-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 30px 100px;
-            display: flex;
-            flex-direction: column;
-        }
-        .page11-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .page11-info-bar {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 25px;
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-            padding-bottom: 20px;
-        }
-        .page11-image-container {
-            flex-grow: 1;
-            width: 100%;
-        }
-
-        /* Страница 6 (сетка) */
-        .page12-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
+            height: 720px;
             background-color: #fcfcfc;
             padding: 25px;
             display: grid;
-            grid-template-columns: 1.2fr 1.1fr 0.8fr ;
-            grid-template-rows: 1fr 1.3fr;
+            grid-template-columns: 0.5fr 1.4fr;
+            grid-template-rows: 1.2fr 1fr;
             gap: 15px;
-            grid-template-areas: 
-                "top-left center-tall right-tall"
-                "bottom-left center-bottom right-tall";
         }
-        .item-1 { grid-column: 1; grid-row: 1; }
-        .item-2 { grid-column: 1; grid-row: 2; }
-        .item-3 { grid-column: 2; grid-row: 1 / span 2; }
-        .item-4 { grid-column: 3; grid-row: 1; }
-        .item-5 { grid-column: 3; grid-row: 2; }
-        .page12-grid-item {
-            position: relative;
-        }
-        .page12-label {
-            position: absolute;
-            bottom: 20px;
-            right: 25px;
-            color: #ffffff;
-            background: rgba(30,30,30,0.7);
-            padding: 6px 12px;
-            border-radius: 4px;
-            backdrop-filter: blur(4px);
-            z-index: 10;
-        }
+        .item-page-photos4-1 { grid-column: 1; grid-row: 1; }
+        .item-page-photos4-2 { grid-column: 1; grid-row: 2; }
+        .item-page-photos4-big-3 { grid-column: 2; grid-row: 1/ span 2; }
 
-
-        /* ---------- МОДАЛЬНОЕ ОКНО (фрейм с фото) ---------- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Страница photos5 */
+        .page-photos5-canvas {
             width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            backdrop-filter: blur(4px);
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.65fr 1fr;
+            gap: 15px;
         }
+        .item-page-photos5-1 { grid-column: 1; grid-row: 2; }
+        .item-page-photos5-2 { grid-column: 2; grid-row: 1 / span 2; }
+        .item-page-photos5-3 { grid-column: 3; grid-row: 1/ span 2; }
+        .item-page-photos5-text { grid-column: 1; grid-row: 1; }
 
-        .modal-container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            height: 90vh;           /* фиксированная высота экрана */
-            overflow: hidden;        /* скрываем всё, что выходит за пределы */
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-grid {
-            display: flex;
-            gap: 20px;
-            flex: 1;                /* занимает всю доступную высоту контейнера */
-            min-height: 0;           /* важно для корректного сжатия */
-        }
-
-        .modal-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-height: 0;           /* позволяет дочерним элементам сжиматься */
-        }
-
-        .modal-column.center {
-            flex: 1.5;                /* центральная колонка шире */
-        }
-
-        .modal-photo {
-            flex: 1 1 0;              /* каждый фото-контейнер занимает равную долю */
-            min-height: 0;             /* важно для сжатия */
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            overflow: hidden;          /* скрываем части изображения, выходящие за пределы */
-        }
-
-        .modal-photo img {
+        /* Страница photos6 */
+        .page-photos6-canvas {
             width: 100%;
-            height: 100%;
-            object-fit: cover;       /* фото полностью заполняет рамку, возможно обрезаясь */
-            object-position: center;  /* центрируем */
-            display: block;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.65fr 1fr;
+            gap: 15px;
         }
+        .item-page-photos6-1 { grid-column: 1; grid-row: 1/ span 2; }
+        .item-page-photos6-2 { grid-column: 2; grid-row: 1 / span 2; }
+        .item-page-photos6-3 { grid-column: 3; grid-row: 1/ span 2; }
 
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 32px;
-            line-height: 1;
-            cursor: pointer;
-            color: #1e1e1e;
-            transition: opacity 0.2s;
-            z-index: 10;
+        /* Страница photos7 */
+        .page-photos7-canvas {
+            width: 100%;
+            height: 720px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 0.65fr 1fr;
+            gap: 15px;
         }
-        .modal-close:hover {
-            opacity: 0.5;
-        }
-        /* ---------- ФИКСИРОВАННАЯ ШАПКА ---------- */
+        .item-page-photos7-1 { grid-column: 1; grid-row: 1/ span 2; }
+        .item-page-photos7-2 { grid-column: 2/ span 2; grid-row: 1 / span 2; }
+
+        /* ---------- ШАПКА ---------- */
         .site-header {
             position: fixed;
             top: 0;
@@ -807,7 +321,7 @@
         }
 
         .header-container {
-            max-width: 1280px;
+            width: 100%;
             margin: 0 auto;
             padding: 5px 30px;
             display: flex;
@@ -828,7 +342,7 @@
         .social-icons {
             display: flex;
             gap: 12px;
-            margin-left: 30px; /* отступ от логотипа */
+            margin-left: 30px;
         }
 
         .social-icon {
@@ -870,18 +384,61 @@
             opacity: 0.6;
         }
 
-        /* Отступ для контента, чтобы не перекрывался шапкой */
-        .portfolio-container {
-            margin-top: 80px; /* подстройте под высоту шапки */
+        /* ---------- ПОДВАЛ ---------- */
+        .site-footer {
+            width: 100%;
+            background-color: #ffffff;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding: 30px 0;
+            margin-top: 40px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.02);
+        }
+
+        .footer-container {
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-left .logo {
+            font-size: 24px;
+            margin-left: 0;
+        }
+
+        .footer-center {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            font-size: 14px;
+            color: #4a4a4a;
+            letter-spacing: 0.3px;
+        }
+
+        .footer-right .social-icons {
+            margin-left: 0;
+        }
+
+        /* Отзывчивость для футера */
+        @media (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .footer-right .social-icons {
+                justify-content: center;
+            }
         }
     </style>
 </head>
 <body>
-        <!-- Фиксированная шапка -->
+    <!-- Фиксированная шапка -->
     <header class="site-header">
         <div class="header-container">
             <div style="display: flex; align-items: center;">
-                <a class="logo" href="index.html" >SOYUZ-DECOR</a>
+                <a class="logo" href="index.html">SOYUZ-DECOR</a>
                 <div class="social-icons">
                     <a href="#" class="social-icon" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
                     <a href="#" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -895,30 +452,14 @@
             </nav>
         </div>
     </header>
-    <div class="progress-bar"></div>
 
-    <div class="portfolio-navigation">
-        <div class="nav-dot active" data-page="1"></div>
-        <div class="nav-dot" data-page="2"></div>
-        <div class="nav-dot" data-page="3"></div>
-        <div class="nav-dot" data-page="4"></div>
-        <div class="nav-dot" data-page="5"></div>
-        <div class="nav-dot" data-page="6"></div>
-        <div class="nav-dot" data-page="7"></div>
-        <div class="nav-dot" data-page="8"></div>
-        <div class="nav-dot" data-page="9"></div>
-        <div class="nav-dot" data-page="10"></div>
-        <div class="nav-dot" data-page="11"></div>
-    </div>
-
-        <!-- СТРАНИЦА 1 -->
     <div class="portfolio-container">
-                <section class="portfolio-page visible" id="page1">
-            <div class="page1-wrapper">
-
-
-                <div class="page1-hero-image-container image-wrapper stagger-item">
-                    <!-- Видео с оверлеем -->
+        <section class="portfolio-page">
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">ДЕКОР ДЛЯ БИЗНЕСА</h1>
+                </header>
+                <div class="page-photo-item image-wrapper stagger-item">
                     <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
                         <video
                             id="bgVideo"
@@ -973,120 +514,153 @@
                     })();
                     </script>
                 </div>
-                <header class="page1-subtitle stagger-item">
-                    <h1 class="hero-subtitle" style="position: relative;">ДЕКОРИРОВАНИЕ ВХОДНЫХ ГРУПП И ПРОСТРАНСТВ</h1>
-                </header>
-
             </div>
         </section>
-
-        <!-- SIMPLY CAN BE SPECIAL -->
-        <section class="portfolio-page" id="page11">
-            <div class="page11-canvas">
-                <header class="page11-header stagger-item">
-                    <h1 class="hero-title">БАРАХОЛЬЩИК</h1>
-                </header>
-                <div class="page11-image-container image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/9.jpg?auto=format&fit=crop" class="image-cover">
+        <section class="portfolio-page">
+            <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">БАРАХОЛЬЩИК. ЗЕЛЕНОГРАДСК</h1>
+            </header>
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-            </div>
-        </section>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
+                        <video
+                            id="bgVideo"
+                            class="image-cover"
+                            muted
+                            loop
+                            autoplay
+                            playsinline
+                            webkit-playsinline
+                            preload="auto"
+                            disablepictureinpicture
+                            controlslist="nodownload nofullscreen noremoteplayback"
+                            style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;"
+                        >
+                            <source src="https://softwareart.ru/videos/soyuz/barah2.mp4" type="video/mp4">
+                        </video>
 
+                    </div>
 
-
-        <section class="portfolio-page" id="page7">
-            <div class="page7-canvas">
-                <div class="page7-photo-item item-left-1 image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                    <script>
+                    (function() {
+                        const video = document.getElementById('bgVideo');
+                        // Функция попытки воспроизведения
+                        function tryPlay() {
+                            if (!video.paused) return;
+                            var p = video.play();
+                            if (p && typeof p.then === 'function') {
+                                p.then(() => clearInterval(interval)).catch(() => {});
+                            }
+                        }
+                        // События загрузки
+                        video.addEventListener('loadeddata', tryPlay);
+                        video.addEventListener('canplay', tryPlay);
+                        video.addEventListener('canplaythrough', tryPlay);
+                        // Интервал для надёжности
+                        const interval = setInterval(() => { if (video.paused) tryPlay(); else clearInterval(interval); }, 200);
+                        // Повтор при возвращении на вкладку
+                        document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+                        // Блокировка нежелательных действий
+                        var touchEvents = ['touchstart', 'touchmove', 'touchend', 'touchcancel'];
+                        touchEvents.forEach(evt => document.addEventListener(evt, e => {}, { passive: true, capture: true }));
+                        document.addEventListener('contextmenu', e => e.preventDefault());
+                        document.addEventListener('selectstart', e => e.preventDefault());
+                        video.addEventListener('dragstart', e => e.preventDefault());
+                    })();
+                    </script>
                 </div>
-                <div class="page7-photo-item item-left-2 image-wrapper stagger-item">
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
                     <img src="piscSoyuz/business/baraholshik/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-left-3 image-wrapper stagger-item">
+            </div>
+        </section>
+        <section class="portfolio-page">
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
                     <img src="piscSoyuz/business/baraholshik/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-center image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/5.jpg?auto=format&fit=crop" alt="Main Portrait" class="image-cover">
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/5.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-1 image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/6.jpg?auto=format&fit=crop" alt="Nature" class="image-cover">
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/6.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-2 image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/7.jpg?auto=format&fit=crop" alt="Group" class="image-cover">
+            </div>
+        </section>
+        <section class="portfolio-page">
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/7.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-                <div class="page7-photo-item item-right-3 image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/8.jpg?auto=format&fit=crop" alt="Portrait Style" class="image-cover">
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/8.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/9.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
             </div>
         </section>
 
-        <!-- SUN & LOVE DISTRICT -->
-
-
-        <section class="portfolio-page" id="page11">
-            <div class="page11-canvas">
-                <header class="page11-header stagger-item">
-                    <h1 class="hero-title">SUN & LOVE DISTRICT</h1>
+        <section class="portfolio-page">
+            <div class="page-bigimage-canvas">
+                <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">АМБЕРИКА</h1>
                 </header>
-                <div class="page11-image-container image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                <div style="display: flex; gap: 50px; flex: 1;">
+                    <div class="page-photo-item image-wrapper stagger-item">
+                        <img src="piscSoyuz/business/baraholshik/1.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                    </div>
+                    <div class="page-photo-item image-wrapper stagger-item">
+                        <img src="piscSoyuz/business/baraholshik/2.jpg?q=80&w=1280&h=400&auto=format&fit=crop" class="image-cover">
+                    </div>
                 </div>
             </div>
         </section>
-
-
-        <section class="portfolio-page" id="page9">
-            <div class="page9-canvas">
-                <div class="page9-image-box page9-main-photo image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a2.jpg?auto=format&fit=crop&q=80&w=800" alt="Невеста на пляже" class="image-cover">
+        <section class="portfolio-page">
+            <header class="page-bigimage-header stagger-item">
+                <h1 class="hero-title">БАЛТ, ХЛЕБ, КРЕНДЕЛЬ</h1>
+            </header>
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/balt/1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-
-                <div class="page9-image-box page9-top-photo image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/2.jpg?auto=format&fit=crop&q=80&w=1000" alt="Свадебная церемония" class="image-cover">
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/balt/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
-
-                <div class="page9-image-box page9-middle-photo image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a5.jpg?auto=format&fit=crop&q=80&w=600" alt="Детали оформления" class="image-cover">
-                </div>
-
-                <div class="page9-text-content stagger-item">
-                    <h2 class="section-title">Детали концепции</h2>
-                    <p class="body-text page9-description">
-                        Флористика включает сухоцветы, морские травы и песчаные кактусы. Музыкальное сопровождение — живой акустический сет с элементами звуков моря. Для гостей подготовлены индивидуальные наборы с эко-косметикой на основе морских минералов и картой местности с маршрутами прогулок по дюнам.
-                    </p>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/balt/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
             </div>
         </section>
-
-        <section class="portfolio-page" id="page-images1">
-            <div class="page-images1-canvas">
-                <div class="page-images1-photo-item i1-item-1 image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/4.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
-                </div>
-                <div class="page-images1-photo-item i1-item-2 image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
-                </div>
-                <div class="page-images1-photo-item i1-item-3 image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
-                </div>
-                <div class="page-images1-photo-item i1-item-4 image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a4.jpg?auto=format&fit=crop" alt="Main Portrait" class="image-cover">
-                </div>
-                <div class="page-images1-photo-item i1-item-5 image-wrapper stagger-item">
-                    <img src="piscSoyuz/weddings/SUNLOVEDISTRICT/a5.jpg?auto=format&fit=crop" alt="Nature" class="image-cover">
-                </div>
-
-        </section>
+    
     </div>
 
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <a class="logo" href="index.html">SOYUZ-DECOR</a>
+            </div>
+            <div class="footer-center">
+                Студия декора. Калининград. Москва.
+            </div>
+            <div class="footer-right">
+                <div class="social-icons">
+                    <a href="#" class="social-icon" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="#" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="tel:+79991234567" class="social-icon" aria-label="Phone"><i class="fas fa-phone-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Функция для анимации появления элементов при скроллинге
         function animateOnScroll() {
             const pages = document.querySelectorAll('.portfolio-page');
-            const progressBar = document.querySelector('.progress-bar');
-            const navDots = document.querySelectorAll('.nav-dot');
            
-            // Функция для проверки видимости элемента
             function isElementInViewport(el) {
                 const rect = el.getBoundingClientRect();
                 return (
@@ -1095,93 +669,31 @@
                 );
             }
            
-            // Функция для обновления видимых элементов
             function updateVisibleElements() {
-                let visiblePageIndex = 0;
-               
-                pages.forEach((page, index) => {
+                pages.forEach((page) => {
                     if (isElementInViewport(page)) {
                         page.classList.add('visible');
-                        visiblePageIndex = index;
-                       
-                        // Обновляем активную точку навигации
-                        navDots.forEach(dot => dot.classList.remove('active'));
-                        navDots[index].classList.add('active');
-                       
-                        // Обновляем информацию о текущей странице
                     }
                 });
-               
-                // Обновляем прогресс-бар
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                const scrollPercent = (scrollTop / scrollHeight) * 100;
-                progressBar.style.width = scrollPercent + '%';
             }
            
-            // Инициализация при загрузке
             updateVisibleElements();
            
-            // Обработчик скролла
             window.addEventListener('scroll', updateVisibleElements);
             window.addEventListener('resize', updateVisibleElements);
            
-            // Навигация по точкам
-            navDots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    const targetPage = pages[index];
-                    targetPage.scrollIntoView({ behavior: 'smooth' });
-                   
-                    // Обновляем активную точку
-                    navDots.forEach(d => d.classList.remove('active'));
-                    dot.classList.add('active');
-                });
-            });
-           
-            // Добавляем задержку для элементов внутри страниц
             const staggerItems = document.querySelectorAll('.stagger-item');
-            staggerItems.forEach((item, index) => {
+            staggerItems.forEach((item) => {
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
             });
            
-            // Инициализация первой страницы как видимой
             if (pages.length > 0) {
                 pages[0].classList.add('visible');
             }
         }
 
-        // Запуск анимации при загрузке страницы
         document.addEventListener('DOMContentLoaded', animateOnScroll);
-
-        // ---------- ЛОГИКА МОДАЛЬНОГО ОКНА ----------
-        document.addEventListener('DOMContentLoaded', function() {
-            const moreBtn = document.getElementById('moreButton');
-            const modal = document.getElementById('photoModal');
-            const closeBtn = document.getElementById('closeModal');
-
-            if (moreBtn) {
-                moreBtn.addEventListener('click', function() {
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden'; // запрещаем прокрутку фона
-                });
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener('click', function() {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = ''; // возвращаем прокрутку
-                });
-            }
-
-            // Закрытие по клику на оверлей (фон)
-            modal.addEventListener('click', function(e) {
-                if (e.target === modal) {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = '';
-                }
-            });
-        });
     </script>
 </body>
 </html>
