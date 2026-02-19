@@ -23,7 +23,10 @@
             font-family: 'Montserrat', sans-serif;
             color: #2c2c2c;
             overflow-x: hidden;
-            width: 1280px;
+            width: 100%;
+            max-width: 1280px;
+            padding-left: 30px;
+            padding-right: 30px;
             margin: 0 auto;
             position: relative;
         }
@@ -197,94 +200,6 @@
             padding-top: 20px;
         }
 
-        /* Страница photos1 */
-        .page-photos1-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.8fr 1.4fr 0.6fr;
-            grid-template-rows: repeat(3, 1fr);
-            gap: 15px;
-        }
-        .item-left-1 { grid-column: 1; grid-row: 1; }
-        .item-left-2 { grid-column: 1; grid-row: 2; }
-        .item-left-3 { grid-column: 1; grid-row: 3; }
-        .item-center { grid-column: 2; grid-row: 1 / span 3; }
-        .item-right-1 { grid-column: 3; grid-row: 1; }
-        .item-right-2 { grid-column: 3; grid-row: 2; }
-        .item-right-3 { grid-column: 3; grid-row: 3; }
-
-        /* Страница photos2 */
-        .page-photos2-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.5fr 0.3fr 0.4fr;
-            grid-template-rows: 1fr 0.5fr;
-            gap: 15px;
-        }
-        .page-photos2-main-photo { grid-column: 1; grid-row: 1/ span 2; }
-        .page-photos2-top-photo { grid-column: 2/ span 2; grid-row: 1; }
-        .page-photos2-middle-photo { grid-column: 2; grid-row: 2; }
-        .page-photos2-text-content { grid-column: 3; grid-row: 2; padding: 5px; display: flex; flex-direction: column; }
-
-        /* Страница photos3 */
-        .page-photos3-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.7fr 0.7fr 1fr;
-            grid-template-rows: 0.7fr 1fr 1.2fr;
-            gap: 15px;
-        }
-        .i1-item-1 { grid-column: 1/ span 2; grid-row: 1/ span 2; }
-        .i1-item-2 { grid-column: 1; grid-row: 3; }
-        .i1-item-3 { grid-column: 2; grid-row: 3; }
-        .i1-item-4 { grid-column: 3; grid-row: 1/ span 2; }
-        .i1-item-5 { grid-column: 3; grid-row: 3; }
-
-        /* Страница photos4 */
-        .page-photos4-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 0.5fr 1.4fr;
-            grid-template-rows: 1.2fr 1fr;
-            gap: 15px;
-        }
-        .item-page-photos4-1 { grid-column: 1; grid-row: 1; }
-        .item-page-photos4-2 { grid-column: 1; grid-row: 2; }
-        .item-page-photos4-big-3 { grid-column: 2; grid-row: 1/ span 2; }
-
-        /* Страница photos5 */
-        .page-photos5-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 0.65fr 1fr;
-            gap: 15px;
-        }
-        .item-page-photos5-1 { grid-column: 1; grid-row: 2; }
-        .item-page-photos5-2 { grid-column: 2; grid-row: 1 / span 2; }
-        .item-page-photos5-3 { grid-column: 3; grid-row: 1/ span 2; }
-        .item-page-photos5-text { grid-column: 1; grid-row: 1; }
-
         /* Страница photos6 */
         .page-photos6-canvas {
             width: 100%;
@@ -301,48 +216,7 @@
         .item-page-photos6-2 { grid-column: 2; grid-row: 1 / span 2; }
         .item-page-photos6-3 { grid-column: 3; grid-row: 1/ span 2; }
 
-        /* Страница photos7 */
-        .page-photos7-canvas {
-            width: 100%;
-            height: auto;
-            min-height: 720px;
-            background-color: #fcfcfc;
-            padding: 25px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 0.65fr 1fr;
-            gap: 15px;
-        }
-        .item-page-photos7-1 { grid-column: 1; grid-row: 1/ span 2; }
-        .item-page-photos7-2 { grid-column: 2/ span 2; grid-row: 1 / span 2; }
-
-
-
-        .page-aboutus4-canvas {
-            width: 100%;
-            height: 620px;
-            background-color: #fcfcfc;
-            padding: 50px;
-            display: grid;
-            grid-template-columns: 1.7fr 1fr;
-            gap: 15px;
-        }
-        .item-page-aboutus4-1 { grid-column: 1 ; grid-row: 1; height: 520px;}
-        .item-page-aboutus4-text1 { grid-column: 2; grid-row:1; }
-
-        .aboutus4-main-title {
-            position: relative;
-            top: 10px;
-            left: 30px;
-            pointer-events: none;
-        }
-        .aboutus4-description-block {
-            position: relative;
-            padding: 30px;
-        }
-
-
-
+        /* Страница aboutus5 */
         .page-aboutus5-canvas {
             width: 100%;
             height: 620px;
@@ -366,7 +240,6 @@
             padding: 30px;
         }
 
-
         .aboutus5-items {
           display: flex;
           flex-direction: column;
@@ -381,7 +254,6 @@
           padding: 10px 0;
           border-bottom: 1px solid #efefef;
         }
-
 
         .aboutus5-item-title {
           font-family: 'Montserrat', serif;
@@ -519,6 +391,29 @@
             }
             .footer-right .social-icons {
                 justify-content: center;
+            }
+            .page-photos6-canvas, .page-aboutus5-canvas, .page-bigimage-canvas {
+                padding: 15px;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                height: auto;
+                min-height: auto;
+            }
+            .item-page-photos6-1, .item-page-photos6-2, .item-page-photos6-3 {
+                grid-column: 1;
+                grid-row: auto;
+            }
+            .item-page-aboutus5-1, .item-page-aboutus5-text1 {
+                grid-column: 1;
+                grid-row: auto;
+                height: auto;
+            }
+            .hero-title {
+                font-size: 30px;
+            }
+            .header-container, .nav-links {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -781,7 +676,6 @@
                 </div>
             </div>
         </section>
-
 
 
 
