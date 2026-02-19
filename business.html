@@ -31,11 +31,11 @@
         /* ---------- ТИПОГРАФИКА ---------- */
         .hero-title {
             font-family: 'Montserrat', serif;
-            font-weight: 300;
+            font-weight: 150;
             font-size: 40px;
             line-height: 1;
             letter-spacing: -1px;
-            color: #1e1e1e;
+            color: #272727;
         }
         .hero-subtitle {
             font-family: 'Montserrat', serif;
@@ -193,7 +193,8 @@
         }
         .page-bigimage-header {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+            padding-top: 20px;
         }
 
         /* Страница photos1 */
@@ -315,6 +316,87 @@
         .item-page-photos7-1 { grid-column: 1; grid-row: 1/ span 2; }
         .item-page-photos7-2 { grid-column: 2/ span 2; grid-row: 1 / span 2; }
 
+
+
+        .page-aboutus4-canvas {
+            width: 100%;
+            height: 620px;
+            background-color: #fcfcfc;
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 15px;
+        }
+        .item-page-aboutus4-1 { grid-column: 1 ; grid-row: 1; height: 520px;}
+        .item-page-aboutus4-text1 { grid-column: 2; grid-row:1; }
+
+        .aboutus4-main-title {
+            position: relative;
+            top: 10px;
+            left: 30px;
+            pointer-events: none;
+        }
+        .aboutus4-description-block {
+            position: relative;
+            padding: 30px;
+        }
+
+
+
+        .page-aboutus5-canvas {
+            width: 100%;
+            height: 620px;
+            background-color: #fcfcfc;
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 15px;
+        }
+        .item-page-aboutus5-1 { grid-column: 2 ; grid-row: 1; height: 560px;}
+        .item-page-aboutus5-text1 { grid-column: 1; grid-row:1; }
+
+        .aboutus5-main-title {
+            position: relative;
+            top: 10px;
+            left: 30px;
+            pointer-events: none;
+        }
+        .aboutus5-description-block {
+            position: relative;
+            padding: 30px;
+        }
+
+
+        .aboutus5-items {
+          display: flex;
+          flex-direction: column;
+          gap: 0;
+          margin-bottom: 72px;
+        }
+
+        .aboutus5-item {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 6px;
+          padding: 10px 0;
+          border-bottom: 1px solid #efefef;
+        }
+
+
+        .aboutus5-item-title {
+          font-family: 'Montserrat', serif;
+          font-size: clamp(1rem, 2vw, 1.1rem);
+          font-weight: 400;
+          color: #111;
+          margin-bottom: 6px;
+        }
+
+        .aboutus5-item-text {
+          font-size: clamp(0.88rem, 2vw, 0.97rem);
+          font-weight: 300;
+          line-height: 1.8;
+          color: #555;
+        }
         /* ---------- ШАПКА ---------- */
         .site-header {
             position: fixed;
@@ -467,7 +549,7 @@
                 <header class="page-bigimage-header stagger-item">
                     <h1 class="hero-title" style="padding-top:20;">ДЕКОР ДЛЯ БИЗНЕСА</h1>
                 </header>
-                <div class="page-photo-item image-wrapper stagger-item">
+                <div class="page-photo-item image-wrapper stagger-item" style="height:400px;">
                     <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
                         <video
                             id="bgVideo"
@@ -524,15 +606,115 @@
                 </div>
             </div>
         </section>
+
+ 
+
         <section class="portfolio-page">
-            <header class="page-bigimage-header stagger-item">
-                    <h1 class="hero-title">БАРАХОЛЬЩИК. ЗЕЛЕНОГРАДСК</h1>
-            </header>
+            <div class="page-aboutus5-canvas">
+                <div class="page-photo-item item-page-aboutus5-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/3.jpg?auto=format&fit=crop" class="image-cover">
+                </div>
+                <div class="item-page-aboutus5-text1 stagger-item">
+                    <h1 class="hero-title" style="font-weight: 150; font-size: 30px; padding-bottom: 25px; ">Мы создаём лицо<br>вашего бизнеса.</h1>
+                    <div class="aboutus5-items">
+
+                      <div class="aboutus5-item">
+                        <h2 class="aboutus5-item-title">Работаем на задачи бренда</h2>
+                        <p class="aboutus5-item-text">Дизайн обязан быть логичным и решать цели бизнеса. Мы отражаем вашу суть через форму.</p>
+                      </div>
+
+                      <div class="aboutus5-item">
+                        <h2 class="aboutus5-item-title">Нет банальных решений</h2>
+                        <p class="aboutus5-item-text">Мы не используем искусственные цветы. Это скучно и неактуально. Мы выбираем честные материалы и живую флористику.</p>
+                      </div>
+
+
+                      <div class="aboutus5-item">
+                        <h2 class="aboutus5-item-title">Эффект паузы</h2>
+                        <p class="aboutus5-item-text">Мы придумываем необычные решения, чтобы люди останавливались и рассматривали ваши витрины.</p>
+                      </div>
+
+                      <div class="aboutus5-item">
+                        <h2 class="aboutus5-item-title">Любовь к городу</h2>
+                        <p class="aboutus5-item-text">Нам нравится делать улицы красивыми. Мы рады, когда бизнес становится частью новой городской эстетики.</p>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page">
             <div class="page-photos6-canvas">
                 <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
-                    <img src="piscSoyuz/business/baraholshik/1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                    <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
+                        <video
+                            id="bgVideo"
+                            class="image-cover"
+                            muted
+                            loop
+                            autoplay
+                            playsinline
+                            webkit-playsinline
+                            preload="auto"
+                            disablepictureinpicture
+                            controlslist="nodownload nofullscreen noremoteplayback"
+                            style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;"
+                        >
+                            <source src="https://softwareart.ru/videos/soyuz/Amberica.mp4" type="video/mp4">
+                        </video>
+
+                    </div>
+
+                    <script>
+                    (function() {
+                        const video = document.getElementById('bgVideo');
+                        // Функция попытки воспроизведения
+                        function tryPlay() {
+                            if (!video.paused) return;
+                            var p = video.play();
+                            if (p && typeof p.then === 'function') {
+                                p.then(() => clearInterval(interval)).catch(() => {});
+                            }
+                        }
+                        // События загрузки
+                        video.addEventListener('loadeddata', tryPlay);
+                        video.addEventListener('canplay', tryPlay);
+                        video.addEventListener('canplaythrough', tryPlay);
+                        // Интервал для надёжности
+                        const interval = setInterval(() => { if (video.paused) tryPlay(); else clearInterval(interval); }, 200);
+                        // Повтор при возвращении на вкладку
+                        document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+                        // Блокировка нежелательных действий
+                        var touchEvents = ['touchstart', 'touchmove', 'touchend', 'touchcancel'];
+                        touchEvents.forEach(evt => document.addEventListener(evt, e => {}, { passive: true, capture: true }));
+                        document.addEventListener('contextmenu', e => e.preventDefault());
+                        document.addEventListener('selectstart', e => e.preventDefault());
+                        video.addEventListener('dragstart', e => e.preventDefault());
+                    })();
+                    </script>
                 </div>
                 <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+
+                  <h1 class="hero-title aboutus5-main-title stagger-item" style="font-weight: 150; font-size: 40px;padding: 10px;" >Задаем ритм</h1>
+
+                    <div class="aboutus5-description-block stagger-item">
+                        <h2 class="item-title"style="font-size: 25px;font-weight: 200; padding-bottom: 10px;">Ваша витрина рассказывает историю бренда еще до того, как прохожий войдет внутрь.Мы делаем эту историю убедительной.</h2>
+                        <h2 class="item-title"style="font-size: 25px;font-weight: 200; padding-bottom: 10px;">Правила нашей работы просты:</h2>
+                        <p class="body-text"> 
+
+     Дизайн решает бизнес-задачи. Мы отказываемся от банальных искусственных цветов в пользу честных материалов и живой флористики. <br><br>Проектируем клумбы и подбираем решения так, чтобы они выглядели естественным продолжением города. <br><br>
+
+    Мы создаем «эффект паузы»: необычные детали, которые заставляют людей останавливаться и рассматривать.  <br><br>Нам нравится делать городские улицы красивыми и помогать бизнесу становиться частью новой городской эстетики.
+                        </p>
+
+
+                    </div>
+
+
+
+
+                </div>
+                <div class="page-photo-item item-page-photos6-3 image-wrapper">
                     <div class="video-wrapper" style="touch-action: auto; -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; pointer-events: none;">
                         <video
                             id="bgVideo"
@@ -580,11 +762,33 @@
                     })();
                     </script>
                 </div>
+            </div>
+        </section>
+
+        <section class="portfolio-page">
+            <header class="page-bigimage-header stagger-item">
+                    <h1 class="hero-title">БАРАХОЛЬЩИК. ЗЕЛЕНОГРАДСК</h1>
+            </header>
+            <div class="page-photos6-canvas">
+                <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/1.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
+                <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
+                    <img src="piscSoyuz/business/baraholshik/2.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
+                </div>
                 <div class="page-photo-item item-page-photos6-3 image-wrapper stagger-item">
                     <img src="piscSoyuz/business/baraholshik/3.jpg?auto=format&fit=crop" alt="Portrait" class="image-cover">
                 </div>
             </div>
         </section>
+
+
+
+
+
+
+
+
         <section class="portfolio-page">
             <div class="page-photos6-canvas">
                 <div class="page-photo-item item-page-photos6-1 image-wrapper stagger-item">
