@@ -47,15 +47,7 @@
             color: #1e1e1e;
         }
 
-        .section-title {
-            font-family: 'Montserrat', serif;
-            font-weight: 400;
-            font-size: 25px;
-            line-height: 1.3;
-            letter-spacing: -0.3px;
-            padding-bottom: 10px;
-            color: #1e1e1e;
-        }
+
 
         .body-text {
             font-family: 'Montserrat', sans-serif;
@@ -194,8 +186,7 @@
         }
         .page-bigimage-header {
             text-align: center;
-            margin-bottom: 10px;
-            padding-top: 20px;
+            margin-bottom: 30px;
         }
 
         /* Страница photos6 */
@@ -214,8 +205,8 @@
         .item-page-photos6-2 { grid-column: 2; grid-row: 1 / span 2; }
         .item-page-photos6-3 { grid-column: 3; grid-row: 1/ span 2; }
 
-        /* Страница aboutus5 */
-        .page-aboutus5-canvas {
+        /* Страница bsn */
+        .page-bsn-canvas {
             width: 100%;
             height: 620px;
             background-color: #fcfcfc;
@@ -224,28 +215,28 @@
             grid-template-columns: 1fr 1.4fr;
             gap: 15px;
         }
-        .item-page-aboutus5-1 { grid-column: 2 ; grid-row: 1; height: 560px;}
-        .item-page-aboutus5-text1 { grid-column: 1; grid-row:1; }
+        .item-page-bsn-1 { grid-column: 2 ; grid-row: 1; height: 560px;}
+        .item-page-bsn-text1 { grid-column: 1; grid-row:1; }
 
-        .aboutus5-main-title {
+        .bsn-main-title {
             position: relative;
             top: 10px;
             left: 30px;
             pointer-events: none;
         }
-        .aboutus5-description-block {
+        .bsn-description-block {
             position: relative;
             padding: 30px;
         }
 
-        .aboutus5-items {
+        .bsn-items {
           display: flex;
           flex-direction: column;
           gap: 0;
           margin-bottom: 72px;
         }
 
-        .aboutus5-item {
+        .bsn-item {
           display: grid;
           grid-template-columns: 1fr;
           gap: 6px;
@@ -253,7 +244,7 @@
           border-bottom: 1px solid #efefef;
         }
 
-        .aboutus5-item-title {
+        .bsn-item-title {
           font-family: 'Montserrat', serif;
           font-size: clamp(1rem, 2vw, 1.1rem);
           font-weight: 400;
@@ -261,7 +252,7 @@
           margin-bottom: 6px;
         }
 
-        .aboutus5-item-text {
+        .bsn-item-text {
           font-size: clamp(0.88rem, 2vw, 0.97rem);
           font-weight: 300;
           line-height: 1.8;
@@ -390,7 +381,7 @@
             .footer-right .social-icons {
                 justify-content: center;
             }
-            .page-photos6-canvas, .page-aboutus5-canvas, .page-bigimage-canvas {
+            .page-photos6-canvas, .page-bsn-canvas, .page-bigimage-canvas {
                 padding: 15px;
                 grid-template-columns: 1fr;
                 grid-template-rows: auto;
@@ -401,7 +392,7 @@
                 grid-column: 1;
                 grid-row: auto;
             }
-            .item-page-aboutus5-1, .item-page-aboutus5-text1 {
+            .item-page-bsn-1, .item-page-bsn-text1 {
                 grid-column: 1;
                 grid-row: auto;
                 height: auto;
@@ -503,33 +494,33 @@
  
 
         <section class="portfolio-page">
-            <div class="page-aboutus5-canvas">
-                <div class="page-photo-item item-page-aboutus5-1 image-wrapper stagger-item">
+            <div class="page-bsn-canvas">
+                <div class="page-photo-item item-page-bsn-1 image-wrapper stagger-item">
                     <img src="piscSoyuz/business/baraholshik/3.jpg?auto=format&fit=crop" class="image-cover">
                 </div>
-                <div class="item-page-aboutus5-text1 stagger-item">
+                <div class="item-page-bsn-text1 stagger-item">
                     <h1 class="hero-title" style="font-weight: 150; font-size: 30px; padding-bottom: 25px; ">Мы создаём лицо<br>вашего бизнеса.</h1>
-                    <div class="aboutus5-items">
+                    <div class="bsn-items">
 
-                      <div class="aboutus5-item">
-                        <h2 class="aboutus5-item-title">Работаем на задачи бренда</h2>
-                        <p class="aboutus5-item-text">Дизайн обязан быть логичным и решать цели бизнеса. Мы отражаем вашу суть через форму.</p>
+                      <div class="bsn-item">
+                        <h2 class="bsn-item-title">Работаем на задачи бренда</h2>
+                        <p class="bsn-item-text">Дизайн обязан быть логичным и решать цели бизнеса. Мы отражаем вашу суть через форму.</p>
                       </div>
 
-                      <div class="aboutus5-item">
-                        <h2 class="aboutus5-item-title">Нет банальных решений</h2>
-                        <p class="aboutus5-item-text">Мы не используем искусственные цветы. Это скучно и неактуально. Мы выбираем честные материалы и живую флористику.</p>
+                      <div class="bsn-item">
+                        <h2 class="bsn-item-title">Нет банальных решений</h2>
+                        <p class="bsn-item-text">Мы не используем искусственные цветы. Это скучно и неактуально. Мы выбираем честные материалы и живую флористику.</p>
                       </div>
 
 
-                      <div class="aboutus5-item">
-                        <h2 class="aboutus5-item-title">Эффект паузы</h2>
-                        <p class="aboutus5-item-text">Мы придумываем необычные решения, чтобы люди останавливались и рассматривали ваши витрины.</p>
+                      <div class="bsn-item">
+                        <h2 class="bsn-item-title">Эффект паузы</h2>
+                        <p class="bsn-item-text">Мы придумываем необычные решения, чтобы люди останавливались и рассматривали ваши витрины.</p>
                       </div>
 
-                      <div class="aboutus5-item">
-                        <h2 class="aboutus5-item-title">Любовь к городу</h2>
-                        <p class="aboutus5-item-text">Нам нравится делать улицы красивыми. Мы рады, когда бизнес становится частью новой городской эстетики.</p>
+                      <div class="bsn-item">
+                        <h2 class="bsn-item-title">Любовь к городу</h2>
+                        <p class="bsn-item-text">Нам нравится делать улицы красивыми. Мы рады, когда бизнес становится частью новой городской эстетики.</p>
                       </div>
                     </div>
                 </div>
@@ -588,9 +579,9 @@
                 </div>
                 <div class="page-photo-item item-page-photos6-2 image-wrapper stagger-item">
 
-                  <h1 class="hero-title aboutus5-main-title stagger-item" style="font-weight: 150; font-size: 40px;padding: 10px;" >Задаем ритм</h1>
+                  <h1 class="hero-title bsn-main-title stagger-item" style="font-weight: 150; font-size: 40px;padding: 10px;" >Задаем ритм</h1>
 
-                    <div class="aboutus5-description-block stagger-item">
+                    <div class="bsn-description-block stagger-item">
                         <h2 class="item-title"style="font-size: 25px;font-weight: 200; padding-bottom: 10px;">Ваша витрина рассказывает историю бренда еще до того, как прохожий войдет внутрь.Мы делаем эту историю убедительной.</h2>
                         <h2 class="item-title"style="font-size: 25px;font-weight: 200; padding-bottom: 10px;">Правила нашей работы просты:</h2>
                         <p class="body-text"> 

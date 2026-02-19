@@ -39,14 +39,7 @@
             color: #272727;
         }
 
-        .section-title {
-            font-family: 'Montserrat', serif;
-            font-weight: 400;
-            font-size: 25px;
-            line-height: 1.3;
-            letter-spacing: -0.3px;
-            color: #1e1e1e;
-        }
+
 
         .body-text {
             font-family: 'Montserrat', sans-serif;
@@ -294,87 +287,6 @@
         }
 
 
-        /* ---------- МОДАЛЬНОЕ ОКНО (фрейм с фото) ---------- */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            backdrop-filter: blur(4px);
-        }
-
-        .modal-container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            padding: 20px;
-            width: 90%;
-            max-width: 1200px;
-            height: 90vh;           /* фиксированная высота экрана */
-            overflow: hidden;        /* скрываем всё, что выходит за пределы */
-            position: relative;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-grid {
-            display: flex;
-            gap: 20px;
-            flex: 1;                /* занимает всю доступную высоту контейнера */
-            min-height: 0;           /* важно для корректного сжатия */
-        }
-
-        .modal-column {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            min-height: 0;           /* позволяет дочерним элементам сжиматься */
-        }
-
-        .modal-column.center {
-            flex: 1.5;                /* центральная колонка шире */
-        }
-
-        .modal-photo {
-            flex: 1 1 0;              /* каждый фото-контейнер занимает равную долю */
-            min-height: 0;             /* важно для сжатия */
-            background-color: #f0f0f0;
-            border-radius: 8px;
-            overflow: hidden;          /* скрываем части изображения, выходящие за пределы */
-        }
-
-        .modal-photo img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;       /* фото полностью заполняет рамку, возможно обрезаясь */
-            object-position: center;  /* центрируем */
-            display: block;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            background: none;
-            border: none;
-            font-size: 32px;
-            line-height: 1;
-            cursor: pointer;
-            color: #1e1e1e;
-            transition: opacity 0.2s;
-            z-index: 10;
-        }
-        .modal-close:hover {
-            opacity: 0.5;
-        }
-
 
         /* ---------- ФИКСИРОВАННАЯ ШАПКА ---------- */
         .site-header {
@@ -390,7 +302,7 @@
         }
 
         .header-container {
-            max-width: 1280px;
+            width: 100%;
             margin: 0 auto;
             padding: 5px 30px;
             display: flex;
