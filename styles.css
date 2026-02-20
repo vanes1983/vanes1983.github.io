@@ -57,7 +57,7 @@ body {
     color: #4a4a4a;
 }
 .with-line {
-    border-bottom: 1px solid #C0C0C0;
+    border-bottom: 1px solid #ebebeb;
     padding-bottom: 1%;
 }
 
@@ -71,6 +71,14 @@ body {
 }
 
 /* ---------- УНИВЕРСАЛЬНЫЕ КЛАССЫ ДЛЯ ИЗОБРАЖЕНИЙ ---------- */
+.autoplayvideo {
+    touch-action: auto; 
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    user-select: none; 
+    pointer-events: none;
+}
+
 .image-wrapper {
     overflow: hidden;
     border-radius: 8px;
