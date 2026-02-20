@@ -24,7 +24,7 @@ body {
 .hero-title {
     font-family: 'Montserrat', serif;
     font-weight: 150;
-    font-size: clamp(20px, 2.7vw, 35px);
+    font-size: clamp(15px, 2.7vw, 35px);
     line-height: 1;
     letter-spacing: -1px;
     color: #272727;
@@ -33,7 +33,7 @@ body {
 .block-title {
     font-family: 'Montserrat', serif;
     font-weight: 150;
-    font-size: clamp(18px, 2.7vw, 30px);
+    font-size: clamp(13px, 2.7vw, 30px);
     line-height: 1;
     letter-spacing: -1px;
     color: #272727;
@@ -200,7 +200,7 @@ video {
 .logo {
     font-family: 'Montserrat', serif;
     font-weight: 300;
-    font-size: 24px;
+    font-size: clamp(15px, 2.6vw, 24px);
     letter-spacing: -0.5px;
     color: #1e1e1e;
     text-decoration: none;
@@ -234,7 +234,7 @@ video {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 2vw;
 }
 
 .nav-link {
@@ -270,28 +270,22 @@ video {
 .footer-container {
     width: 100%;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0 6%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.footer-left .logo {
-    font-size: 24px;
-    margin-left: 0;
-}
+
 
 .footer-center {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: 14px;
+    font-size: clamp(10px, 2vw, 14px);
     color: #4a4a4a;
     letter-spacing: 0.3px;
 }
 
-.footer-right .social-icons {
-    margin-left: 0;
-}
 
 /* Страница 1 */
 .page1-wrapper {
@@ -386,7 +380,6 @@ video {
 .aboutus5-items {
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
 .aboutus5-item {
