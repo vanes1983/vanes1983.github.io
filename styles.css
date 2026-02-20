@@ -29,7 +29,6 @@ body {
     overflow-x: hidden;
     width: 100%;
     max-width: 1280px;
-    min-width: 600px;
     margin: 0 auto;
     position: relative;
 }
@@ -664,4 +663,111 @@ video {
 .simple-just-text-block {
      position: relative;
     pointer-events: none;
+}
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Slightly smaller base font */
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .social-icons {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .portfolio-container {
+        margin-top: 120px; /* Adjust for taller header */
+    }
+
+    .portfolio-page {
+        padding: 5%;
+        margin-bottom: 5%;
+    }
+
+    /* Stack all grids vertically */
+    .page-aboutus4-canvas,
+    .page-aboutus5-canvas,
+    .page-aboutus6-canvas,
+    .page-aboutus7-canvas,
+    .page-bsn-canvas,
+    .page-photos1-canvas,
+    .page-photos2-canvas,
+    .page-photos3-canvas,
+    .page-photos4-canvas,
+    .page-photos5-canvas,
+    .page-photos6-canvas,
+    .page-photos7-canvas,
+    .page-bigimage-canvas {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+        min-height: none;
+        max-height: none;
+        aspect-ratio: auto;
+        height: auto;
+    }
+
+    /* Make images full width */
+    .page-photo-item,
+    .image-wrapper {
+        width: 100%;
+        height: auto;
+        min-height: none;
+        max-height: none;
+    }
+
+    /* Adjust titles and texts */
+    .hero-title {
+        font-size: 24px;
+    }
+
+    .block-title {
+        font-size: 20px;
+    }
+
+    .body-text {
+        font-size: 14px;
+    }
+
+    /* Footer */
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer-center {
+        margin: 10px 0;
+    }
+
+    /* Specific adjustments */
+    .page1-hero-image-container {
+        height: 40vh;
+    }
+
+    .aboutus4-description-block,
+    .aboutus5-description-block,
+    .bsn-items {
+        margin: 20px 0;
+    }
+
+    .simple-just-text-block {
+        padding: 10px;
+    }
+
+    /* Hide or adjust videos if needed */
+    .video-wrapper video {
+        width: 100%;
+    }
 }
