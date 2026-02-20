@@ -542,43 +542,7 @@
         </div>
     </footer>
 
-    <script>
-        function animateOnScroll() {
-            const pages = document.querySelectorAll('.portfolio-page');
-           
-            function isElementInViewport(el) {
-                const rect = el.getBoundingClientRect();
-                return (
-                    rect.top <= window.innerHeight * 0.8 &&
-                    rect.bottom >= window.innerHeight * 0.2
-                );
-            }
-           
-            function updateVisibleElements() {
-                pages.forEach((page) => {
-                    if (isElementInViewport(page)) {
-                        page.classList.add('visible');
-                    }
-                });
-            }
-           
-            updateVisibleElements();
-           
-            window.addEventListener('scroll', updateVisibleElements);
-            window.addEventListener('resize', updateVisibleElements);
-           
-            const staggerItems = document.querySelectorAll('.stagger-item');
-            staggerItems.forEach((item) => {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
-            });
-           
-            if (pages.length > 0) {
-                pages[0].classList.add('visible');
-            }
-        }
+    <script src="scripts.js"></script>
 
-        document.addEventListener('DOMContentLoaded', animateOnScroll);
-    </script>
 </body>
 </html>

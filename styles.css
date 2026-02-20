@@ -1,4 +1,17 @@
 /* ---------- Общие сбросы и переменные ---------- */
+
+@media (max-width: 599px) {
+            .logo {
+                display: none;
+            }
+        }
+        .site-header {
+            transition: transform 0.3s ease;
+        }
+        .site-header.hide {
+            transform: translateY(-100%);
+        }
+        
 * {
     margin: 0;
     padding: 0;
