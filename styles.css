@@ -65,7 +65,7 @@ body {
 .body-text {
     font-family: 'Montserrat', sans-serif;
     font-weight: 300;
-    font-size: clamp(5px, 1.16vw, 15px) ;
+    font-size: clamp(8px, 1.16vw, 15px) ;
     line-height: 1.7;
     color: #4a4a4a;
 }
@@ -350,8 +350,6 @@ video {
     width: 100%;
     height: auto;
     aspect-ratio: 16 / 9;
-    max-height: 550px;
-    min-height: 180px;
     background-color: #fcfcfc;
     padding: 1vh 2vw;
     display: grid;
@@ -359,7 +357,7 @@ video {
     gap: 1.2%;
 }
 
-.item-page-aboutus4-1 { grid-column: 1 ; grid-row: 1; max-height: 530px;}
+.item-page-aboutus4-1 { grid-column: 1 ; grid-row: 1; }
 .item-page-aboutus4-text1 { grid-column: 2; grid-row:1; }
 
 .aboutus4-main-title {
@@ -469,6 +467,36 @@ video {
     margin: 5% 1% 2% 0%
 }
 
+.page-aboutus6-canvas {
+    width: 100%;
+    height: auto;
+    max-height: 620px;
+    aspect-ratio: 16 / 9;
+    background-color: #fcfcfc;
+    padding: 1vh 2vw;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    gap: 1.2%;
+}
+
+.item-page-aboutus6-1 { grid-column: 2 ; grid-row: 1; max-height: 570px;}
+.item-page-aboutus6-text1 { grid-column: 1; grid-row:1; }
+
+
+.page-aboutus7-canvas {
+    width: 100%;
+    height: auto;
+    max-height: 580px;
+    aspect-ratio: 16 / 9;
+    background-color: #fcfcfc;
+    padding: 1vh 2vw;
+    display: grid;
+    grid-template-columns: 1.8fr 0.9fr;
+    gap: 1.2%;
+}
+
+.item-page-aboutus7-1 { grid-column: 1 ; grid-row: 1; max-height: 510px; }
+.item-page-aboutus7-text1 { grid-column: 2; grid-row:1; }
 
 .section-title {
     font-family: 'Montserrat', serif;
